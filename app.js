@@ -45,22 +45,24 @@ $('#submit').on('click', function () {
             // getting all sound Id's from the specific search query 
             // console.log(soundListArr[i]);
 
-
             // these are the values we need to get the correct mp3 from the sound Instance Call
-            // getting the name of each sound 
-            console.log(soundListArr[i].name);
-            // getting the id of each sound 
-            console.log(soundListArr[i].id);
+            
+            // test for getting the name of each sound 
+            // console.log(soundListArr[i].name);
 
+            // test for getting the id of each sound 
+            // console.log(soundListArr[i].id);
 
+            // this variable will hold the sound name 
+            let soundName = soundListArr[i].name;            
+            // this variable will hold the sound Id 
+            let soundIds = soundListArr[i].id;
 
-        }
-
-
-        $('#submit2').on('click', function () {
-
+            // we need to display the searched audio files as html elements on the website 
+            // for each of the sound Id's we need to do a ajax call so that we can have all of the 
+            // audios show up on the page 
             $.ajax({
-                url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
+                url: `https://freesound.org/apiv2/sounds/${soundIds}/?&token=${apiKey}`,
                 method: 'GET'
             }).then((response) => {
 
@@ -68,9 +70,23 @@ $('#submit').on('click', function () {
 
 
             });
+        }
 
 
-        });
+        // $('#submit2').on('click', function () {
+
+        //     // $.ajax({
+        //     //     url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
+        //     //     method: 'GET'
+        //     // }).then((response) => {
+
+        //     //     console.log(response);
+
+
+        //     // });
+
+
+        // });
 
     });
 
