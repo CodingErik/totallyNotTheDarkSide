@@ -37,7 +37,7 @@ $('#submit').on('click', function () {
         // looping throught the the soundListArr 
         for (let i = 0; i < soundListArr.length; i++) {
             
-
+            // testing the arrays outputs 
             console.log(soundListArr[i]);
             // console.log(reponse.results[i].name);
         }
