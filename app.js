@@ -28,7 +28,8 @@ $('#submit').on('click', function () {
         method: 'GET'
     }).then((response) => {
 
-        console.log(response);
+        // testing ajax request
+        // console.log(response);
 
         // Assigning this variable 
         // this is the array of sound objects that is returned by the call
@@ -38,8 +39,16 @@ $('#submit').on('click', function () {
         for (let i = 0; i < soundListArr.length; i++) {
             
             // testing the arrays outputs 
-            console.log(soundListArr[i]);
-            // console.log(reponse.results[i].name);
+            // getting all sound Id's from the specific search query 
+            // console.log(soundListArr[i]);
+
+            // getting the name of each sound 
+            console.log(soundListArr[i].name);
+            // getting the id of each sound 
+            console.log(soundListArr[i].id);
+
+
+
         }
 
 
