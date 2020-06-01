@@ -75,6 +75,8 @@ $('#submit').on('click', function () {
 
                 // this get the specific hq mp3
                 console.log(response.previews);
+
+                // now we have the specific link for the mp3 working!
                 console.log('this is the actual link to the mp3',response.previews['preview-hq-mp3']);
 
             });
