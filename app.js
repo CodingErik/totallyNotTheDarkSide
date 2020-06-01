@@ -30,35 +30,38 @@ $('#submit').on('click', function () {
 
         console.log(response);
 
+        // Assigning this variable 
+        // this is the array of sound objects that is returned by the call
+        let soundListArr = response.results;
 
-        let id = response.results[0].id
+        // looping throught the the soundListArr 
+        for (let i = 0; i < soundListArr.length; i++) {
+            
 
-        // console.log(reponse.results);
+            console.log(soundListArr[i]);
+            // console.log(reponse.results[i].name);
+        }
 
-        // for (let i = 0; i < reponse.results.length; i++) {
-        // console.log(id);
-        //     // console.log(reponse.results[i].name);
-        // }
 
+        $('#submit2').on('click', function () {
+
+            $.ajax({
+                url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
+                method: 'GET'
+            }).then((response) => {
+
+                console.log(response);
+
+
+            });
+
+
+        });
 
     });
 
-    
+
 });
 
 
 
-$('#submit2').on('click', function () {
-
-    $.ajax({                     
-        url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
-        method: 'GET'
-    }).then((response) => {
-
-        console.log(response);
-
-
-    });
-
-
-});
