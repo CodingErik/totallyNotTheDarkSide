@@ -93,6 +93,21 @@ $('#submit').on('click', function () {
         }
 
 
+        
+
+        let audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", "https://freesound.org/data/previews/400/400402_5121236-hq.mp3");
+
+        // Theme Button
+        $("#play").on("click", function() {
+          audioElement.play();
+        });
+        $("#pause").on("click", function() {
+          audioElement.pause();
+        });
+
+
+
         // $('#submit2').on('click', function () {
 
         //     // $.ajax({
