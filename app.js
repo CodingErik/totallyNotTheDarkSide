@@ -40,6 +40,9 @@ $('#submit').on('click', function () {
 
         // looping throught the the soundListArr 
         for (let i = 0; i < soundListArr.length; i++) {
+
+            // this gives the specific amount of results that we should be expecting
+            console.log(soundListArr.length);
             
             // testing the arrays outputs 
             // getting all sound Id's from the specific search query 
@@ -66,8 +69,13 @@ $('#submit').on('click', function () {
                 method: 'GET'
             }).then((response) => {
 
-                console.log(response);
+                // this gets the sound instance object of each of sounds from the array list 
+                // of the specified search query 
+                // console.log(response);
 
+                // this get the specific hq mp3
+                console.log(response.previews);
+                console.log('this is the actual link to the mp3',response.previews['preview-hq-mp3']);
 
             });
         }
