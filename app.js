@@ -45,6 +45,8 @@ $('#submit').on('click', function () {
             // getting all sound Id's from the specific search query 
             // console.log(soundListArr[i]);
 
+
+            // these are the values we need to get the correct mp3 from the sound Instance Call
             // getting the name of each sound 
             console.log(soundListArr[i].name);
             // getting the id of each sound 
