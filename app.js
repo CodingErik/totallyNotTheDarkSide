@@ -74,13 +74,18 @@ $('#submit').on('click', function () {
                 // console.log(response);
 
                 // this get the specific hq mp3
-                // console.log(response.previews); ///EXTRAS
-                // get the wave from each one of the files that we have a visual 
+                // console.log(response.previews); 
+                ///EXTRAS// get the wave from each one of the files that we have a visual 
+                ///EXTRAS// get a download button going for each these guys 
+
+
+                // assign variable to link property (hq sound link)
+                let soundLink = response.previews['preview-hq-mp3'];
 
                 // now we have the specific link for the mp3 working!
-                console.log('this is the actual link to the mp3',response.previews['preview-hq-mp3']);
+                console.log('this is the actual link to the mp3',soundLink);
 
-                
+                // $('.results').append('<a href=""> text link </a> ')
                 
 
             });
