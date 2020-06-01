@@ -85,7 +85,8 @@ $('#submit').on('click', function () {
                 // now we have the specific link for the mp3 working!
                 console.log('this is the actual link to the mp3',soundLink);
 
-                $('.results').append('<div>'+ soundName +'<a href=`${soundLink}`> sound </a></div>')
+                $('.results').append('<div>'+ soundName, soundIds, soundLink +'</div>')
+                $('.results').append('<a href=""+soundLink+"">chewing gum </a>');
                 
 
             });
