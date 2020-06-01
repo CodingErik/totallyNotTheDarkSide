@@ -74,10 +74,14 @@ $('#submit').on('click', function () {
                 // console.log(response);
 
                 // this get the specific hq mp3
-                console.log(response.previews);
+                // console.log(response.previews); ///EXTRAS
+                // get the wave from each one of the files that we have a visual 
 
                 // now we have the specific link for the mp3 working!
                 console.log('this is the actual link to the mp3',response.previews['preview-hq-mp3']);
+
+                
+                
 
             });
         }
