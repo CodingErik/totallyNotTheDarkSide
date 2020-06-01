@@ -11,7 +11,10 @@ let querySearch;
 
 
 $('#submit').on('click', function () {
+    // here we take the user input and use it as our query value 
     querySearch = $('.userInput').val();
+    
+    // here we test that out query value is correct
     console.log('this is the querySearch', querySearch);
 
 
