@@ -87,7 +87,7 @@ $('#submit').on('click', function () {
                 // this gets the sound instance object of each of sounds from the array list 
                 // of the specified search query 
                 console.log(response);
-                
+
 
                 // this get the specific hq mp3
                 // console.log(response.previews); 
@@ -132,7 +132,7 @@ function prepend(soundLink, soundName, downLoad) {
     let div = $('<div class="playOrPause"></div>');
     // putting the button 
     let name = $('<button value=' + soundLink + '>' + soundName + '</button> ');
-    name.css({ 'color': 'red'})
+    name.css({ 'color': 'red' })
     // placing a play button
     let playBtn = $('<button class="btn btn-outline-secondary play ">play</button>');
     // placing a pause button 
@@ -180,17 +180,19 @@ function deleteHistory() {
 //********************************************** */
 $('.results').on('click', function (e) {
 
-    // testing getting the URL of the button
-    // -------------------------------------- 
-    console.log($(e.target).val());
-    // the vanilla java way 
-    // console.log(e.target.value);
+    {
+        // testing getting the URL of the button
+        // -------------------------------------- 
+        // console.log($(e.target).val());
+        // the vanilla java way 
+        // console.log(e.target.value);
 
-    // testing targetting the play button to test 
-    // console.log($(e.target).hasClass('play'));
+        // testing targetting the play button to test 
+        // console.log($(e.target).hasClass('play'));
 
-    // testing targetting the pause button to test 
-    // console.log($(e.target).hasClass('pause'));
+        // testing targetting the pause button to test 
+        // console.log($(e.target).hasClass('pause'));
+    }
 
     // this listens for the play button 
     if ($(e.target).hasClass('play') === true) {
@@ -224,9 +226,6 @@ $('.results').on('click', function (e) {
 });
 //********************************************** */
 
-
-
-// https://freesound.org/data/previews/400/400402_5121236-hq.mp3
 
 let audioElement = document.createElement("audio");
 audioElement.setAttribute("src", "audio/Whooooooo.wav");
