@@ -83,20 +83,49 @@ $('#submit').on('click', function () {
                 let soundLink = response.previews['preview-hq-mp3'];
 
                 // now we have the specific link for the mp3 working!
-                console.log('this is the actual link to the mp3',soundLink);
+                // console.log('this is the actual link to the mp3',soundLink);
 
-                $('.results').append('<div>'+ soundName, soundIds, soundLink +'</div>')
-                $('.results').append('<a href=""+soundLink+"">chewing gum </a>');
+                // $('.results').append('<div>'+ soundName, soundIds +'</div>')
+                // $('.results').append('<button class=" btn btn-outline-secondary btn-link soundPlay" href='+soundLink+'>chewing gum </button>');
+                $('.results').append('<button><a href='+soundLink+'>link text</a></button>');
                 
 
             });
         }
 
+    });
 
-        
+
+});
 
 
-        // $('#submit2').on('click', function () {
+$(".soundPlay").on("click", function() {
+    // let audioElement = document.createElement("audio");
+    console.log(this);
+  });
+
+
+
+
+
+
+// https://freesound.org/data/previews/400/400402_5121236-hq.mp3
+
+let audioElement = document.createElement("audio");
+audioElement.setAttribute("src", "audio/Whooooooo.wav");
+
+// Theme Button
+$("#play").on("click", function() {
+  audioElement.play();
+  console.log(this);
+});
+$("#pause").on("click", function() {
+  audioElement.pause();
+  console.log(this);
+});
+
+
+// $('#submit2').on('click', function () {
 
         //     // $.ajax({
         //     //     url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
@@ -110,27 +139,5 @@ $('#submit').on('click', function () {
 
 
         // });
-
-    });
-
-
-});
-
-
-
-// https://freesound.org/data/previews/400/400402_5121236-hq.mp3
-
-let audioElement = document.createElement("audio");
-audioElement.setAttribute("src", "assets/Whooooooo.wav");
-
-// Theme Button
-$("#play").on("click", function() {
-  audioElement.play();
-});
-$("#pause").on("click", function() {
-  audioElement.pause();
-});
-
-
 
 
