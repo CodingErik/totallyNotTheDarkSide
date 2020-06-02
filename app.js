@@ -11,6 +11,11 @@ let querySearch;
 
 
 $('#submit').on('click', function () {
+
+    //clear the last history list 
+    deleteHistory();
+
+
     // here we take the user input and use it as our query value 
     querySearch = $('.userInput').val();
 
@@ -116,7 +121,7 @@ function prepend(soundLink, soundName, i) {
     // placing a play button
     let play = $('<button class="btn btn-outline-secondary play ">play</button>')
     // placing a pause button 
-    let pause= $('<button class="btn btn-outline-secondary pause ">pause</button>') 
+    let pause = $('<button class="btn btn-outline-secondary pause ">pause</button>')
 
     //  here we append all elements to the main div 
     //-------------------
@@ -124,7 +129,7 @@ function prepend(soundLink, soundName, i) {
     div.append(play);
     div.append(pause);
     //-------------------
-    
+
 
     // here we append the div to the results container 
     //-------------------
@@ -135,6 +140,20 @@ function prepend(soundLink, soundName, i) {
 //********************************************** */
 
 
+// THIS DELETES THE LIST 
+function deleteHistory() {
+
+    // empties local storage
+    // localStorage.clear();
+
+    // empties the history array
+    // historyArr = [];
+
+    // empties the searchHistory div 
+    $('.results').empty();
+
+}
+
 
 //RESULT'S CLICK CONTAINER 
 // here we are targetting the container div with the class results
@@ -142,17 +161,39 @@ function prepend(soundLink, soundName, i) {
 //********************************************** */
 $('.results').on('click', function (e) {
 
-    // testing getting the url of the button 
-    console.log($(e.target).val());
+    // testing getting the URL of the button
+    // -------------------------------------- 
+    // console.log($(e.target).val());
+    // the vanilla java way 
     // console.log(e.target.value);
 
-    // targetting the play button to test 
-    console.log($(e.target).hasClass('play'));
-    // targetting the pause button to test 
-    console.log($(e.target).hasClass('pause'));
-    
+    // testing targetting the play button to test 
+    // console.log($(e.target).hasClass('play'));
 
-    // if($(e.target).val() === 'play')
+    // testing targetting the pause button to test 
+    // console.log($(e.target).hasClass('pause'));
+
+    // this listens for the play button 
+    if ($(e.target).hasClass('play') === true) {
+        let audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", $(e.target).prev().val());
+
+        audioElement.play();
+        
+        // console.log('if i see this the this is responding to the play button being pressed')
+        console.log('this should be the url', $(e.target).prev().val());
+    }
+
+    // this listens for the pause button 
+    if ($(e.target).hasClass('pause') === true) {
+        let audioElement = document.createElement("audio");
+        audioElement.setAttribute("src", $(e.target).prev().prev().val());
+
+        audioElement.pause();
+
+        // console.log('if i see this the this is responding to the pause button being pressed')
+        console.log('this should be the url', $(e.target).prev().prev().val());
+    }
 
 
 
