@@ -19,7 +19,8 @@ let apiKey = '4i3fqXUgYadjWrlBHdWKd0jfbO9wNCTw6OeQLPsT';
 let querySearch;
 
 
-
+// SEARCH QUERY SUBMIT BUTTON*** 
+//********************************************** */
 $('#submit').on('click', function () {
 
     //clear the last history list 
@@ -40,6 +41,19 @@ $('#submit').on('click', function () {
     // this gets us the previews for each specific sound id that we search 
     // https://freesound.org/apiv2/sounds/1234/
 
+    // calling the soundRequestAjax to get the query request
+    soundRequestAjax(querySearch);
+
+
+
+
+});
+//********************************************** */
+
+// SoundRequestAjax  MAKES A REQUEST TO THE API
+// TAKES ONE PARAMETER, THE querySearch
+//********************************************** */
+function soundRequestAjax(querySearch){
 
     $.ajax({
         url: `https://freesound.org/apiv2/search/text/?format=json&query=${querySearch}&token=${apiKey}`,
@@ -59,17 +73,19 @@ $('#submit').on('click', function () {
             // this gives the specific amount of results that we should be expecting
             console.log(soundListArr.length);
 
-            // testing the arrays outputs 
-            // getting all sound Id's from the specific search query 
-            // console.log(soundListArr[i]);
+            {
+                // testing the arrays outputs 
+                // getting all sound Id's from the specific search query 
+                // console.log(soundListArr[i]);
 
-            // these are the values we need to get the correct mp3 from the sound Instance Call
+                // these are the values we need to get the correct mp3 from the sound Instance Call
 
-            // test for getting the name of each sound 
-            // console.log(soundListArr[i].name);
+                // test for getting the name of each sound 
+                // console.log(soundListArr[i].name);
 
-            // test for getting the id of each sound 
-            // console.log(soundListArr[i].id);
+                // test for getting the id of each sound 
+                // console.log(soundListArr[i].id);
+            }
 
             // this variable will hold the sound name 
             let soundName = soundListArr[i].name;
@@ -116,19 +132,19 @@ $('#submit').on('click', function () {
         }
 
     });
-
-
-});
-
+}
+//********************************************** */
 
 // PREPEND FUNCTION 
 // this function takes in two parameters the soundLink and the soundName
+// and prepends them to **elements** in the page 
 //********************************************** */
-function prepend(soundLink, soundName, downLoad) {
+function prepend(soundLink, soundName) {
     // this function prepends each sound selection 
     // prependding search entry to results div
 
     // building div for each
+    //--------------------------------------------
     let div = $('<div class="playOrPause"></div>');
     // putting the button 
     let name = $('<button value=' + soundLink + '>' + soundName + '</button> ');
@@ -139,6 +155,7 @@ function prepend(soundLink, soundName, downLoad) {
     // let pause = $('<button class="btn btn-outline-secondary pause ">pause</button>')
     // making a download button 
     // let downloadbtn = $('<button class="btn btn-outline-secondary download ">download</button>');
+    //--------------------------------------------
 
     //  here we append all elements to the main div 
     //-------------------
@@ -157,9 +174,9 @@ function prepend(soundLink, soundName, downLoad) {
 }
 //********************************************** */
 
-
 // THIS DELETES THE LIST THAT WAS LAST CLICKED 
 // so it can make room for the next request
+//********************************************** */
 function deleteHistory() {
 
     // empties local storage
@@ -172,56 +189,69 @@ function deleteHistory() {
     $('.results').empty();
 
 }
+//********************************************** */
 
 
-//RESULT'S CLICK CONTAINER 
+//RESULT'S CLICK CONTAINER //SOUND SENDER **** URL 
 // here we are targetting the container div with the class results
 // then we are getting the src for the specific event target that was clicked   
 //********************************************** */
 $('.results').on('click', function (e) {
 
+    // THIS CLICK FUNCTION MIGHT HAVE TO CALLED SOUND SENDER 
+    // this is the url that need to be sent to the player so that it can play this sound 
+    console.log($(e.target).val());
+    // we have to find a way to send this url from each file to the player
+
     {
-        // testing getting the URL of the button
-        // -------------------------------------- 
-        // console.log($(e.target).val());
-        // the vanilla java way 
-        // console.log(e.target.value);
 
-        // testing targetting the play button to test 
-        // console.log($(e.target).hasClass('play'));
+        {
+            // testing getting the URL of the button
+            // -------------------------------------- 
 
-        // testing targetting the pause button to test 
-        // console.log($(e.target).hasClass('pause'));
+            // console.log($(e.target).val());
+            // the vanilla java way 
+            // console.log(e.target.value);
+
+            // testing targetting the play button to test 
+            // console.log($(e.target).hasClass('play'));
+
+            // testing targetting the pause button to test 
+            // console.log($(e.target).hasClass('pause'));
+        }
+
+        //HERE WE TESTED THAT THE AUDIO IS WORKING NOW THAT IT IS WORKING WE NO LONGER NEED THIS
+        // WE JUST HAVE TO SEND URL TO THE PLAYER 
+        {
+            // this listens for the play button 
+            // if ($(e.target).hasClass('play') === true) {
+            //     console.log('this is the play button');
+            //     let audioElement = document.createElement("audio");
+            //     audioElement.setAttribute("src", $(e.target).prev().val());
+
+            //     audioElement.play();
+            //     // console.log(audioElement.play());
+
+            //     // console.log('if i see this the this is responding to the play button being pressed')
+            //     console.log('this should be the url', $(e.target).prev().val());
+            // }
+        }
+        // pause button is here 
+        {
+            // this listens for the pause button 
+            // if ($(e.target).hasClass('pause') === true) {
+            //     console.log('this is the pause button');
+            //     let audioElement = document.createElement("audio");
+            //     audioElement.setAttribute("src", $(e.target).prev().prev().val());
+
+            //     audioElement.pause();
+
+            //     // console.log('if i see this the this is responding to the pause button being pressed')
+            //     console.log('this should be the url', $(e.target).prev().prev().val());
+            // }
+        }
+
     }
-
-    // this listens for the play button 
-    if ($(e.target).hasClass('play') === true) {
-        console.log('this is the play button');
-        let audioElement = document.createElement("audio");
-        audioElement.setAttribute("src", $(e.target).prev().val());
-
-        audioElement.play();
-        // console.log(audioElement.play());
-
-        // console.log('if i see this the this is responding to the play button being pressed')
-        console.log('this should be the url', $(e.target).prev().val());
-    }
-
-    // pause button is here 
-    {
-        // this listens for the pause button 
-        // if ($(e.target).hasClass('pause') === true) {
-        //     console.log('this is the pause button');
-        //     let audioElement = document.createElement("audio");
-        //     audioElement.setAttribute("src", $(e.target).prev().prev().val());
-
-        //     audioElement.pause();
-
-        //     // console.log('if i see this the this is responding to the pause button being pressed')
-        //     console.log('this should be the url', $(e.target).prev().prev().val());
-        // }
-    }
-
 
 });
 //********************************************** */
