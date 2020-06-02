@@ -147,7 +147,10 @@ $('.results').on('click', function (e) {
     // console.log(e.target.value);
 
     // targetting the play button to test 
-    console.log($(e.target).hasClass('play');
+    console.log($(e.target).hasClass('play'));
+    // targetting the pause button to test 
+    console.log($(e.target).hasClass('pause'));
+    
 
     // if($(e.target).val() === 'play')
 
