@@ -87,7 +87,10 @@ $('#submit').on('click', function () {
 
                 // $('.results').append('<div>'+ soundName, soundIds +'</div>')
                 // $('.results').append('<button class=" btn btn-outline-secondary btn-link soundPlay" href='+soundLink+'>chewing gum </button>');
-                $('.results').append('<div><button value='+soundLink+'>'+soundName+'</button></div>');
+                
+                // calling the prepend function 
+                // this function takes two arguments the soundLink and the soundName
+                prepend(soundLink, soundName); 
                 
 
             });
@@ -99,29 +102,31 @@ $('#submit').on('click', function () {
 });
 
 
-// $(".soundPlay").on("click", function() {
-//     // let audioElement = document.createElement("audio");
-//     console.log(this);
-//   });
+// PREPEND FUNCTION 
+// this function takes in two parameters the soundLink and the soundName
+//********************************************** */
+function prepend(soundLink, soundName) {
+    // this function prepends each sound selection 
+    // prependding search entry to results div              
+    $('.results').append('<div><button value='+soundLink+'>'+soundName+'</button></div>');
+}
+//********************************************** */
+
+
+//RESULT'S CLICK CONTAINER 
+// here we are targetting the container div with the class results
+// then we are getting the src for the specific event target that was clicked   
+//********************************************** */
 $('.results').on('click', function (e) {
 
     // testing getting the url of the button 
     console.log(e.target.value);
-    // let historySelection = $(e.target).text();  //e.target.innerText;
 
 
 
-
-    // let historySelection = $(e.target).text();  //e.target.innerText;
-
-    // to see the user input value test  
-    // console.log(historySelection);
-
-    // sends request to our requestAjax function
-    // requestAjax(historySelection);
 
 });
-
+//********************************************** */
 
 
 
