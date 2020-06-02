@@ -87,7 +87,7 @@ $('#submit').on('click', function () {
 
                 // $('.results').append('<div>'+ soundName, soundIds +'</div>')
                 // $('.results').append('<button class=" btn btn-outline-secondary btn-link soundPlay" href='+soundLink+'>chewing gum </button>');
-                $('.results').append('<button><a href='+soundLink+'>link text</a></button>');
+                $('.results').append('<div><button value='+soundLink+'>'+soundName+'</button></div>');
                 
 
             });
@@ -99,12 +99,28 @@ $('#submit').on('click', function () {
 });
 
 
-$(".soundPlay").on("click", function() {
-    // let audioElement = document.createElement("audio");
-    console.log(this);
-  });
+// $(".soundPlay").on("click", function() {
+//     // let audioElement = document.createElement("audio");
+//     console.log(this);
+//   });
+$('.results').on('click', function (e) {
+
+    // testing getting the url of the button 
+    console.log(e.target.value);
+    // let historySelection = $(e.target).text();  //e.target.innerText;
 
 
+
+
+    // let historySelection = $(e.target).text();  //e.target.innerText;
+
+    // to see the user input value test  
+    // console.log(historySelection);
+
+    // sends request to our requestAjax function
+    // requestAjax(historySelection);
+
+});
 
 
 
