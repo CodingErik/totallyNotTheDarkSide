@@ -5,16 +5,16 @@
 
 
 
-$('body').css({
-    "background-color": "darkblue"
-})
+// $('body').css({
+//     "background-color": "darkblue"
+// })
 
 
 
 
 // $('.one').text('hello');
-
-let apiKey = 'hs78SPDVdG9bSdkeG9sZ6PbBE0rW5vp6ziy1BMvK';
+// hs78SPDVdG9bSdkeG9sZ6PbBE0rW5vp6ziy1BMvK
+let apiKey = '4i3fqXUgYadjWrlBHdWKd0jfbO9wNCTw6OeQLPsT';
 
 let querySearch;
 
@@ -87,12 +87,16 @@ $('#submit').on('click', function () {
                 // this gets the sound instance object of each of sounds from the array list 
                 // of the specified search query 
                 console.log(response);
+                
 
                 // this get the specific hq mp3
                 // console.log(response.previews); 
                 ///EXTRAS// get the wave from each one of the files that we have a visual 
                 ///EXTRAS// get a download button going for each these guys 
 
+                // testing download
+                console.log(response.download);
+                let downLoad = response.download;
 
                 // assign variable to link property (hq sound link)
                 let soundLink = response.previews['preview-hq-mp3'];
@@ -105,7 +109,7 @@ $('#submit').on('click', function () {
 
                 // calling the prepend function 
                 // this function takes two arguments the soundLink and the soundName
-                prepend(soundLink, soundName, i);
+                prepend(soundLink, soundName, downLoad);
 
 
             });
@@ -120,23 +124,27 @@ $('#submit').on('click', function () {
 // PREPEND FUNCTION 
 // this function takes in two parameters the soundLink and the soundName
 //********************************************** */
-function prepend(soundLink, soundName, i) {
+function prepend(soundLink, soundName, downLoad) {
     // this function prepends each sound selection 
     // prependding search entry to results div
 
     // building div for each
     let div = $('<div class="playOrPause"></div>');
     // putting the button 
-    let button = $('<button value=' + soundLink + '>' + soundName + '</button> ');
+    let name = $('<button value=' + soundLink + '>' + soundName + '</button> ');
+    name.css({ 'color': 'red'})
     // placing a play button
-    let play = $('<button class="btn btn-outline-secondary play ">play</button>')
+    let playBtn = $('<button class="btn btn-outline-secondary play ">play</button>');
     // placing a pause button 
     // let pause = $('<button class="btn btn-outline-secondary pause ">pause</button>')
+    // making a download button 
+    // let downloadbtn = $('<button class="btn btn-outline-secondary download ">download</button>');
 
     //  here we append all elements to the main div 
     //-------------------
-    div.append(button);
-    div.append(play);
+    div.append(name);
+    div.append(playBtn);
+    // div.append(downloadbtn);
     // div.append(pause);
     //-------------------
 
@@ -191,7 +199,7 @@ $('.results').on('click', function (e) {
         audioElement.setAttribute("src", $(e.target).prev().val());
 
         audioElement.play();
-        console.log(audioElement.play());
+        // console.log(audioElement.play());
 
         // console.log('if i see this the this is responding to the play button being pressed')
         console.log('this should be the url', $(e.target).prev().val());
