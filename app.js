@@ -13,7 +13,7 @@ let querySearch;
 $('#submit').on('click', function () {
     // here we take the user input and use it as our query value 
     querySearch = $('.userInput').val();
-    
+
     // here we test that out query value is correct
     console.log('this is the querySearch', querySearch);
 
@@ -43,13 +43,13 @@ $('#submit').on('click', function () {
 
             // this gives the specific amount of results that we should be expecting
             console.log(soundListArr.length);
-            
+
             // testing the arrays outputs 
             // getting all sound Id's from the specific search query 
             // console.log(soundListArr[i]);
 
             // these are the values we need to get the correct mp3 from the sound Instance Call
-            
+
             // test for getting the name of each sound 
             // console.log(soundListArr[i].name);
 
@@ -57,7 +57,7 @@ $('#submit').on('click', function () {
             // console.log(soundListArr[i].id);
 
             // this variable will hold the sound name 
-            let soundName = soundListArr[i].name;            
+            let soundName = soundListArr[i].name;
             // this variable will hold the sound Id 
             let soundIds = soundListArr[i].id;
 
@@ -87,11 +87,11 @@ $('#submit').on('click', function () {
 
                 // $('.results').append('<div>'+ soundName, soundIds +'</div>')
                 // $('.results').append('<button class=" btn btn-outline-secondary btn-link soundPlay" href='+soundLink+'>chewing gum </button>');
-                
+
                 // calling the prepend function 
                 // this function takes two arguments the soundLink and the soundName
-                prepend(soundLink, soundName); 
-                
+                prepend(soundLink, soundName, i);
+
 
             });
         }
@@ -105,12 +105,35 @@ $('#submit').on('click', function () {
 // PREPEND FUNCTION 
 // this function takes in two parameters the soundLink and the soundName
 //********************************************** */
-function prepend(soundLink, soundName) {
+function prepend(soundLink, soundName, i) {
     // this function prepends each sound selection 
-    // prependding search entry to results div              
-    $('.results').append('<div><button value='+soundLink+'>'+soundName+'</button></div>');
+    // prependding search entry to results div
+
+    // building div for each
+    let div = $('<div class="playOrPause"></div>');
+    // putting the button 
+    let button = $('<button value=' + soundLink + '>' + soundName + '</button> ');
+    // placing a play button
+    let play = $('<button class="btn btn-outline-secondary play ">play</button>')
+    // placing a pause button 
+    let pause= $('<button class="btn btn-outline-secondary pause ">pause</button>') 
+
+    //  here we append all elements to the main div 
+    //-------------------
+    div.append(button);
+    div.append(play);
+    div.append(pause);
+    //-------------------
+    
+
+    // here we append the div to the results container 
+    //-------------------
+    $('.results').append(div);
+    //-------------------
+
 }
 //********************************************** */
+
 
 
 //RESULT'S CLICK CONTAINER 
@@ -120,8 +143,13 @@ function prepend(soundLink, soundName) {
 $('.results').on('click', function (e) {
 
     // testing getting the url of the button 
-    console.log(e.target.value);
+    console.log($(e.target).val());
+    // console.log(e.target.value);
 
+    // targetting the play button to test 
+    console.log($(e.target).hasClass('play');
+
+    // if($(e.target).val() === 'play')
 
 
 
@@ -136,29 +164,15 @@ let audioElement = document.createElement("audio");
 audioElement.setAttribute("src", "audio/Whooooooo.wav");
 
 // Theme Button
-$("#play").on("click", function() {
-  audioElement.play();
-  console.log(this);
+$("#play").on("click", function () {
+    audioElement.play();
+    console.log(this);
 });
-$("#pause").on("click", function() {
-  audioElement.pause();
-  console.log(this);
+$("#pause").on("click", function () {
+    audioElement.pause();
+    console.log(this);
 });
 
 
-// $('#submit2').on('click', function () {
-
-        //     // $.ajax({
-        //     //     url: `https://freesound.org/apiv2/sounds/1234/?&token=${apiKey}`,
-        //     //     method: 'GET'
-        //     // }).then((response) => {
-
-        //     //     console.log(response);
-
-
-        //     // });
-
-
-        // });
 
 
