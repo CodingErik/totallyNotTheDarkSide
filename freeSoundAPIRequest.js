@@ -201,6 +201,7 @@ $('.results').on('click', function (e) {
     // THIS CLICK FUNCTION MIGHT HAVE TO CALLED SOUND SENDER 
     // this is the url that need to be sent to the player so that it can play this sound 
     console.log($(e.target).val());
+
     // we have to find a way to send this url from each file to the player
 
     {
@@ -255,6 +256,7 @@ $('.results').on('click', function (e) {
 
 });
 //********************************************** */
+
 
 
 let audioElement = document.createElement("audio");
