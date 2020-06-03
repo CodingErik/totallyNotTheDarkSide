@@ -1,4 +1,6 @@
 
+// this is quote & picture/video 
+{
 
 //imageVideoOfTheDay ** 
 // call to get the video or image of the day 
@@ -42,6 +44,7 @@ function imageVideoOfTheDayAjax() {
 };
 //**********************************
 
+// calling the imageVideoOfTheDayAjax function
 imageVideoOfTheDayAjax();
 
 
@@ -71,7 +74,169 @@ function quoteOfTheDayAjax() {
 };
 //**********************************
 
+// calling the quoteOfTheDayAjax function
 quoteOfTheDayAjax();
+
+
+}
+
+
+
+
+// RUN SEARCH FOR API SEARCH BUTTON 
+// SPACE X API REQUEST *************
+//**********************************
+$('#runSearch').on('click', function () {
+
+    let baseUrl = 'https://api.spacexdata.com/v3/'
+
+
+    let builtUrlQuery = baseUrl + getSpaceXParameters();
+
+    $.ajax({
+        url: builtUrlQuery,
+        method: 'GET'
+    }).then(populateSpaceXData)
+    console.log('this is the built query', builtUrlQuery);
+});
+//**********************************
+
+//getSpaceXParameters function
+// this functions gets the correct endpoints for the url making the Ajax call 
+//**********************************
+function getSpaceXParameters() {
+
+    // here we would have some kind of listener that waits for all the parameters to be checked 
+
+    //Capsules
+    //Cores
+    //Dragons
+    //History
+    //Info
+    //Landing Pads
+    //Launches
+    //Launch Pads
+    //Missions
+    //Payloads
+    //Rockets
+    //Roadster
+    //Ships
+
+    return 'capsules';
+};
+//**********************************
+
+// POPULATESPACEXDATA function 
+// This populateSpaceXData on the page 
+//**********************************
+function populateSpaceXData(response) {
+    // console.log(response[0]['capsule_id']);
+
+    response.forEach((e)=>{
+        console.log(e['capsule_id'])
+    })
+
+};
+//**********************************
+
+
+$('#clear').on('click', function(){
+
+    $('spaceDataPopulate').empty();
+})
+
+
+
+// $("#run-search").on("click", function(event) {
+//     // This line allows us to take advantage of the HTML "submit" property
+//     // This way we can hit enter on the keyboard and it registers the search
+//     // (in addition to clicks). Prevents the page from reloading on form submit.
+//     event.preventDefault();
+
+//     // Empty the region associated with the articles
+//     clear();
+
+//     // Build the query URL for the ajax request to the NYT API
+//     var queryURL = buildQueryURL();
+
+//     // Make the AJAX request to the API - GETs the JSON data at the queryURL.
+//     // The data then gets passed as an argument to the updatePage function
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//     }).then(updatePage);
+//   });
+
+
+//   function buildQueryURL() {
+//     // queryURL is the url we'll use to query the API
+//     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+
+//     // Begin building an object to contain our API call's query parameters
+//     // Set the API key
+//     var queryParams = { "api-key": "R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M" };
+
+//     //QUERY PARAMS ************************************************************
+//     //************************************************************************
+//     // Grab text the user typed into the search input, add to the queryParams object
+//     queryParams.q = $("#search-term")
+//       .val()
+//       .trim();
+
+//     // If the user provides a startYear, include it in the queryParams object
+//     var startYear = $("#start-year")
+//       .val()
+//       .trim();
+
+//     if (parseInt(startYear)) {
+//       // this is where it is being added to the queryParams object 
+//       queryParams.begin_date = startYear + "0101";
+//     }
+
+//     // If the user provides an endYear, include it in the queryParams object
+//     var endYear = $("#end-year")
+//       .val()
+//       .trim();
+
+//     if (parseInt(endYear)) {
+//       queryParams.end_date = endYear + "0101";
+//     }
+//     // console.log(queryParams);
+//     // Logging the URL so we have access to it for troubleshooting
+//     // console.log("---------------\nURL: " + queryURL + "\n---------------");
+//     // console.log('this is just the parameters',$.param(queryParams));
+//     // console.log(queryURL + $.param(queryParams));
+//     return queryURL + $.param(queryParams);
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
