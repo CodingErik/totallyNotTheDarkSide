@@ -80,8 +80,8 @@ quoteOfTheDayAjax();
 
 }
 
-
-
+// this is the SPACE X API
+{
 
 // RUN SEARCH FOR API SEARCH BUTTON 
 // SPACE X API REQUEST *************
@@ -101,8 +101,8 @@ $('#runSearch').on('click', function () {
 });
 //**********************************
 
-//getSpaceXParameters function
-// this functions gets the correct endpoints for the url making the Ajax call 
+//    ^^^^^      getSpaceXParameters function BUILDURL
+//functions gets the correct endpoints for the url for making the SPACE X the Ajax call ***
 //**********************************
 function getSpaceXParameters() {
 
@@ -132,8 +132,15 @@ function getSpaceXParameters() {
 function populateSpaceXData(response) {
     // console.log(response[0]['capsule_id']);
 
+    // cool this is working now and populating results on the website dynamically
+    // we are gonna not have to specify anything 
+    // we will just have to loop HERE  
     response.forEach((e)=>{
         console.log(e['capsule_id'])
+
+        // this will stay here                  this will just say reponse
+       $('.spaceDataPopulate').append($('<div>').text(e['capsule_id'])); 
+
     })
 
 };
@@ -144,6 +151,85 @@ $('#clear').on('click', function(){
 
     $('spaceDataPopulate').empty();
 })
+
+
+}
+
+
+
+// this call request most recent launches BTN
+
+$('#upComingLaunchBtn').on('click', function(){
+
+    let baseUrl = 'https://launchlibrary.net/1.3/';
+
+    let queryParameters = {
+            launch: 'launch'
+    }
+    
+    $.ajax({
+        url: baseUrl + queryParameters.launch,
+        method: 'GET'
+    }).then((appendUpcomingLaunches))
+});
+
+// this function appends the most recent launches to the html
+function appendUpcomingLaunches(response){
+   
+    // this is an array with all the upcoming launches
+    console.log(response.launches);
+
+    let launchesArr = response.launches;
+
+    // this this is number of upcoming launches
+    console.log(response.count);
+
+
+    // loop through and append the upcoming launches to the html
+    launchesArr.forEach((e)=>{
+        
+        let name = $('<div>').text(`launch name:${e.name}`);
+        let date = $('<div>').text(`launch date:${e.net}`);
+        let id = $('<div>').text(`launch id:${e.id}`);
+        let launchContainer = $('<div>').css({
+            'border': ' 1px solid red'
+        });
+
+        launchContainer.prepend(name);
+        launchContainer.append(date);
+        launchContainer.append(id);
+
+        $('.upcomingLauchesContainer').append(launchContainer)
+
+    })
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
