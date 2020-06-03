@@ -156,9 +156,10 @@ $('#clear').on('click', function(){
 }
 
 
-
+// Upcoming Launch request and append
+{
+// BUTTON that get us all the Upcoming Launched 
 // this call request most recent launches BTN
-
 $('#upComingLaunchBtn').on('click', function(){
 
     let baseUrl = 'https://launchlibrary.net/1.3/';
@@ -173,7 +174,9 @@ $('#upComingLaunchBtn').on('click', function(){
     }).then((appendUpcomingLaunches))
 });
 
+// APPENDUPCOMINGLAUNCHES function 
 // this function appends the most recent launches to the html
+// plus all the juicy stats that come with that
 function appendUpcomingLaunches(response){
    
     // this is an array with all the upcoming launches
@@ -184,13 +187,17 @@ function appendUpcomingLaunches(response){
     // this this is number of upcoming launches
     console.log(response.count);
 
+    let launchCount = $('<div>').text(`Upcoming Count Launch: ${response.count}`)
+    
+
+    $('.upcomingLauchesContainer').prepend(launchCount);
 
     // loop through and append the upcoming launches to the html
     launchesArr.forEach((e)=>{
         
-        let name = $('<div>').text(`launch name:${e.name}`);
-        let date = $('<div>').text(`launch date:${e.net}`);
-        let id = $('<div>').text(`launch id:${e.id}`);
+        let name = $('<div>').text(`launch name: ${e.name}`);
+        let date = $('<div>').text(`launch date: ${e.net}`);
+        let id = $('<div>').text(`launch id: ${e.id}`);
         let launchContainer = $('<div>').css({
             'border': ' 1px solid red'
         });
@@ -205,6 +212,8 @@ function appendUpcomingLaunches(response){
 
 }
 
+
+}
 
 
 
