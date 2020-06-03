@@ -3,12 +3,12 @@
 
 
 
-
+let sendSoundToPlayer = '';
 
 // $('body').css({
 //     "background-color": "darkblue"
 // })
-
+let audioElement;
 
 
 
@@ -53,7 +53,7 @@ $('#submit').on('click', function () {
 // SoundRequestAjax  MAKES A REQUEST TO THE API
 // TAKES ONE PARAMETER, THE querySearch
 //********************************************** */
-function soundRequestAjax(querySearch){
+function soundRequestAjax(querySearch) {
 
     $.ajax({
         url: `https://freesound.org/apiv2/search/text/?format=json&query=${querySearch}&token=${apiKey}`,
@@ -68,7 +68,8 @@ function soundRequestAjax(querySearch){
         let soundListArr = response.results;
 
         // looping throught the the soundListArr 
-        for (let i = 0; i < soundListArr.length; i++) {
+        //soundListArr.length // this what the number should be 
+        for (let i = 0; i < 1 ; i++) {
 
             // this gives the specific amount of results that we should be expecting
             console.log(soundListArr.length);
@@ -225,17 +226,23 @@ $('.results').on('click', function (e) {
         // WE JUST HAVE TO SEND URL TO THE PLAYER 
         {
             // this listens for the play button 
-            // if ($(e.target).hasClass('play') === true) {
-            //     console.log('this is the play button');
-            //     let audioElement = document.createElement("audio");
-            //     audioElement.setAttribute("src", $(e.target).prev().val());
+            if ($(e.target).hasClass('play') === true) {
+                console.log('this is the play button');
+                let audioElement = document.createElement("audio");
+                audioElement.setAttribute("src", $(e.target).prev().val());
 
-            //     audioElement.play();
-            //     // console.log(audioElement.play());
+                audioElement.play();
+                // console.log(audioElement.play());
 
-            //     // console.log('if i see this the this is responding to the play button being pressed')
-            //     console.log('this should be the url', $(e.target).prev().val());
-            // }
+
+
+                // console.log('if i see this the this is responding to the play button being pressed')
+                console.log('this should be the url', $(e.target).prev().val());
+                sendSoundToPlayer = $(e.target).prev().val();
+
+
+
+            }
         }
         // pause button is here 
         {
@@ -258,19 +265,38 @@ $('.results').on('click', function (e) {
 //********************************************** */
 
 
+// we need to figure out a way to replace the called src file 
+// that we can exchange it 
 
-let audioElement = document.createElement("audio");
-audioElement.setAttribute("src", "audio/Whooooooo.wav");
+// https://freesound.org/data/previews/414/414615_394391-hq.mp3
 
-// Theme Button
-$("#play").on("click", function () {
-    audioElement.play();
-    console.log(this);
-});
-$("#pause").on("click", function () {
-    audioElement.pause();
-    console.log(this);
-});
+
+// function that send it to the target 
+
+
+// feed the array and pull from the array 
+
+
+    audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", sendSoundToPlayer);
+
+
+    // Theme Button
+    $("#play").on("click", function () {
+        audioElement.play();
+        console.log(this);
+    });
+    $("#pause").on("click", function () {
+        audioElement.pause();
+        console.log(this);
+    });
+
+
+
+
+
+
+
 
 
 
