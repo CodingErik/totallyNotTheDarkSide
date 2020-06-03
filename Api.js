@@ -1,5 +1,5 @@
 
-// this is quote & picture/video 
+// this is quote & picture/video API
 {
 
 //imageVideoOfTheDay ** 
@@ -146,20 +146,24 @@ function populateSpaceXData(response) {
 };
 //**********************************
 
-
+// clears the spaceDataPopulate container
+//**********************************
 $('#clear').on('click', function(){
 
-    $('spaceDataPopulate').empty();
+    $('.spaceDataPopulate').empty();
 })
+//**********************************
 
 
 }
 
 
-// Upcoming Launch request and append
+// Upcoming Launch API
 {
+
 // BUTTON that get us all the Upcoming Launched 
 // this call request most recent launches BTN
+//**********************************
 $('#upComingLaunchBtn').on('click', function(){
 
     let baseUrl = 'https://launchlibrary.net/1.3/';
@@ -173,10 +177,12 @@ $('#upComingLaunchBtn').on('click', function(){
         method: 'GET'
     }).then((appendUpcomingLaunches))
 });
+//**********************************
 
 // APPENDUPCOMINGLAUNCHES function 
 // this function appends the most recent launches to the html
 // plus all the juicy stats that come with that
+//**********************************
 function appendUpcomingLaunches(response){
    
     // this is an array with all the upcoming launches
@@ -211,7 +217,15 @@ function appendUpcomingLaunches(response){
     })
 
 }
+//**********************************
 
+// BUTTON clears the upcomingLauchesContainer
+//**********************************
+$('#clearLaunch').on('click', function(){
+
+    $('.upcomingLauchesContainer').empty();
+})
+//**********************************
 
 }
 
