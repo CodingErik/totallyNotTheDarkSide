@@ -32,13 +32,21 @@ function imageVideoOfTheDayAjax() {
         } else if (response.media_type === 'video') {
             // console.log('this is a video')
             // the image has to be reponsive find the correct class for the materialize 
-            let video = $('<iframe width="420" height="315"> </iframe>');
+            let video = $('<iframe>');
             video.attr('src', response.url);
             video.addClass('responsive-video');
 
             $('.results').append(video);
 
-        }
+        } 
+        // else {
+        //     // this is a default image if we dont have an image
+        //     // let img = $('<img width="420" height="315"> </img>');
+        //     // img.attr('src', response.url);
+        //     // img.addClass("responsive-img");
+
+        //     // $('.results').append(img);
+        // }
 
     });
 };
@@ -79,6 +87,10 @@ quoteOfTheDayAjax();
 
 
 }
+
+
+// have the image have the ability to download  ******* WORK ON THIS 
+
 
 // this is the SPACE X API
 {
@@ -230,6 +242,25 @@ $('#clearLaunch').on('click', function(){
 }
 
 
+// hubble News API this lets us the latest news  ******* WORK ON THIS
+{
+    function hubbleAjaxCall(){
+
+        // this is the latest news 
+        //http://hubblesite.org/api/v3/news_release/last
+
+
+        // this is a list of the news 
+        // http://hubblesite.org/api/v3/news
+
+        let baseUrl = 'https://hubblesite.org/';
+
+
+
+
+
+    }
+}
 
 
 
