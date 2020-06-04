@@ -3,25 +3,74 @@
 }
 
 body {
-    background-color: #A6191F;
+    background-color: #0B1F3A;
     color: #D7CEC9;
+    margin: 0;
+    padding: 0;
+    /* background-image:url("../images/spaceX-background.jpeg") ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.logo-adjustment {
+    background:url("../images/telescope.png") no-repeat 50% 50%;
+    background-size: 100%;
+    height: 50px;
+    width: 50px;    
     margin: 0;
     padding: 0;
 }
 
-header {
-    background-color: #0A5568;
+.header-image {
+    background-image:url("../images/imageOfTheDay.png") ;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    
 }
 
 #menu {
     list-style: none;
     display: flex;
-    flex-direction: row-reverse;
-    background-color: #0A5568;
+    /* flex-direction: row-reverse; */
+    background-color: #746C6B;
+    opacity: .8;
 }
 
 ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+ul li {
+    float: left;
+    width: 100px;
+    height: 40px;
+    opacity: .8;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+ul li a:hover {
+    background-color: #746C6B;
+    opacity: 1.6;
+}
+
+ul li ul li {
+    display: none;
+}
+
+ul li:hover ul li {
+    display: block;
 }
 
 a {
@@ -44,11 +93,10 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  margin: 5px;
 }
 
-/* .body-middle {
-  height: 200px;
+.body-middle {
+  height: 1000px;
   width: 100%;
   border: 2px solid black;
   display: flex;
@@ -56,27 +104,25 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  margin: 20px;
-} */
+}
 
 .body-left {
-  height: 300px;
-  width: 50%;
+  height: 500px;
+  width: 80%;
   border: 2px solid black;
   display: flex;
-  /* flex-wrap: inherit; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   margin: 0;
-  /* margin-right: 50%; */
   padding: 0;
   float: left;
 }
+
 .body-right {
-  height: 300px;
-  width: 50%;
+  height: 500px;
+  width: 20%;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -84,12 +130,69 @@ a {
   justify-content: center;
   font-weight: 600;
   margin: 0;
-  /* margin-left: 50%; */
   padding: 0;
   float: right;
 }
 
-/* .body-top {
-    border: 3px black;
-} */
+.footer {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+}
 
+#searchResult {
+  height: 55px;
+  width: 60%;
+  background-color: #0A5568;
+  border: 2px solid black;
+  font-weight: 600;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin: 0;
+  padding: 0;
+  /* display: flex-start;
+  flex-direction: row;
+  justify-content: space-between; */
+  /* float: left; */
+}
+
+/* .playButton {
+    height: 50px;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 100%;
+    border-color: black;
+    background:url("../images/play.png") no-repeat 60% 50%;
+    background-origin: content-box;
+    transition-duration: .60s;
+    background-color: red;
+    background-size: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+.outer-container-playbutton {
+
+}
+
+.inner-container-playbutton {
+    width: 50px;
+
+}
+
+.pauseButton {
+    height: 40px;
+    width: 30px;
+    background-color: blue;
+    border: 3px solid black;
+}
+
+.addToFavoritesButton {
+    height: 40px;
+    width: 100px;
+    background-color: purple;
+    border: 3px solid black;
+    float: right;
+} */
