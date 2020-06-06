@@ -208,7 +208,7 @@ function appendUpcomingLaunches(response){
     let launchCount = $('<div>').text(`Upcoming Count Launch: ${response.count}`)
     
 
-    $('.upcomingLauchesContainer').prepend(launchCount);
+    $('.upcomingLaunchesContainer').prepend(launchCount);
 
     // loop through and append the upcoming launches to the html
     launchesArr.forEach((e)=>{
@@ -224,18 +224,18 @@ function appendUpcomingLaunches(response){
         launchContainer.append(date);
         launchContainer.append(id);
 
-        $('.upcomingLauchesContainer').append(launchContainer)
+        $('.upcomingLaunchesContainer').append(launchContainer)
 
     })
 
 }
 //**********************************
 
-// BUTTON clears the upcomingLauchesContainer
+// BUTTON clears the upcomingLaunchesContainer
 //**********************************
 $('#clearLaunch').on('click', function(){
 
-    $('.upcomingLauchesContainer').empty();
+    $('.upcomingLaunchesContainer').empty();
 })
 //**********************************
 
