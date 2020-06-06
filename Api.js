@@ -1,4 +1,6 @@
 
+
+// [DONE]!!!!!
 // this is quote & picture/video API
 {
 
@@ -28,6 +30,8 @@ function imageVideoOfTheDayAjax() {
 
             $('.results').append(img);
 
+            console.log(img)
+
 
         } else if (response.media_type === 'video') {
             // console.log('this is a video')
@@ -37,6 +41,8 @@ function imageVideoOfTheDayAjax() {
             video.addClass('responsive-video');
 
             $('.results').append(video);
+
+            console.log(video)
 
         } 
         // else {
@@ -77,7 +83,10 @@ function quoteOfTheDayAjax() {
         quoteDiv.append(quoteText);
         quoteDiv.prepend(quoteAuthor);
 
-        $('.results').prepend(quoteDiv);
+        // $('.results').prepend(quoteDiv); 
+        $('.quoteDiv').prepend(quoteDiv); 
+
+        
     });
 };
 //**********************************
@@ -170,13 +179,20 @@ $('#clear').on('click', function(){
 }
 
 
+
+
+// [DONE]!!!!!
 // Upcoming Launch API
 {
 
 // BUTTON that get us all the Upcoming Launched 
 // this call request most recent launches BTN
 //**********************************
-$('#upComingLaunchBtn').on('click', function(){
+// $('#upComingLaunchBtn').on('click', function(){
+
+
+
+function callLaunchDates(){
 
     let baseUrl = 'https://launchlibrary.net/1.3/';
 
@@ -188,8 +204,10 @@ $('#upComingLaunchBtn').on('click', function(){
         url: baseUrl + queryParameters.launch,
         method: 'GET'
     }).then((appendUpcomingLaunches))
-});
+};
 //**********************************
+
+callLaunchDates();
 
 // APPENDUPCOMINGLAUNCHES function 
 // this function appends the most recent launches to the html
@@ -208,7 +226,8 @@ function appendUpcomingLaunches(response){
     let launchCount = $('<div>').text(`Upcoming Count Launch: ${response.count}`)
     
 
-    $('.upcomingLauchesContainer').prepend(launchCount);
+    // $('.upcomingLauchesContainer').prepend(launchCount);
+    $('.launchDatesDiv').prepend(launchCount);
 
     // loop through and append the upcoming launches to the html
     launchesArr.forEach((e)=>{
@@ -224,7 +243,8 @@ function appendUpcomingLaunches(response){
         launchContainer.append(date);
         launchContainer.append(id);
 
-        $('.upcomingLauchesContainer').append(launchContainer)
+        // $('.upcomingLauchesContainer').append(launchContainer)
+        $('.launchDatesDiv').append(launchContainer)
 
     })
 
@@ -242,25 +262,25 @@ $('#clearLaunch').on('click', function(){
 }
 
 
-// hubble News API this lets us the latest news  ******* WORK ON THIS
-{
-    function hubbleAjaxCall(){
+// // hubble News API this lets us the latest news  ******* WORK ON THIS
+// {
+//     function hubbleAjaxCall(){
 
-        // this is the latest news 
-        //http://hubblesite.org/api/v3/news_release/last
-
-
-        // this is a list of the news 
-        // http://hubblesite.org/api/v3/news
-
-        let baseUrl = 'https://hubblesite.org/';
+//         // this is the latest news 
+//         //http://hubblesite.org/api/v3/news_release/last
 
 
+//         // this is a list of the news 
+//         // http://hubblesite.org/api/v3/news
+
+//         let baseUrl = 'https://hubblesite.org/';
 
 
 
-    }
-}
+
+
+//     }
+// }
 
 
 
