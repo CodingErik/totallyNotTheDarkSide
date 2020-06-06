@@ -22,14 +22,14 @@ body {
     padding: 0;
 }
 
-.header-image {
+/* .header-image {
     background-image:url("../images/imageOfTheDay.png") ;
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
     
-}
+} */
 
 #menu {
     list-style: none;
