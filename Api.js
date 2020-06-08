@@ -131,8 +131,9 @@
     function getSpaceXParameters() {
 
 
-        $('#searchInput').val();
-        console.log($('#searchInput').val());
+        let userInput = $('#searchInput').val();
+        console.log(userInput);
+
         // here we would have some kind of listener that waits for all the parameters to be checked 
 
         //Capsules
@@ -159,6 +160,8 @@
     function populateSpaceXData(response) {
         // console.log(response[0]['capsule_id']);
 
+        $('.spaceDataPopulate').empty();
+
         // cool this is working now and populating results on the website dynamically
         // we are gonna not have to specify anything 
         // we will just have to loop HERE  
@@ -175,8 +178,8 @@
 
     // clears the spaceDataPopulate container
     //**********************************
-    $('#clear').on('click', function () {
-
+    $('#clear').on('click', function (e) {
+        e.preventDefault();
         $('.spaceDataPopulate').empty();
     })
     //**********************************

@@ -146,6 +146,32 @@
               </form>
               <!-- ******************************************************************** -->
               <!-- ******************************************************************** -->
+              
+              
+              <!-- THIS IS THE SEARCH FOR THE HUBBLENEWS API -->
+              <!-- ******************************************************************** -->
+              <!-- ******************************************************************** -->
+              <form role="form">
+                <!-- Here we create the text box for capturing the search term-->
+                <div class="form-group">
+                  <label for="keywordSearchInput">Search Key Term:</label>
+
+                  <!-- THIS IS THE INPUT  -->
+                  <input type="text" class="form-control" id="searchInputHubble" />
+                </div>
+
+                <!-- Here we have our final submit button -->
+                <!-- ************************************************************* -->
+                <button type="submit" class="btn btn-default" id="runSearchHubble">
+                  <i class="fa fa-search"></i> Search
+                </button>
+                <!-- ************************************************************* -->
+                <button class="btn btn-default" id="clearHubble">
+                  <i class="fa fa-trash"></i> Clear Results
+                </button>
+              </form>
+              <!-- ******************************************************************** -->
+              <!-- ******************************************************************** -->
 
             </div>
           </div>
@@ -153,6 +179,7 @@
       </aside>
       <section class="body-right article-list spaceDataPopulate">I am the section, but may move
         <!-- ************************************************************* -->
+        <!-- this is also where the space x data will populate  -->
         <!-- this is the news  -->
         <div class="newsDiv"></div>
         <!-- ************************************************************* -->
