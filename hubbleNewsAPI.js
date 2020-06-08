@@ -16,10 +16,8 @@
             url: 'http://hubblesite.org/api/v3/news_release/last',
             method: 'GET'
         }).then((response)=> {
+
             console.log(response);
-
-
-
 
         })
 

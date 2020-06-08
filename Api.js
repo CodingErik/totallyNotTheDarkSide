@@ -28,8 +28,8 @@
                 img.attr('src', response.url);
                 img.addClass("responsive-img");
 
-                // $('.results').append(img);
-                $('body').append(img);
+                $('.results').append(img);
+                // $('body').append(img);
 
                 console.log(img)
 
@@ -41,7 +41,7 @@
                 video.attr('src', response.url);
                 video.addClass('responsive-video');
 
-                // $('.results').append(video);
+                $('.results').append(video);
                 // $('.results').append(video);
 
                 console.log(video)
