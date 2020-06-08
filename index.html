@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+  ​
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +9,13 @@
     <link rel="stylesheet" href="./assets/css/materialize.min.css" />
     <title>Space Portal | Main</title>
   </head>
+  ​
+
   <body class="results">
+
+    <!-- this it the image or video  -->
+    <!-- <div class="results"></div> -->
+
     <div class="main-container">
       <header class="header">
         <div class="navbar"></div>
@@ -59,54 +67,111 @@
               </ul>
             </li>
             <li>
-              <!-- <input id="searchBar" placeholder="Search" /> -->
-              <!-- Here we create the text box for capturing the search term-->
-              <div class="form-group">
-                <label for="keywordSearchInput">Search Key Term:</label>
-                <input type="text" class="form-control" id="keywordSearchInput" />
-              </div>
+              <input id="searchBar" placeholder="Search" />
             </li>
             <li>
-              <!-- <button id="searchBtn">Go</button> -->
-              <!-- Here we have our final submit button BUTTON -->
-              <button type="submit" class="btn btn-default" id="run-search">
-                <i class="fa fa-search"></i> Search
-              </button>
+              <button id="searchBtn">Go</button>
             </li>
           </ul>
         </nav>
       </header>
-
+      ​
       <div class="header-image">
         <div id="inspirational-quotes">
           <!-- this is the quote div  -->
           <div class="quoteDiv"></div>
         </div>
       </div>
-
+      ​
       <div class="body-container">
-        <div id="launch-dates" class="body-top">
+
+        <!-- start -->
+        <div id="launch-dates" class="body-top row">
           <!-- this is the launchDates  -->
-          <div class="launchDatesDiv"></div>
+          <div class="launchDatesDiv col l2 m2 s2"></div> 
         </div>
+        <!-- end -->
+
         <aside class="body-left">
-          <!-- Here we create the text box for capturing the search term-->
-          <div class="form-group">
-            <label for="keywordSearchInput">Search Key Term:</label>
-            <input type="text" class="form-control" id="keywordSearchInput" />
+          <div class="col-sm-5">
+            <br />
+            <!-- First card is for handling the search parameters -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Search Parameters</h3>
+              </div>
+              <div class="card-body">
+                <!-- Here we create an HTML Form for handling the inputs-->
+                <form role="form">
+                  <!-- Here we create the text box for capturing the search term-->
+                  <div class="form-group">
+                    <label for="keywordSearchInput">Search Key Term:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="keywordSearchInput"
+                    />
+                  </div>
+                  ​
+                  <!-- Here we capture the number of records that the user wants to retrieve  -->
+                  <div class="form-group">
+                    <label for="results">Number of Records to Retrieve:</label>
+                    <select
+                      id="article-count"
+                      class="custom-select"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <option selected value="1">1</option>
+                      <!-- Setting the option for 5 as default -->
+                      <option value="5" selected>5</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+                  ​
+                  <!-- Here we capture the Start Year Parameter-->
+                  <div class="form-group">
+                    <label for="start-year">Start Year (Optional):</label>
+                    <input type="text" class="form-control" id="start-year" />
+                  </div>
+                  ​
+                  <!-- Here we capture the End Year Parameter  *****-->
+                  <!-- ************************************************************* -->
+                  <div class="form-group">
+                    <label for="keywordSearchInput">Search Key Term:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="keywordSearchInput"
+                    />
+                  </div>
+                  <!-- ************************************************************* -->
+                  ​ ​
+
+                  <!-- Here we have our final submit button -->
+                  <!-- ************************************************************* -->
+                  <button type="submit" class="btn btn-default" id="run-search">
+                    <i class="fa fa-search"></i> Search
+                  </button>
+                  <!-- ************************************************************* -->
+                  <button class="btn btn-default" id="clear-all">
+                    <i class="fa fa-trash"></i> Clear Results
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
-          <!-- Here we have our final submit button BUTTON -->
-          <button type="submit" class="btn btn-default" id="run-search">
-            <i class="fa fa-search"></i> Search
-          </button>
         </aside>
-        <section class="body-right article-list">I am the section, but may move
+        <section class="body-right article-list">
+          I am the section, but may move
+          <!-- ************************************************************* -->
           <!-- this is the news  -->
           <div class="newsDiv"></div>
+          <!-- ************************************************************* -->
         </section>
         <article class="body-middle">I am the middle</article>
+        ​ ​ ​ ​
       </div>
-
+      
       <footer class="footer">
         <p>Created by totallyNotTheDarkSide | 2020</p>
         <div>
@@ -123,4 +188,5 @@
     <script src="Api.js"></script>
     <script src="spaceflightnews.js"></script>
   </body>
+  ​
 </html>

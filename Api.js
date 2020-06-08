@@ -235,9 +235,14 @@ function appendUpcomingLaunches(response){
         let name = $('<div>').text(`launch name: ${e.name}`);
         let date = $('<div>').text(`launch date: ${e.net}`);
         let id = $('<div>').text(`launch id: ${e.id}`);
-        let launchContainer = $('<div>').css({
-            'border': ' 1px solid red'
+        let launchContainer = $('<div>').css( {
+            'margin': ' 2px',
+            'padding': '5px',
+            'background-color': 'black',
+            'opacity': '.7',
+            'border-radius': '5px',
         });
+        // end
 
         launchContainer.prepend(name);
         launchContainer.append(date);

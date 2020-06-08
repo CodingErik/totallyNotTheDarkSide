@@ -67,7 +67,7 @@ $(document).ready(function () {
         $('.newsDiv').append(titleDiv);
         $('.newsDiv').append(linkDiv);
         $('.newsDiv').append(pDateDiv);
-        $('.newsDiv')
+        // $('.newsDiv')
 
       }
     });

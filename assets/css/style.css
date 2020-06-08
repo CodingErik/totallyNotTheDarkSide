@@ -7,7 +7,7 @@ body {
     color: #D7CEC9;
     margin: 0;
     padding: 0;
-    /* background-image:url("../images/spaceX-background.jpeg") ;
+    /* background-image: element() ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
@@ -93,6 +93,18 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 600;
+}
+
+/* .card-content {
+   
+} */
+
+.launchDatesDiv {
+    color: limegreen;
+}
+
+li:nth-child(odd) {
+    color: blue;
 }
 
 .body-middle {
