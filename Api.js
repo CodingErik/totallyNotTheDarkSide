@@ -207,7 +207,55 @@
 
         let queryParameters = {
             launch: 'launch'
+<<<<<<< HEAD
         }
+=======
+    }
+    
+    $.ajax({
+        url: baseUrl + queryParameters.launch,
+        method: 'GET'
+    }).then((appendUpcomingLaunches))
+};
+//**********************************
+
+callLaunchDates();
+
+// APPENDUPCOMINGLAUNCHES function 
+// this function appends the most recent launches to the html
+// plus all the juicy stats that come with that
+//**********************************
+function appendUpcomingLaunches(response){
+   
+    // this is an array with all the upcoming launches
+    console.log(response.launches);
+
+    let launchesArr = response.launches;
+
+    // this this is number of upcoming launches
+    console.log(response.count);
+
+    let launchCount = $('<div>').text(`Upcoming Count Launch: ${response.count}`)
+    
+
+    // $('.upcomingLauchesContainer').prepend(launchCount);
+    $('.launchDatesDiv').prepend(launchCount);
+
+    // loop through and append the upcoming launches to the html
+    launchesArr.forEach((e)=>{
+        
+        let name = $('<div>').text(`launch name: ${e.name}`);
+        let date = $('<div>').text(`launch date: ${e.net}`);
+        let id = $('<div>').text(`launch id: ${e.id}`);
+        let launchContainer = $('<div>').css( {
+            'margin': ' 2px',
+            'padding': '5px',
+            'background-color': 'black',
+            'opacity': '.7',
+            'border-radius': '5px',
+        });
+        // end
+>>>>>>> 9fe6b03f7c9c624f3edeab7e582b397803f0ff7d
 
         $.ajax({
             url: baseUrl + queryParameters.launch,
