@@ -17,8 +17,11 @@ $(document).ready(function () {
 
             //testing
             // console.log('hello');
+
+            // the call is working so far here !!!!!!!!!!!
+
             // call function to make ajax call 
-            spaceXAjax();
+            spaceXAjax(e.target);
         }
 
     });
@@ -26,17 +29,51 @@ $(document).ready(function () {
 
 
 
-    function spaceXAjax() {
+    function spaceXAjax(buttonPressed) {
+
+
+        // testing to get the data-id from the specific button that was pressed 
+        // console.log($(buttonPressed).data('id'));
+
+
 
         let baseUrl = "https://api.spacexdata.com/v3/";
 
-        let builtUrlQuery = baseUrl + getSpaceXParameters();
+        switch ($(buttonPressed).data('id')) {
 
-        $.ajax({
-            url: builtUrlQuery,
-            method: "GET",
-        }).then(populateSpaceXData);
-        console.log("this is the built query", builtUrlQuery);
+            case '1':
+
+                console.log('we will see this if the button pressed is 1')
+                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+
+                break;
+
+            case '2':
+
+                console.log('we will see this if the button pressed is 2')
+                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+
+                break;
+            case '3':
+
+                console.log('we will see this if the button pressed is 3')
+                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+
+                break;
+
+            default:
+
+            // code block
+
+        }
+
+
+
+        // $.ajax({
+        //     url: builtUrlQuery,
+        //     method: "GET",
+        // }).then(populateSpaceXData);
+        // console.log("this is the built query", builtUrlQuery);
 
     }
 
