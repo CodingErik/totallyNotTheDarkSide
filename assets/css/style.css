@@ -126,7 +126,7 @@ li:nth-child(odd) {
   color: blue;
 }
 
-.body-middle {
+.article {
   height: 1000px;
   width: 100%;
   border: 2px solid black;
@@ -137,7 +137,7 @@ li:nth-child(odd) {
   font-weight: 600;
 }
 
-.body-left {
+.aside {
   height: 500px;
   width: 20%;
   border: 2px solid black;
@@ -151,7 +151,7 @@ li:nth-child(odd) {
   float: left;
 }
 
-.body-right {
+.section {
   height: 500px;
   width: 80%;
   border: 2px solid black;
@@ -183,4 +183,9 @@ li:nth-child(odd) {
   border-bottom-left-radius: 50px;
   margin: 0;
   padding: 0;
+}
+
+.quoteDiv {
+  font-size: 30px;
+  color: white;
 }
