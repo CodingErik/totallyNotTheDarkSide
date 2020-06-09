@@ -19,34 +19,26 @@ function imageVideoOfTheDayAjax() {
     if (response.media_type === "image") {
       // console.log('this is an image')
       // the image has to be reponsive find the correct class for the materialize
-      let img = $('<img width="420" height="315"> </img>');
+      let img = $('<img width="100%" height="auto"> </img>');
       img.attr("src", response.url);
       img.addClass("responsive-img");
 
-      $(".results").append(img);
+      $(".imageOfTheDay").append(img);
       // $('body').append(img);
 
       console.log(img);
     } else if (response.media_type === "video") {
       // console.log('this is a video')
       // the image has to be reponsive find the correct class for the materialize
-      let video = $("<iframe>");
+      let video = $('<iframe width="100%" height="auto"> <iframe>');
       video.attr("src", response.url);
       video.addClass("responsive-video");
 
-      $(".results").append(video);
+      $(".imageOfTheDay").append(video);
       // $('.results').append(video);
 
       console.log(video);
     }
-    // else {
-    //     // this is a default image if we dont have an image
-    //     // let img = $('<img width="420" height="315"> </img>');
-    //     // img.attr('src', response.url);
-    //     // img.addClass("responsive-img");
-
-    //     // $('.results').append(img);
-    // }
   });
 }
 //**********************************

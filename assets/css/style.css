@@ -7,10 +7,6 @@ body {
   color: #d7cec9;
   margin: 0;
   padding: 0;
-  /*background-image:  ;*/
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .results {
@@ -33,7 +29,7 @@ body {
   display: flex;
   /* flex-direction: row-reverse; */
   background-color: #746c6b;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   min-height: 75px;
   /* border: solid 2px; */
   border-radius: 3px;
@@ -72,7 +68,7 @@ ul li {
   float: left;
   /* width: 100px; */
   height: 40px;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   line-height: 40px;
   text-align: center;
 }
@@ -80,6 +76,7 @@ ul li {
 ul li a {
   text-decoration: none;
   color: white;
+  background-color: black;
   display: block;
 }
 
