@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
+
 
 <head>
   <meta charset="UTF-8" />
@@ -18,14 +18,26 @@
       <div class="navbar"></div>
       <nav id="menu">
         <ul>
-          <li>
+          <li class="h-five">
             <div class="logo-adjustment"></div>
           </li>
           <li>
-            <h5>Space Portal</h5>
+            <h5 class="h-five">Space Portal</h5>
           </li>
-          <li>
-            <a href="#placeholder">Placeholder</a>
+          <li class="nav-btn">
+            <a href="#Search">Search</a>
+            <ul>
+              <li>
+                <a>
+                  <div class="test">test</div>
+                  <div class="test1">test1</div>
+                  <div class="test2">test2</div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-btn">
+            <a href="#OtherPortals">Other Portals</a>
             <ul>
               <li>
                 <a>
@@ -37,8 +49,8 @@
               </li>
             </ul>
           </li>
-          <li>
-            <a href="#placeHolder1">Placeholder1</a>
+          <!-- <li class="nav-btn">
+            <a href="#loginRegister" >Login/Register</a>
             <ul>
               <li>
                 <a>
@@ -49,32 +61,21 @@
                 </a>
               </li>
             </ul>
+          </li> -->
+          <!-- <li id="searchBar" >
+            <input placeholder="Search"/>
           </li>
-          <li>
-            <a href="#loginRegister">Login/Register</a>
-            <ul>
-              <li>
-                <a>
-                  <div class="test">test</div>
-                  <div class="test1">test1</div>
-                  <div class="test2">test2</div>
-                  <div class="test3">test3</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <input id="searchBar" placeholder="Search" />
-          </li>
-          <li>
+          <li id="go-btn">
             <button id="searchBtn">Go</button>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </header>
 
     <div class="header-image">
-      <div id="inspirational-quotes">Quote</div>
+      <div id="inspirational-quotes">
+        <div class="quoteDiv"></div>
+      </div>
       <div class="results"></div>
     </div>
 
@@ -210,196 +211,4 @@
 </body>
 
 </html>
-=======
-  ​
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/materialize.min.css" />
-    <title>Space Portal | Main</title>
-  </head>
-  ​
-
-  <body class="results">
-
-    <!-- this it the image or video  -->
-    <!-- <div class="results"></div> -->
-
-    <div class="main-container">
-      <header class="header">
-        <div class="navbar"></div>
-        <nav id="menu">
-          <ul>
-            <li class="h-five">
-              <div class="logo-adjustment"></div>
-            </li>
-            <li>
-              <h5 class="h-five">Space Portal</h5>
-            </li>
-            <li class="nav-btn">
-              <a href="#Search">Search</a>
-              <ul>
-                <li>
-                  <a>
-                    <div class="test">test</div>
-                    <div class="test1">test1</div>
-                    <div class="test2">test2</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-btn">
-              <a href="#OtherPortals">Other Portals</a>
-              <ul>
-                <li>
-                  <a>
-                    <div class="test">test</div>
-                    <div class="test1">test1</div>
-                    <div class="test2">test2</div>
-                    <div class="test3">test3</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- <li class="nav-btn">
-              <a href="#loginRegister" >Login/Register</a>
-              <ul>
-                <li>
-                  <a>
-                    <div class="test">test</div>
-                    <div class="test1">test1</div>
-                    <div class="test2">test2</div>
-                    <div class="test3">test3</div>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
-            <!-- <li id="searchBar" >
-              <input placeholder="Search"/>
-            </li>
-            <li id="go-btn">
-              <button id="searchBtn">Go</button>
-            </li> -->
-          </ul>
-        </nav>
-        <div class="results">
-        </div>
-      </header>
-      ​
-      <div class="header-image">
-        <div id="inspirational-quotes">
-          <!-- this is the quote div  -->
-          <div class="quoteDiv"></div>
-        </div>
-      </div>
-      ​
-      <div class="body-container">
-
-        <!-- start -->
-        <div id="launch-dates" class="body-top row">
-          <!-- this is the launchDates  -->
-          <div class="launchDatesDiv col l2 m2 s2"></div> 
-        </div>
-        <!-- end -->
-
-        <aside class="body-left">
-          <div class="col-sm-5">
-            <br />
-            <!-- First card is for handling the search parameters -->
-            <div class="card">
-              <div class="card-header">
-                <h3>Search Parameters</h3>
-              </div>
-              <div class="card-body">
-                <!-- Here we create an HTML Form for handling the inputs-->
-                <form role="form">
-                  <!-- Here we create the text box for capturing the search term-->
-                  <div class="form-group">
-                    <label for="keywordSearchInput">Search Key Term:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="keywordSearchInput"
-                    />
-                  </div>
-                  ​
-                  <!-- Here we capture the number of records that the user wants to retrieve  -->
-                  <div class="form-group">
-                    <label for="results">Number of Records to Retrieve:</label>
-                    <select
-                      id="article-count"
-                      class="custom-select"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <option selected value="1">1</option>
-                      <!-- Setting the option for 5 as default -->
-                      <option value="5" selected>5</option>
-                      <option value="10">10</option>
-                    </select>
-                  </div>
-                  ​
-                  <!-- Here we capture the Start Year Parameter-->
-                  <div class="form-group">
-                    <label for="start-year">Start Year (Optional):</label>
-                    <input type="text" class="form-control" id="start-year" />
-                  </div>
-                  ​
-                  <!-- Here we capture the End Year Parameter  *****-->
-                  <!-- ************************************************************* -->
-                  <div class="form-group">
-                    <label for="keywordSearchInput">Search Key Term:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="keywordSearchInput"
-                    />
-                  </div>
-                  <!-- ************************************************************* -->
-                  ​ ​
-
-                  <!-- Here we have our final submit button -->
-                  <!-- ************************************************************* -->
-                  <button type="submit" class="btn btn-default" id="run-search">
-                    <i class="fa fa-search"></i> Search
-                  </button>
-                  <!-- ************************************************************* -->
-                  <button class="btn btn-default" id="clear-all">
-                    <i class="fa fa-trash"></i> Clear Results
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <section class="body-right article-list">
-          I am the section, but may move
-          <!-- ************************************************************* -->
-          <!-- this is the news  -->
-          <div class="newsDiv"></div>
-          <!-- ************************************************************* -->
-        </section>
-        <article class="body-middle">I am the middle</article>
-        ​ ​ ​ ​
-      </div>
-      
-      <footer class="footer">
-        <p>Created by totallyNotTheDarkSide | 2020</p>
-        <div>
-          Icons made by
-          <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
-          <a href="https://www.flaticon.com/" title="Flaticon"
-            >www.flaticon.com</a
-          >
-        </div>
-      </footer>
-    </div>
-    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="Api.js"></script>
-    <script src="spaceflightnews.js"></script>
-  </body>
-  ​
-</html>
->>>>>>> 9fe6b03f7c9c624f3edeab7e582b397803f0ff7d
