@@ -1,7 +1,7 @@
 // adding document .ready 
 $(document).ready(function () {
 
-    $('.tabs').tabs();
+
 
     // this is quote & picture/video API
 
