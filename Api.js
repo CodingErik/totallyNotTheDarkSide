@@ -1,8 +1,8 @@
-
+// comment test 
 
 // [DONE]!!!!!
 // this is quote & picture/video API
-{
+
 
     //imageVideoOfTheDay ** 
     // call to get the video or image of the day 
@@ -97,7 +97,7 @@
     quoteOfTheDayAjax();
 
 
-}
+
 
 
 // have the image have the ability to download  ******* WORK ON THIS 
