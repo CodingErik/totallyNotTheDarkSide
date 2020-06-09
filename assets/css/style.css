@@ -57,7 +57,7 @@ body {
   margin: 20px;
   width: 75px;
 }
-
+/* 
 ul {
   margin: 0;
   padding: 0;
@@ -66,13 +66,13 @@ ul {
 
 ul li {
   float: left;
-  /* width: 100px; */
+  width: 100px;
   height: 40px;
-  /* opacity: 0.8; */
+  opacity: 0.8;
   line-height: 40px;
   text-align: center;
-}
-
+} */
+/* 
 ul li a {
   text-decoration: none;
   color: white;
@@ -91,7 +91,7 @@ ul li ul li {
 
 ul li:hover ul li {
   display: block;
-}
+} */
 
 a {
   color: #d7cec9;
