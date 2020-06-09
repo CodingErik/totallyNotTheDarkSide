@@ -1,232 +1,161 @@
-// DONE!!!!!
-// this is quote & picture/video API
+// adding document .ready 
+$(document).ready(function () {
 
-//imageVideoOfTheDay **
-// call to get the video or image of the day
-//**********************************
-function imageVideoOfTheDayAjax() {
-  // used to test img
-  // https://apodapi.herokuapp.com/api/?date=2020-06-01
+    $('.tabs').tabs();
 
-  $.ajax({
-    url: `https://apodapi.herokuapp.com/api/`,
-    method: "GET",
-  }).then((response) => {
-    console.log(response.url);
+    // this is quote & picture/video API
 
-    // console.log(response.media_type);
+    //imageVideoOfTheDay **
+    // call to get the video or image of the day
+    //**********************************
+    function imageVideoOfTheDayAjax() {
+        // used to test img
+        // https://apodapi.herokuapp.com/api/?date=2020-06-01
 
-    if (response.media_type === "image") {
-      // console.log('this is an image')
-      // the image has to be reponsive find the correct class for the materialize
-      let img = $('<img width="100%" height="auto"> </img>');
-      img.attr("src", response.url);
-      img.addClass("responsive-img");
+        $.ajax({
+            url: `https://apodapi.herokuapp.com/api/`,
+            method: "GET",
+        }).then((response) => {
+            console.log(response.url);
 
-      $(".imageOfTheDay").append(img);
-      // $('body').append(img);
+            // console.log(response.media_type);
 
-      console.log(img);
-    } else if (response.media_type === "video") {
-      // console.log('this is a video')
-      // the image has to be reponsive find the correct class for the materialize
-      let video = $('<iframe width="100%" height="auto"> <iframe>');
-      video.attr("src", response.url);
-      video.addClass("responsive-video");
+            if (response.media_type === "image") {
+                // console.log('this is an image')
+                // the image has to be reponsive find the correct class for the materialize
+                let img = $('<img width="100%" height="auto"> </img>');
+                img.attr("src", response.url);
+                img.addClass("responsive-img");
 
-      $(".imageOfTheDay").append(video);
-      // $('.results').append(video);
+                $(".imageOfTheDay").append(img);
+                // $('body').append(img);
 
-      console.log(video);
+                console.log(img);
+            } else if (response.media_type === "video") {
+                // console.log('this is a video')
+                // the image has to be reponsive find the correct class for the materialize
+                let video = $('<iframe width="100%" height="auto"> <iframe>');
+                video.attr("src", response.url);
+                video.addClass("responsive-video");
+
+                $(".imageOfTheDay").append(video);
+                // $('.results').append(video);
+
+                console.log(video);
+            }
+        });
     }
-  });
-}
-//**********************************
+    //**********************************
 
-// calling the imageVideoOfTheDayAjax function
-imageVideoOfTheDayAjax();
+    // calling the imageVideoOfTheDayAjax function
+    imageVideoOfTheDayAjax();
 
-//quoteOfTheDay **
-// calls for author and quote of the day
-function quoteOfTheDayAjax() {
-    $.ajax({
-        url: `https://quote-garden.herokuapp.com/api/v2/quotes/random`,
-        method: "GET",
-    }).then((response) => {
-        console.log(response);
-        let quoteAuthor = $("<strong>")
-            .text(`${response.quote.quoteAuthor} :`)
-            .css({
-                "margin-right": "10px",
-            });
-        let quoteGenre = $("<span>").text(response.quote.quoteGenre);
-        let quoteText = $("<span>").text(response.quote.quoteText);
+    //quoteOfTheDay **
+    // calls for author and quote of the day
+    function quoteOfTheDayAjax() {
+        $.ajax({
+            url: `https://quote-garden.herokuapp.com/api/v2/quotes/random`,
+            method: "GET",
+        }).then((response) => {
+            console.log(response);
+            let quoteAuthor = $("<strong>")
+                .text(`${response.quote.quoteAuthor} :`)
+                .css({
+                    "margin-right": "10px",
+                });
+            let quoteGenre = $("<span>").text(response.quote.quoteGenre);
+            let quoteText = $("<span>").text(response.quote.quoteText);
 
-        let quoteDiv = $("<div>");
-        quoteDiv.append(quoteText);
-        quoteDiv.prepend(quoteAuthor);
+            let quoteDiv = $("<div>");
+            quoteDiv.append(quoteText);
+            quoteDiv.prepend(quoteAuthor);
 
-        // $('.results').prepend(quoteDiv);
-        $(".quoteDiv").prepend(quoteDiv);
-    });
-}
+            // $('.results').prepend(quoteDiv);
+            $(".quoteDiv").prepend(quoteDiv);
+        });
+    }
 
-// calling the quoteOfTheDayAjax function
-quoteOfTheDayAjax();
-
-// have the image have the ability to download  ******* WORK ON THIS
-
-// this is the SPACE X API
+    // calling the quoteOfTheDayAjax function
+    quoteOfTheDayAjax();
 
 
-// RUN SEARCH FOR API SEARCH BUTTON
-// SPACE X API REQUEST *************
-//**********************************
-$("#runSearch").on("click", function (e) {
-    e.preventDefault();
-    $(".spaceDataPopulate").empty();
-    let baseUrl = "https://api.spacexdata.com/v3/";
+    // Upcoming Launch API************************
+    // BUTTON that get us all the Upcoming Launched
+    // this call request most recent launches BTN
+    //**********************************
+    function callLaunchDates() {
 
-    let builtUrlQuery = baseUrl + getSpaceXParameters();
+        let baseUrl = "https://launchlibrary.net/1.3/";
 
-    $.ajax({
-        url: builtUrlQuery,
-        method: "GET",
-    }).then(populateSpaceXData);
-    console.log("this is the built query", builtUrlQuery);
-});
-//**********************************
+        let queryParameters = {
+            launch: "launch",
+        };
 
-//    ^^^^^      getSpaceXParameters function BUILDURL
-//functions gets the correct endpoints for the url for making the SPACE X the Ajax call ***
-//**********************************
-function getSpaceXParameters() {
-    let userInput = $("#searchInput").val();
-    console.log(userInput);
-
-    // here we would have some kind of listener that waits for all the parameters to be checked
-
-    //Capsules
-    //Cores
-    //Dragons
-    //History
-    //Info
-    //Landing Pads
-    //Launches
-    //Launch Pads
-    //Missions
-    //Payloads
-    //Rockets
-    //Roadster
-    //Ships
-
-    return "capsules";
-}
-//**********************************
-
-// POPULATESPACEXDATA function
-// This populateSpaceXData on the page
-//**********************************
-function populateSpaceXData(response) {
-    // console.log(response[0]['capsule_id']);
-
-    $(".spaceDataPopulate").empty();
-
-    // cool this is working now and populating results on the website dynamically
-    // we are gonna not have to specify anything
-    // we will just have to loop HERE
-    response.forEach((e) => {
-        console.log(e["capsule_id"]);
-
-        // this will stay here                  this will just say reponse
-        $(".spaceDataPopulate").append($("<div>").text(e["capsule_id"]));
-    });
-}
-//**********************************
-
-// clears the spaceDataPopulate container
-//**********************************
-$("#clear").on("click", function (e) {
-    e.preventDefault();
-    $(".spaceDataPopulate").empty();
-});
-//**********************************
-
-
-// [DONE]!!!!!
-// Upcoming Launch API
-
-// BUTTON that get us all the Upcoming Launched
-// this call request most recent launches BTN
-//**********************************
-function callLaunchDates() {
-
-    let baseUrl = "https://launchlibrary.net/1.3/";
-
-    let queryParameters = {
-        launch: "launch",
+        $.ajax({
+            url: baseUrl + queryParameters.launch,
+            method: "GET",
+        }).then(appendUpcomingLaunches);
     };
+    //**********************************
 
-    $.ajax({
-        url: baseUrl + queryParameters.launch,
-        method: "GET",
-    }).then(appendUpcomingLaunches);
-};
-//**********************************
+    // APPENDUPCOMINGLAUNCHES function
+    // this function appends the most recent launches to the html
+    // plus all the juicy stats that come with that
+    //**********************************
+    function appendUpcomingLaunches(response) {
 
-// APPENDUPCOMINGLAUNCHES function
-// this function appends the most recent launches to the html
-// plus all the juicy stats that come with that
-//**********************************
-function appendUpcomingLaunches(response) {
+        // empty the div everytime the launch dates populates
+        $(".launchDatesDiv").empty();
 
-    // empty the div everytime the launch dates populates
-    $(".launchDatesDiv").empty();
+        // this is an array with all the upcoming launches
+        console.log(response.launches);
 
-    // this is an array with all the upcoming launches
-    console.log(response.launches);
+        let launchesArr = response.launches;
 
-    let launchesArr = response.launches;
+        // this this is number of upcoming launches
+        console.log(response.count);
 
-    // this this is number of upcoming launches
-    console.log(response.count);
+        let launchCount = $("<div>").text(`Upcoming Count Launch: ${response.count}`);
 
-    let launchCount = $("<div>").text(`Upcoming Count Launch: ${response.count}`);
+        $(".launchDatesDiv").prepend(launchCount);
 
-    $(".launchDatesDiv").prepend(launchCount);
+        // loop through and append the upcoming launches to the html
+        launchesArr.forEach((e) => {
+            let name = $("<div>").text(`launch name: ${e.name}`);
+            let date = $("<div>").text(`launch date: ${e.net}`);
+            let id = $("<div>").text(`launch id: ${e.id}`);
+            let launchContainer = $("<div>").css({
+                // margin: " 2px",
+                // padding: "5px",
+                // "border-radius": "5px",
+            });
 
-    // loop through and append the upcoming launches to the html
-    launchesArr.forEach((e) => {
-        let name = $("<div>").text(`launch name: ${e.name}`);
-        let date = $("<div>").text(`launch date: ${e.net}`);
-        let id = $("<div>").text(`launch id: ${e.id}`);
-        let launchContainer = $("<div>").css({
-            // margin: " 2px",
-            // padding: "5px",
-            // "border-radius": "5px",
+            launchContainer.addClass('launchCardStyle');
+
+            launchContainer.append(name);
+            launchContainer.append(date);
+            launchContainer.append(id);
+            launchContainer.addClass('col s4');
+
+            // $('.upcomingLauchesContainer').append(launchContainer)
+            $(".launchDatesDiv").append(launchContainer);
+
         });
 
-        launchContainer.addClass('launchCardStyle');
 
-        launchContainer.append(name);
-        launchContainer.append(date);
-        launchContainer.append(id);
-        launchContainer.addClass('col s4');
+    }
+    //**********************************
 
-        // $('.upcomingLauchesContainer').append(launchContainer)
-        $(".launchDatesDiv").append(launchContainer);
-
+    // BUTTON clears the upcomingLaunchesContainer
+    //**********************************
+    $("#clearLaunch").on("click", function () {
+        $(".launchDatesDiv").empty();
     });
+    //**********************************
+
+    callLaunchDates();
 
 
-}
-//**********************************
 
-// BUTTON clears the upcomingLaunchesContainer
-//**********************************
-$("#clearLaunch").on("click", function () {
-    $(".launchDatesDiv").empty();
+
 });
-//**********************************
-
-callLaunchDates();
