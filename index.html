@@ -1,101 +1,99 @@
 <!-- <div class="results"></div> -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- material icons  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- this is our style sheet  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <!-- material icons  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- this is our style sheet  -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Space Portal | Main</title>
+  </head>
 
-  <title>Space Portal | Main</title>
-</head>
+  <header>
+    <nav class="nav-extended indigo darken-4">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Space Portal</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a href="#test1">Space Flight News</a></li>
+          <li class="tab"><a href="#test2">Space X</a></li>
+          <li class="tab"><a href="#test3">Hubble News</a></li>
+        </ul>
+      </div>
+    </nav>
 
-
-<nav class="nav-extended indigo darken-4">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Space Portal</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul class="sidenav" id="mobile-demo">
       <li><a href="sass.html">Sass</a></li>
       <li><a href="badges.html">Components</a></li>
       <li><a href="collapsible.html">JavaScript</a></li>
     </ul>
-  </div>
-  <div class="nav-content">
-    <ul class="tabs tabs-transparent">
-      <li class="tab"><a href="#test1">Space Flight News</a></li>
-      <li class="tab"><a href="#test2">Space X</a></li>
-      <li class="tab "><a href="#test3">Hubble News</a></li>
-    </ul>
-  </div>
-</nav>
+  </header>
 
-<ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">JavaScript</a></li>
-</ul>
-
-<div id="test1" class="col s12">Space Flight News</div>
-<div id="test2" class="col s12">Space X</div>
-<div id="test3" class="col s12">Hubble News</div>
-
-
-
-
-
-
-<body>
-  <div class="container">
-
-    <div id="inspirational-quote">
-      <div>
-        <div class="quoteDiv"></div>
+  <body>
+    <div class="container">
+      <div id="inspirational-quote">
+        <div>
+          <div class="quoteDiv"></div>
+        </div>
       </div>
-    </div>
-    <div class="imageOfTheDay">
 
-    </div>
-    <!-- this is where the launch times populate  -->
-    <div class="upcoming-launch container">
-      <div class="row launchDatesDiv">
-
+      <aside class="aside">
+        <div id="test1" class="col s12">Space Flight News</div>
+        <div id="test2" class="col s12">Space X</div>
+        <div id="test3" class="col s12">Hubble News</div>
+      </aside>
+      <div class="imageOfTheDay"></div>
+      <!-- this is where the launch times populate  -->
+      <div class="upcoming-launch container">
+        <div class="row launchDatesDiv"></div>
       </div>
+      <section class="section article-list spaceDataPopulate">
+        <!-- this is also where the space x data will populate  -->
+        <!-- this is the news  -->
+        <div class="newsDiv"></div>
+      </section>
+      <article class="article">
+        I am the middle
+      </article>
+      <footer class="footer">
+        <p>Created by totallyNotTheDarkSide | 2020</p>
+        <div>
+          Icons made by
+          <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
+          <a href="https://www.flaticon.com/" title="Flaticon"
+            >www.flaticon.com</a
+          >
+        </div>
+      </footer>
     </div>
-    <aside class="aside"></aside>
-    <section class="section article-list spaceDataPopulate">
-
-
-      <!-- this is also where the space x data will populate  -->
-      <!-- this is the news  -->
-      <div class="newsDiv"></div>
-    </section>
-    <article class="article">
-      I am the middle
-    </article>
-    <footer class="footer">
-      <p>Created by totallyNotTheDarkSide | 2020</p>
-      <div>
-        Icons made by
-        <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
-        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-      </div>
-    </footer>
-  </div>
-  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./assets/js/materialize.js"></script>
-  <script src="./assets/js/Api.js"></script>
-  <script src="./assets/js/spaceflightnews.js"></script>
-  <script src="./assets/js/hubbleNewsAPI.js"></script>
-  <script src="./assets/js/spaceXAPI.js"></script>
-</body>
-
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/materialize.js"></script>
+    <script src="./assets/js/Api.js"></script>
+    <script src="./assets/js/spaceflightnews.js"></script>
+    <script src="./assets/js/hubbleNewsAPI.js"></script>
+    <script src="./assets/js/spaceXAPI.js"></script>
+  </body>
 </html>
