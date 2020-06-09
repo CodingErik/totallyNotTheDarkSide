@@ -12,7 +12,7 @@ function imageVideoOfTheDayAjax() {
     url: `https://apodapi.herokuapp.com/api/`,
     method: "GET",
   }).then((response) => {
-    // console.log(response.url);
+    console.log(response.url);
 
     // console.log(response.media_type);
 
@@ -56,7 +56,6 @@ imageVideoOfTheDayAjax();
 
 //quoteOfTheDay **
 // calls for author and quote of the day
-//**********************************
 function quoteOfTheDayAjax() {
   $.ajax({
     url: `https://quote-garden.herokuapp.com/api/v2/quotes/random`,
@@ -79,7 +78,6 @@ function quoteOfTheDayAjax() {
     $(".quoteDiv").prepend(quoteDiv);
   });
 }
-//**********************************
 
 // calling the quoteOfTheDayAjax function
 quoteOfTheDayAjax();
