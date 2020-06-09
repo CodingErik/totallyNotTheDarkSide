@@ -24,6 +24,10 @@ $(document).ready(function () {
 
   $('.hubbleSearch').on('click', function (e) {
     e.preventDefault();
+
+    // empties div before the new search query populates
+    $('.newsDiv').empty();
+    
     searchSpaceFlightNews();
   })
 
@@ -41,8 +45,7 @@ $(document).ready(function () {
   // this will add the user defined search term to a search
   function searchSpaceFlightNews() {
 
-    // empties div before the new search query populates
-    $('.newsDiv').empty();
+    
 
     let userInput = $('#spaceFlightUserInput').val().trim();
 
