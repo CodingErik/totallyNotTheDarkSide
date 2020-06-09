@@ -22,9 +22,16 @@ $(document).ready(function () {
 
   // document.getElementById("searchBtn").addEventListener("click");
 
-  $('#run-search').on('click', function (e) {
+  $('.hubbleSearch').on('click', function (e) {
     e.preventDefault();
     searchSpaceFlightNews();
+  })
+
+
+  $('.spaceFlightClear').on('click', function (e) {
+    e.preventDefault();
+    // empties div for new search 
+    $('.newsDiv').empty();
   })
 
 
@@ -34,7 +41,10 @@ $(document).ready(function () {
   // this will add the user defined search term to a search
   function searchSpaceFlightNews() {
 
-    let userInput = $('#keywordSearchInput').val().trim();
+    // empties div before the new search query populates
+    $('.newsDiv').empty();
+
+    let userInput = $('#spaceFlightUserInput').val().trim();
 
     console.log(userInput);
 
