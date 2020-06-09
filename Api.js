@@ -207,9 +207,6 @@
 
         let queryParameters = {
             launch: 'launch'
-<<<<<<< HEAD
-        }
-=======
     }
     
     $.ajax({
@@ -255,13 +252,12 @@ function appendUpcomingLaunches(response){
             'border-radius': '5px',
         });
         // end
->>>>>>> 9fe6b03f7c9c624f3edeab7e582b397803f0ff7d
 
         $.ajax({
             url: baseUrl + queryParameters.launch,
             method: 'GET'
         }).then((appendUpcomingLaunches))
-    };
+    });
     //**********************************
 
     callLaunchDates();
@@ -355,6 +351,4 @@ function appendUpcomingLaunches(response){
 
 
 
-
-
-
+}
