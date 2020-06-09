@@ -7,7 +7,7 @@ body {
     color: #D7CEC9;
     margin: 0;
     padding: 0;
-    /* background-image:url("../images/spaceX-background.jpeg") ;
+    /* background-image: element() ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; */
@@ -23,14 +23,19 @@ body {
     padding: 0;
 }
 
+<<<<<<< HEAD
+/* .header-image {
+    background-image:url("../images/imageOfTheDay.png") ;
+=======
 .header-image {
     /* background-image:url("../images/imageOfTheDay.png") ; */
+>>>>>>> 7099c28d6bd2fc773b25ae4c01f2e8dd39f5c553
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
     
-}
+} */
 
 #menu {
     list-style: none;
@@ -120,6 +125,18 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 600;
+}
+
+/* .card-content {
+   
+} */
+
+.launchDatesDiv {
+    color: limegreen;
+}
+
+li:nth-child(odd) {
+    color: blue;
 }
 
 .body-middle {
