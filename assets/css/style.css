@@ -23,13 +23,8 @@ body {
     padding: 0;
 }
 
-<<<<<<< HEAD
 /* .header-image {
     background-image:url("../images/imageOfTheDay.png") ;
-=======
-.header-image {
-    /* background-image:url("../images/imageOfTheDay.png") ; */
->>>>>>> 7099c28d6bd2fc773b25ae4c01f2e8dd39f5c553
     background-size: auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,6 +125,10 @@ a {
 /* .card-content {
    
 } */
+
+.launchCardStyle {
+    background-color: red;
+}
 
 .launchDatesDiv {
     color: limegreen;
