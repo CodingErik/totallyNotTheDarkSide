@@ -5,6 +5,7 @@
 // call to get the video or image of the day
 //**********************************
 function imageVideoOfTheDayAjax() {
+<<<<<<< HEAD:Api.js
     // used to test img
     // https://apodapi.herokuapp.com/api/?date=2020-06-01
 
@@ -48,6 +49,51 @@ function imageVideoOfTheDayAjax() {
         //     // $('.results').append(img);
         // }
     });
+=======
+  // used to test img
+  // https://apodapi.herokuapp.com/api/?date=2020-06-01
+
+  $.ajax({
+    url: `https://apodapi.herokuapp.com/api/`,
+    method: "GET",
+  }).then((response) => {
+    console.log(response.url);
+
+    // console.log(response.media_type);
+
+    if (response.media_type === "image") {
+      // console.log('this is an image')
+      // the image has to be reponsive find the correct class for the materialize
+      let img = $('<img width="420" height="315"> </img>');
+      img.attr("src", response.url);
+      img.addClass("responsive-img");
+
+      $(".results").append(img);
+      // $('body').append(img);
+
+      console.log(img);
+    } else if (response.media_type === "video") {
+      // console.log('this is a video')
+      // the image has to be reponsive find the correct class for the materialize
+      let video = $("<iframe>");
+      video.attr("src", response.url);
+      video.addClass("responsive-video");
+
+      $(".results").append(video);
+      // $('.results').append(video);
+
+      console.log(video);
+    }
+    // else {
+    //     // this is a default image if we dont have an image
+    //     // let img = $('<img width="420" height="315"> </img>');
+    //     // img.attr('src', response.url);
+    //     // img.addClass("responsive-img");
+
+    //     // $('.results').append(img);
+    // }
+  });
+>>>>>>> bab77740a2c410170bd03dabecb6e273c9eb9c3d:assets/js/Api.js
 }
 //**********************************
 
@@ -56,7 +102,6 @@ imageVideoOfTheDayAjax();
 
 //quoteOfTheDay **
 // calls for author and quote of the day
-//**********************************
 function quoteOfTheDayAjax() {
     $.ajax({
         url: `https://quote-garden.herokuapp.com/api/v2/quotes/random`,
@@ -79,7 +124,6 @@ function quoteOfTheDayAjax() {
         $(".quoteDiv").prepend(quoteDiv);
     });
 }
-//**********************************
 
 // calling the quoteOfTheDayAjax function
 quoteOfTheDayAjax();
