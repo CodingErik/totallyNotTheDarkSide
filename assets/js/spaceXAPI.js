@@ -32,40 +32,44 @@ $(document).ready(function () {
     function spaceXAjax(buttonPressed) {
 
 
+        let id = $(buttonPressed).data('id');
+
+
         // testing to get the data-id from the specific button that was pressed 
-        // console.log($(buttonPressed).data('id'));
+        // code is working here we are receiving the numbers 
+        console.log(id);
 
 
 
         let baseUrl = "https://api.spacexdata.com/v3/";
 
-        switch ($(buttonPressed).data('id')) {
+        // switch (id) {
 
-            case '1':
+        //     case '1':
 
-                console.log('we will see this if the button pressed is 1')
-                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+        //         console.log('we will see this if the button pressed is 1')
+        //         // let builtUrlQuery = baseUrl + getSpaceXParameters();
 
-                break;
+        //         break;
 
-            case '2':
+        //     case '2':
 
-                console.log('we will see this if the button pressed is 2')
-                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+        //         console.log('we will see this if the button pressed is 2')
+        //         // let builtUrlQuery = baseUrl + getSpaceXParameters();
 
-                break;
-            case '3':
+        //         break;
+        //     case '3':
 
-                console.log('we will see this if the button pressed is 3')
-                // let builtUrlQuery = baseUrl + getSpaceXParameters();
+        //         console.log('we will see this if the button pressed is 3')
+        //         // let builtUrlQuery = baseUrl + getSpaceXParameters();
 
-                break;
+        //         break;
 
-            default:
+        //     default:
 
-            // code block
+        //     // code block
 
-        }
+        // }
 
 
 
@@ -112,6 +116,11 @@ $(document).ready(function () {
         //Roadster
         //Ships
 
+        //MAYBE WE SEPARETE THESE INTO THEIR ON SPECIFIC QUERIES 
+
+        if (condition) {
+            
+        }
 
         // latest LAUNCH
         //https://api.spacexdata.com/v3/launches/latest
