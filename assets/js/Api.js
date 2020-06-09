@@ -12,7 +12,7 @@ function imageVideoOfTheDayAjax() {
     url: `https://apodapi.herokuapp.com/api/`,
     method: "GET",
   }).then((response) => {
-    // console.log(response.url);
+    console.log(response.url);
 
     // console.log(response.media_type);
 
