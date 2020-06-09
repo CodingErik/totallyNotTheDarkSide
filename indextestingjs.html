@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 
@@ -26,20 +27,19 @@
           <input type="text" class="form-control" id="keywordSearchInput" />
         </div>
 
-        <!-- Here we capture the number of records that the user wants to retrieve  -->
-        <div class="form-group">
-          <label for="results">Number of Records to Retrieve:</label>
-          <select
-            id="article-count"
-            class="custom-select"
-            aria-labelledby="dropdownMenuButton"
-          >
-            <option selected value="1">1</option>
-            <!-- Setting the option for 5 as default -->
-            <option value="5" selected>5</option>
-            <option value="10">10</option>
-          </select>
-        </div>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+
 
 
         <!-- Here we have our final submit button BUTTON -->
@@ -69,9 +69,15 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="Api.js"></script>
 <script src="spaceflightnews.js"></script>
+=======
+
+>>>>>>> 9fe6b03f7c9c624f3edeab7e582b397803f0ff7d
 </body>
 </html>
