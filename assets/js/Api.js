@@ -179,6 +179,10 @@ function callLaunchDates() {
 // plus all the juicy stats that come with that
 //**********************************
 function appendUpcomingLaunches(response) {
+
+    // empty the div everytime the launch dates populates
+    $(".launchDatesDiv").empty();
+
     // this is an array with all the upcoming launches
     console.log(response.launches);
 
@@ -197,11 +201,9 @@ function appendUpcomingLaunches(response) {
         let date = $("<div>").text(`launch date: ${e.net}`);
         let id = $("<div>").text(`launch id: ${e.id}`);
         let launchContainer = $("<div>").css({
-            margin: " 2px",
-            padding: "5px",
-            // "background-color": "black",
-            opacity: ".7",
-            "border-radius": "5px",
+            // margin: " 2px",
+            // padding: "5px",
+            // "border-radius": "5px",
         });
 
         launchContainer.addClass('launchCardStyle');
@@ -209,6 +211,7 @@ function appendUpcomingLaunches(response) {
         launchContainer.append(name);
         launchContainer.append(date);
         launchContainer.append(id);
+        launchContainer.addClass('col s4');
 
         // $('.upcomingLauchesContainer').append(launchContainer)
         $(".launchDatesDiv").append(launchContainer);
