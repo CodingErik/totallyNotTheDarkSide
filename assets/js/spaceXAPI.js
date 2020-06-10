@@ -13,6 +13,8 @@ $(document).ready(function () {
         // testing
         // console.log($(e.target));
 
+        // if the button has this class 
+        // then it makes a ajax call so that we can pull the right info 
         if ($(e.target).hasClass('btn')) {
 
             //testing
@@ -27,77 +29,42 @@ $(document).ready(function () {
     });
     //**********************************
 
-
-
+    //SPACEXAJAX FUNCTION
+    // Makes a ajax request to the Space X API
+    //**********************************
     function spaceXAjax(buttonPressed) {
 
-
         let id = $(buttonPressed).data('id');
-
 
         // testing to get the data-id from the specific button that was pressed 
         // code is working here we are receiving the numbers 
         // console.log(id);
 
-
         let baseUrl = "https://api.spacexdata.com/v3/";
-
 
         let builtUrlQuery = baseUrl + getSpaceXParameters(id);
 
+        $.ajax({
+            url: builtUrlQuery,
+            method: "GET",
+        }).then(populateSpaceXData);
 
-
-
-        // $.ajax({
-        //     url: builtUrlQuery,
-        //     method: "GET",
-        // }).then(populateSpaceXData);
+        //test the query being built
         // console.log("this is the built query", builtUrlQuery);
 
     }
-
-
-
-    // CLEAR BUTTON  ******************
-    $('.spaceXClear').on('click', function (e) {
-        e.preventDefault();
-        // empties div for new search 
-        $('.newsDiv').empty();
-    })
     //**********************************
 
-
-
-    //    ^^^^^      getSpaceXParameters function BUILDURL
-    //functions gets the correct endpoints for the url for making the SPACE X the Ajax call ***
+    //    ^^^^^      getSpaceXParameters function BUILDSURL
+    //function gets the correct endpoints for the url for SPACEXAJAX the Ajax call ***
     //**********************************
     function getSpaceXParameters(id) {
         let userInput = $("#searchInput").val();
         console.log(userInput);
 
-        // here we would have some kind of listener that waits for all the parameters to be checked
-
-        //Capsules
-        //Cores
-        //Dragons
-        //History
-        //Info
-        //Landing Pads
-        //Launches
-        //Launch Pads
-        //Missions
-        //Payloads
-        //Rockets
-        //Roadster
-        //Ships
-
-        //MAYBE WE SEPARETE THESE INTO THEIR ON SPECIFIC QUERIES 
-
-
+        // RETURNS the right parameter according to button pressed 
         switch (id) {
-
             case 1:
-
                 // latest LAUNCH
                 //https://api.spacexdata.com/v3/launches/latest
                 // > launch_date_local 
@@ -106,57 +73,92 @@ $(document).ready(function () {
                 // rocket > second_stage > payloads > rocket_name
                 // > links > mission_patch_small
                 // > links > video_link
-                return console.log(`we will see this if the button pressed is ${id}`); ;
-
+                // return console.log(`we will see this if the button pressed is ${id}`);
+                return 'launches/latest';
             case 2:
-
                 // ROCKETS
                 // > wikipedia 
                 // > flickr_images (jpeg if available)
                 //> description 
                 //> country 
                 //> name 
-                return console.log(`we will see this if the button pressed is ${id}`); ;
-
-
+                // return console.log(`we will see this if the button pressed is ${id}`);
+                return 'rockets';
             case 3:
-
                 // MISSIONS 
                 // > mission_name
                 // > description
                 // > wikipedia
-                return console.log(`we will see this if the button pressed is ${id}`); ;
-
+                // return console.log(`we will see this if the button pressed is ${id}`);
+                return 'missions';
         }
 
     }
     //**********************************
 
-    // POPULATESPACEXDATA function
+    // POPULATESPACEXDATA function  *APPEND DATA*
     // This populateSpaceXData on the page
     //**********************************
     function populateSpaceXData(response) {
         // console.log(response[0]['capsule_id']);
 
-        $(".spaceDataPopulate").empty();
+        //testing
+        // $(".spaceDataPopulate").empty();
+        $(".newsDiv").empty();
+
 
         // cool this is working now and populating results on the website dynamically
         // we are gonna not have to specify anything
         // we will just have to loop HERE
-        response.forEach((e) => {
-            console.log(e["capsule_id"]);
+        // response.forEach((e) => {
+        //     console.log(e["capsule_id"]);
 
-            // this will stay here                  this will just say reponse
-            $(".spaceDataPopulate").append($("<div>").text(e["capsule_id"]));
-        });
+        //     // this will stay here                  this will just say reponse
+        //     $(".spaceDataPopulate").append($("<div>").text(e["capsule_id"]));
+        // });
+
+        //This is to test the reponse 
+        console.log('is this firing', response);
     }
     //**********************************
 
-    // clears the spaceDataPopulate container
+    // this function builds Elements for the specific search 
+    function buildElements() {
+
+
+        // latest LAUNCH
+        //https://api.spacexdata.com/v3/launches/latest
+        // > launch_date_local 
+        // > mission_name
+        // > rocket > rocket_name
+        // rocket > second_stage > payloads > rocket_name
+        // > links > mission_patch_small
+        // > links > video_link
+        // return console.log(`we will see this if the button pressed is ${id}`);
+
+        // ROCKETS
+        // > wikipedia 
+        // > flickr_images (jpeg if available)
+        //> description 
+        //> country 
+        //> name 
+        // return console.log(`we will see this if the button pressed is ${id}`);
+
+        // MISSIONS 
+        // > mission_name
+        // > description
+        // > wikipedia
+        // return console.log(`we will see this if the button pressed is ${id}`);
+
+    }
+
+
+    // BUTTON
+    // clears the newsDiv container
     //**********************************
-    $("#clear").on("click", function (e) {
+    $(".spaceXClear").on("click", function (e) {
         e.preventDefault();
-        $(".spaceDataPopulate").empty();
+        $(".newsDiv").empty();
     });
     //**********************************
 
