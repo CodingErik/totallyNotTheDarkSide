@@ -13,8 +13,8 @@ $(document).ready(function () {
         // testing
         // console.log($(e.target));
 
-
-
+        // if the button has this class 
+        // then it makes a ajax call so that we can pull the right info 
         if ($(e.target).hasClass('btn')) {
 
             //testing
@@ -25,8 +25,6 @@ $(document).ready(function () {
             // call function to make ajax call 
             spaceXAjax(e.target);
         }
-        
-        
 
     });
     //**********************************
@@ -124,7 +122,10 @@ $(document).ready(function () {
     }
     //**********************************
 
+    // this function builds Elements for the specific search 
+    function buildElements(){
 
+    }
 
 
     // BUTTON
