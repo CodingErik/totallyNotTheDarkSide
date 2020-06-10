@@ -67,7 +67,7 @@ $(document).ready(function () {
         let titleDiv = $('<div>').text(title).css({
           'border': '1px solid blue'
         })
-        let linkDiv = $('<div>').text(link).css({
+        let linkDiv = $('<a>').attr('href',link).text('Click here for Article!').css({
           'border': '1px solid blue'
         })
         let pDateDiv = $('<div>').text(pDate).css({

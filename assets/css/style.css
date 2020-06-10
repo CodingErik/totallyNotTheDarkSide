@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
 }
 
 body {
@@ -204,4 +204,8 @@ li:nth-child(odd) {
 
 .radioButton {
     margin-top: 20px;
+}
+
+.inputFontColor {
+    color: white;
 }

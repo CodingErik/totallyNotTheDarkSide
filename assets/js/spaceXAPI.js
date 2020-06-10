@@ -34,6 +34,7 @@ $(document).ready(function () {
     //**********************************
     function spaceXAjax(buttonPressed) {
 
+        // pull data number 
         let id = $(buttonPressed).data('id');
 
         // testing to get the data-id from the specific button that was pressed 
@@ -43,6 +44,9 @@ $(document).ready(function () {
         let baseUrl = "https://api.spacexdata.com/v3/";
 
         let builtUrlQuery = baseUrl + getSpaceXParameters(id);
+
+        // testing the id number 
+        // console.log('this is before the ajax call ' + id);
 
         $.ajax({
             url: builtUrlQuery,
@@ -65,30 +69,12 @@ $(document).ready(function () {
         // RETURNS the right parameter according to button pressed 
         switch (id) {
             case 1:
-                // latest LAUNCH
-                //https://api.spacexdata.com/v3/launches/latest
-                // > launch_date_local 
-                // > mission_name
-                // > rocket > rocket_name
-                // rocket > second_stage > payloads > rocket_name
-                // > links > mission_patch_small
-                // > links > video_link
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'launches/latest';
             case 2:
-                // ROCKETS
-                // > wikipedia 
-                // > flickr_images (jpeg if available)
-                //> description 
-                //> country 
-                //> name 
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'rockets';
             case 3:
-                // MISSIONS 
-                // > mission_name
-                // > description
-                // > wikipedia
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'missions';
         }
@@ -106,49 +92,114 @@ $(document).ready(function () {
         // $(".spaceDataPopulate").empty();
         $(".newsDiv").empty();
 
+        console.log('this is the rocket name ',response[0].rocket_name);
 
-        // cool this is working now and populating results on the website dynamically
-        // we are gonna not have to specify anything
-        // we will just have to loop HERE
-        // response.forEach((e) => {
-        //     console.log(e["capsule_id"]);
+        console.log('this is the response',response);
 
-        //     // this will stay here                  this will just say reponse
-        //     $(".spaceDataPopulate").append($("<div>").text(e["capsule_id"]));
-        // });
+        if (Boolean(response.launch_success)) {
+            buildLaunchDiv(response);
+        } 
+        // rockets works
+        if (Boolean(response[0].rocket_name)) {
+            buildRocketDiv(response);
+        }
+        // } else if () {
+        //     buildMissionsDiv(response)
+        // }
+
+
+        // 1 2 3 response object is being sent here 
+        // which build do we pass the the newsdiv
 
         //This is to test the reponse 
-        console.log('is this firing', response);
+        // console.log('is this firing', response);
     }
     //**********************************
 
     // this function builds Elements for the specific search 
-    function buildElements() {
 
 
+
+    function buildLaunchDiv(response) {
         // latest LAUNCH
         //https://api.spacexdata.com/v3/launches/latest
-        // reponse.launch_date_local 
-        // reponse.mission_name
-        // reponse.rocket.rocket_name
-        // reponse.rocket.second_stage.payloads.payload_type
-        // reponse.links.mission_patch_small
-        // response.links.video_link
-        // return console.log(`we will see this if the button pressed is ${id}`);
+        let localLaunchDate = $('<div>').text(response.launch_date_local);
+        let missonName = $('<div>').text(response.mission_name);
+        let launchName = $('<div>').text(response.rocket.rocket_name);
+        let launchPayload = $('<div>').text(response.rocket.second_stage.payloads[0].payload_type);
+        let launchMissionPatch = $('<img>').attr('src', response.links.mission_patch_small);
+        let launchVideoLink = $('<a>').text('click here to see the launch!').attr('href', response.links.video_link);
 
-        // ROCKETS
-        // > wikipedia 
-        // > flickr_images (jpeg if available)
-        //> description 
-        //> country 
-        //> name 
-        // return console.log(`we will see this if the button pressed is ${id}`);
+        let launchArr = [localLaunchDate, missonName, launchName, launchPayload, launchMissionPatch, launchVideoLink];
 
-        // MISSIONS 
-        // > mission_name
-        // > description
-        // > wikipedia
+        // add col class and append to newsDiv
+        launchArr.forEach((e) => {
+
+            $(e).addClass('col s2')
+            $('.newsDiv').append(e);
+        })
+
         // return console.log(`we will see this if the button pressed is ${id}`);
+    }
+
+    function buildRocketDiv(response) {
+        // // ROCKETS
+
+        console.log('this is from within the buildRocketDiv',response);
+        for (let i = 0; i < response.length; i++) {
+
+
+            // console.log('this is each rocket i ',response[i]);
+            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia);
+            let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images);
+            let rocketDescription = $('<div>').text(response[i].description);
+            let rocketCountry = $('<div>').text(`country: ${response[i].country}`).css({ color: 'red'});
+            let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`).css({ color: 'pink'});
+            // let row = $('div').addClass('row');
+
+            // test the rocket names
+            // console.log(`this is the rocket name ${response[i].rocket_name}`)
+            // console.log(wiki);
+
+            // wiki.addClass('col s2');
+            // rocketImage.addClass('col s2');
+            // rocketDescription.addClass('col s2');
+            // rocketCountry.addClass('col s2');
+            // rocketName.addClass('col s2');
+
+            $('.newsDiv').append(rocketName);
+            $('.newsDiv').append(rocketCountry);
+            $('.newsDiv').append(wiki);
+            $('.newsDiv').append(rocketImage);
+            $('.newsDiv').append(rocketDescription);
+
+            // $('.newsDiv').append(row);
+        }
+
+
+
+
+
+        // // return console.log(`we will see this if the button pressed is ${id}`);
+    }
+
+    function buildMissionsDiv(response) {
+        // // MISSIONS 
+        let missionName = $('<div>').text(response.mission_name);
+        let missionDescription = $('<div>').text(response.description);
+        let missionWiki = $('<a>').text('Wiki link here!').attr('href', response.wikipedia);
+
+
+        let launchArr = [missionName, missionDescription, missionWiki];
+
+        // add col class and append to newsDiv
+        launchArr.forEach((e) => {
+
+            $(e).addClass('col s2')
+            $('.newsDiv').append(e);
+        })
+
+        // // return console.log(`we will see this if the button pressed is ${id}`);
 
     }
 

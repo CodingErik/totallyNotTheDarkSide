@@ -10,6 +10,8 @@ $(document).ready(function () {
 
     function populateQuerySearch(){
         
+      // empties the previous search before we see the search boxes || buttons 
+      $(".newsDiv").empty();
         // for testing
         // console.log('hello');
 
