@@ -92,15 +92,15 @@ $(document).ready(function () {
         // $(".spaceDataPopulate").empty();
         $(".newsDiv").empty();
 
-        console.log('this is the rocket name ',response[0].rocket_name);
+        // console.log('this is the rocket name ', response[0].rocket_name);
 
-        console.log('this is the response',response);
+        console.log('this is the response', response);
 
         if (Boolean(response.launch_success)) {
             buildLaunchDiv(response);
-        } 
+        }
         // rockets works
-        if (Boolean(response[0].rocket_name)) {
+        else if (Boolean(response[0].rocket_name)) {
             buildRocketDiv(response);
         }
         // } else if () {
@@ -119,42 +119,58 @@ $(document).ready(function () {
     // this function builds Elements for the specific search 
 
 
-
+    /// NEED TO WORK ON THIS 
     function buildLaunchDiv(response) {
+
+        console.log('we are gettingn to buildLaunchDiv')
+
+        let col = $('<div>');
+        let col2 = $('<div>').addClass('col s6');
+
         // latest LAUNCH
         //https://api.spacexdata.com/v3/launches/latest
+
         let localLaunchDate = $('<div>').text(response.launch_date_local);
         let missonName = $('<div>').text(response.mission_name);
         let launchName = $('<div>').text(response.rocket.rocket_name);
         let launchPayload = $('<div>').text(response.rocket.second_stage.payloads[0].payload_type);
         let launchMissionPatch = $('<img>').attr('src', response.links.mission_patch_small);
         let launchVideoLink = $('<a>').text('click here to see the launch!').attr('href', response.links.video_link);
+        launchVideoLink.css({ 'font-style': 'italic', color: 'red', 'font-weight': '900' });
 
-        let launchArr = [localLaunchDate, missonName, launchName, launchPayload, launchMissionPatch, launchVideoLink];
+        
 
-        // add col class and append to newsDiv
-        launchArr.forEach((e) => {
+        col.append(localLaunchDate);
+        col.append(missonName);
+        col.append(launchName);
+        col.append(launchPayload);
+        col.append(launchVideoLink);
+        col2.append(launchMissionPatch);
 
-            $(e).addClass('col s2')
-            $('.newsDiv').append(e);
-        })
+
+        $('.newsDiv').appendTo(col1);
+
+        // $('.newsDiv').append(row);
+
+        // $('.newsDiv').prepend('<strong>LATEST LAUNCH<strong>');
 
         // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
+    // MVP FOR buildRocketDiv DONE 
     function buildRocketDiv(response) {
         // // ROCKETS
 
-        console.log('this is from within the buildRocketDiv',response);
+        console.log('this is from within the buildRocketDiv', response);
         for (let i = 0; i < response.length; i++) {
 
 
             // console.log('this is each rocket i ',response[i]);
-            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia);
+            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia).css({ 'font-style': 'italic', color: 'red', 'font-weight': '900' });
             let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images);
-            let rocketDescription = $('<div>').text(response[i].description);
-            let rocketCountry = $('<div>').text(`country: ${response[i].country}`).css({ color: 'red'});
-            let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`).css({ color: 'pink'});
+            let rocketDescription = $('<div>').text(`Description: ${response[i].description}`);
+            let rocketCountry = $('<div>').text(`country: ${response[i].country}`).css({ color: 'red' });
+            let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`).css({ color: 'pink' });
             // let row = $('div').addClass('row');
 
             // test the rocket names
@@ -169,12 +185,14 @@ $(document).ready(function () {
 
             $('.newsDiv').append(rocketName);
             $('.newsDiv').append(rocketCountry);
-            $('.newsDiv').append(wiki);
             $('.newsDiv').append(rocketImage);
             $('.newsDiv').append(rocketDescription);
+            $('.newsDiv').append(wiki);
 
-            // $('.newsDiv').append(row);
+
         }
+
+        $('.newsDiv').prepend('<strong>ALL SPACE X ROCKETS<strong>');
 
 
 
