@@ -124,12 +124,7 @@ $(document).ready(function () {
             let name = $("<div>").text(`launch name: ${e.name}`);
             let date = $("<div>").text(`launch date: ${e.net}`);
             let id = $("<div>").text(`launch id: ${e.id}`);
-            let launchContainer = $("<div>").css({
-                // margin: " 2px",
-                // padding: "5px",
-                // "border-radius": "5px",
-            });
-
+            let launchContainer = $("<div>");
             launchContainer.addClass('launchCardStyle');
 
             launchContainer.append(name);

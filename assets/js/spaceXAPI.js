@@ -128,12 +128,12 @@ $(document).ready(function () {
 
         // latest LAUNCH
         //https://api.spacexdata.com/v3/launches/latest
-        // > launch_date_local 
-        // > mission_name
-        // > rocket > rocket_name
-        // rocket > second_stage > payloads > rocket_name
-        // > links > mission_patch_small
-        // > links > video_link
+        // reponse.launch_date_local 
+        // reponse.mission_name
+        // reponse.rocket.rocket_name
+        // reponse.rocket.second_stage.payloads.payload_type
+        // reponse.links.mission_patch_small
+        // response.links.video_link
         // return console.log(`we will see this if the button pressed is ${id}`);
 
         // ROCKETS
