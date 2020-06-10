@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- this is our style sheet  -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- orbitron font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
   <title>Space Portal | Main</title>
 </head>
@@ -51,7 +53,7 @@
           <div id="test1" class="col s12"> <strong>Space Flight News</strong>
             <!-- user input field  -->
             <div class="input-field col s12">
-              <textarea id="spaceFlightUserInput" class="materialize-textarea"></textarea>
+              <textarea id="spaceFlightUserInput" class=" inputFontColor materialize-textarea"></textarea>
               <label for="textarea1">Search</label>
             </div>
             <div class="col s3 m2">
@@ -91,7 +93,7 @@
           <div id="test3" class="col s12"> <strong>Hubble Glossary</strong>
             <!-- user input field  -->
             <div class="input-field col s12">
-              <textarea id="hubbleUserInput" class="materialize-textarea"></textarea>
+              <textarea id="hubbleUserInput" class=" inputFontColor materialize-textarea"></textarea>
               <label for="textarea1">Search</label>
             </div>
             <div class="col s3 m2">
@@ -107,13 +109,10 @@
         </div>
       </aside>
       <!-- this is where the results of the query populates -->
-      <section class="col s12 m6 newsDiv hidingQuery">
-
-
-        <!-- *********** result for space news api *********** -->
-
-
-
+      <section class="col s12 m6  hidingQuery">
+        <div class="row newsDiv">
+           <!-- *********** result for space news api *********** -->
+        </div>
       </section>
       <div class="col s12">
         <!-- this is where the quote goes  -->
