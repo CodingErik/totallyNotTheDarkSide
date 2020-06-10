@@ -17,8 +17,11 @@ $(document).ready(function () {
 
             //testing
             // console.log('hello');
+
+            // the call is working so far here !!!!!!!!!!!
+
             // call function to make ajax call 
-            spaceXAjax();
+            spaceXAjax(e.target);
         }
 
     });
@@ -26,17 +29,30 @@ $(document).ready(function () {
 
 
 
-    function spaceXAjax() {
+    function spaceXAjax(buttonPressed) {
+
+
+        let id = $(buttonPressed).data('id');
+
+
+        // testing to get the data-id from the specific button that was pressed 
+        // code is working here we are receiving the numbers 
+        // console.log(id);
+
 
         let baseUrl = "https://api.spacexdata.com/v3/";
 
-        let builtUrlQuery = baseUrl + getSpaceXParameters();
 
-        $.ajax({
-            url: builtUrlQuery,
-            method: "GET",
-        }).then(populateSpaceXData);
-        console.log("this is the built query", builtUrlQuery);
+        let builtUrlQuery = baseUrl + getSpaceXParameters(id);
+
+
+
+
+        // $.ajax({
+        //     url: builtUrlQuery,
+        //     method: "GET",
+        // }).then(populateSpaceXData);
+        // console.log("this is the built query", builtUrlQuery);
 
     }
 
@@ -55,7 +71,7 @@ $(document).ready(function () {
     //    ^^^^^      getSpaceXParameters function BUILDURL
     //functions gets the correct endpoints for the url for making the SPACE X the Ajax call ***
     //**********************************
-    function getSpaceXParameters() {
+    function getSpaceXParameters(id) {
         let userInput = $("#searchInput").val();
         console.log(userInput);
 
@@ -75,36 +91,44 @@ $(document).ready(function () {
         //Roadster
         //Ships
 
-
-        // latest LAUNCH
-        //https://api.spacexdata.com/v3/launches/latest
-        // > launch_date_local 
-        // > mission_name
-        // > rocket > rocket_name
-        // rocket > second_stage > payloads > rocket_name
-        // > links > mission_patch_small
-        // > links > video_link
+        //MAYBE WE SEPARETE THESE INTO THEIR ON SPECIFIC QUERIES 
 
 
+        switch (id) {
 
-        // ROCKETS
-        // > wikipedia 
-        // > flickr_images (jpeg if available)
-        //> description 
-        //> country 
-        //> name 
+            case 1:
+
+                // latest LAUNCH
+                //https://api.spacexdata.com/v3/launches/latest
+                // > launch_date_local 
+                // > mission_name
+                // > rocket > rocket_name
+                // rocket > second_stage > payloads > rocket_name
+                // > links > mission_patch_small
+                // > links > video_link
+                return console.log(`we will see this if the button pressed is ${id}`); ;
+
+            case 2:
+
+                // ROCKETS
+                // > wikipedia 
+                // > flickr_images (jpeg if available)
+                //> description 
+                //> country 
+                //> name 
+                return console.log(`we will see this if the button pressed is ${id}`); ;
 
 
-        // MISSIONS 
-        // > mission_name
-        // > description
-        // > wikipedia
+            case 3:
 
+                // MISSIONS 
+                // > mission_name
+                // > description
+                // > wikipedia
+                return console.log(`we will see this if the button pressed is ${id}`); ;
 
+        }
 
-
-
-        return "capsules";
     }
     //**********************************
 
