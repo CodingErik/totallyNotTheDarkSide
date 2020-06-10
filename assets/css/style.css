@@ -200,3 +200,7 @@ li:nth-child(odd) {
     padding: 10px;
     margin: 10px;
 }
+
+.radioButton {
+    margin-top: 20px;
+}
