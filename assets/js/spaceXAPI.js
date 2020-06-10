@@ -201,6 +201,7 @@ $(document).ready(function () {
         // // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
+    // THIS IS LAST ON TO WORK ON 
     function buildMissionsDiv(response) {
         // // MISSIONS 
         let missionName = $('<div>').text(response.mission_name);
