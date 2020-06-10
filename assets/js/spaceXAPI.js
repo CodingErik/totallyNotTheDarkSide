@@ -118,12 +118,37 @@ $(document).ready(function () {
         // });
 
         //This is to test the reponse 
-        console.log('is this firing',response);
+        console.log('is this firing', response);
     }
     //**********************************
 
     // this function builds Elements for the specific search 
-    function buildElements(){
+    function buildElements() {
+
+
+        // latest LAUNCH
+        //https://api.spacexdata.com/v3/launches/latest
+        // > launch_date_local 
+        // > mission_name
+        // > rocket > rocket_name
+        // rocket > second_stage > payloads > rocket_name
+        // > links > mission_patch_small
+        // > links > video_link
+        // return console.log(`we will see this if the button pressed is ${id}`);
+
+        // ROCKETS
+        // > wikipedia 
+        // > flickr_images (jpeg if available)
+        //> description 
+        //> country 
+        //> name 
+        // return console.log(`we will see this if the button pressed is ${id}`);
+
+        // MISSIONS 
+        // > mission_name
+        // > description
+        // > wikipedia
+        // return console.log(`we will see this if the button pressed is ${id}`);
 
     }
 
