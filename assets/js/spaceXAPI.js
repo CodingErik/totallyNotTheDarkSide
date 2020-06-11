@@ -161,6 +161,13 @@ $(document).ready(function () {
             // console.log(`this is the rocket name ${response[i].rocket_name}`)
             // console.log(wiki);
 
+            // generating classes for john
+            rocketDescription.addClass('rocketDescription');
+            rocketCountry.addClass('rocketCountry');
+            rocketName.addClass('rocketName');
+
+
+
             let container = $('<div>');
             container.addClass('rocketsDiv');
 
