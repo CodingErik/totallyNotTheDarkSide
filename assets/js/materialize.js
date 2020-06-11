@@ -29,6 +29,16 @@ $(document).ready(function () {
 
     }
 
+    // closeQuerySearch function
+    // this hides the querySearch and the news when the user clicks away from it
+    // click anywhere in the body 
+    // ******************************************
+    function closeQuerySearch(){
+      // adding the hidingQuery to both search and results when we click away from the are
+      $('.search').addClass('hidingQuery');
+    }
+    // ******************************************
+
 
     
 });
