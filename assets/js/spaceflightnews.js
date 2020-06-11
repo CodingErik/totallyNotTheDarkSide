@@ -1,3 +1,4 @@
+// adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
   //add eventlistener on click from drop down menu
 

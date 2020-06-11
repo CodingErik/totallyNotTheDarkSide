@@ -1,3 +1,4 @@
+// adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
 
     // this is the SPACE X API

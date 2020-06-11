@@ -1,5 +1,6 @@
 // hubble News API this lets us the latest news  ******* WORK ON THIS
 
+// adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
 
 

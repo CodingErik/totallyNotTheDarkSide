@@ -1,4 +1,4 @@
-// adding document .ready 
+// adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
 
 
