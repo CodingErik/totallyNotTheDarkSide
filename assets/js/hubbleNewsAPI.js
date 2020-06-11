@@ -67,7 +67,7 @@ $(document).ready(function () {
                 padding: '30px'
             })
 
-           
+            definition.addClass('hubbleDefinition')
 
             $('.newsDiv').append(definition);
 
