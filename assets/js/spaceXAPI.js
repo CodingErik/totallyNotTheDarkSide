@@ -86,40 +86,21 @@ $(document).ready(function () {
     // This populateSpaceXData on the page
     //**********************************
     function populateSpaceXData(response) {
-        // console.log(response[0]['capsule_id']);
 
         //testing
         // $(".spaceDataPopulate").empty();
         $(".newsDiv").empty();
 
-        // console.log('this is the rocket name ', response[0].rocket_name);
+        // test response
+        // console.log('this is the response', response);
 
-        console.log('this is the response', response);
+        buildRocketDiv(response);
 
-        if (Boolean(response.launch_success)) {
-            buildLaunchDiv(response);
-        }
-        // rockets works
-        else if (Boolean(response[0].rocket_name)) {
-            buildRocketDiv(response);
-        }
-        // } else if () {
-        //     buildMissionsDiv(response)
-        // }
-
-
-        // 1 2 3 response object is being sent here 
-        // which build do we pass the the newsdiv
-
-        //This is to test the reponse 
-        // console.log('is this firing', response);
     }
     //**********************************
 
-    // this function builds Elements for the specific search 
 
-
-    /// NEED TO WORK ON THIS 
+    /// to be used as Extension features
     function buildLaunchDiv(response) {
 
         console.log('we are gettingn to buildLaunchDiv')
@@ -138,7 +119,7 @@ $(document).ready(function () {
         let launchVideoLink = $('<a>').text('click here to see the launch!').attr('href', response.links.video_link);
         launchVideoLink.css({ 'font-style': 'italic', color: 'red', 'font-weight': '900' });
 
-        
+
 
         col.append(localLaunchDate);
         col.append(missonName);
@@ -166,28 +147,27 @@ $(document).ready(function () {
 
 
             // console.log('this is each rocket i ',response[i]);
-            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia).css({ 'font-style': 'italic', color: 'red', 'font-weight': '900' });
+            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia);
             let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images);
             let rocketDescription = $('<div>').text(`Description: ${response[i].description}`);
-            let rocketCountry = $('<div>').text(`country: ${response[i].country}`).css({ color: 'red' });
-            let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`).css({ color: 'pink' });
-            // let row = $('div').addClass('row');
+            let rocketCountry = $('<div>').text(`country: ${response[i].country}`);
+            let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`);
 
             // test the rocket names
             // console.log(`this is the rocket name ${response[i].rocket_name}`)
             // console.log(wiki);
 
-            // wiki.addClass('col s2');
-            // rocketImage.addClass('col s2');
-            // rocketDescription.addClass('col s2');
-            // rocketCountry.addClass('col s2');
-            // rocketName.addClass('col s2');
+            let container = $('<div>');
+            container.addClass('rocketsDiv');
 
-            $('.newsDiv').append(rocketName);
-            $('.newsDiv').append(rocketCountry);
-            $('.newsDiv').append(rocketImage);
-            $('.newsDiv').append(rocketDescription);
-            $('.newsDiv').append(wiki);
+
+            container.append(rocketName);
+            container.append(rocketCountry);
+            container.append(rocketImage);
+            container.append(rocketDescription);
+            container.append(wiki);
+
+            $('.newsDiv').append(container);
 
 
         }
@@ -201,7 +181,7 @@ $(document).ready(function () {
         // // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
-    // THIS IS LAST ON TO WORK ON 
+    /// to be used as Extension features
     function buildMissionsDiv(response) {
         // // MISSIONS 
         let missionName = $('<div>').text(response.mission_name);
