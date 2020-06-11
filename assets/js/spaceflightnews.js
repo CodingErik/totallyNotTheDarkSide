@@ -22,21 +22,26 @@ $(document).ready(function () {
 
   // document.getElementById("searchBtn").addEventListener("click");
 
+  // spaceFlightSearch BUTTON 
+  //****************************************************
   $('.spaceFlightSearch').on('click', function (e) {
+    // preventing the page from refreshing 
     e.preventDefault();
 
-    
-    
+    // calling the searchSpaceFlightNews to make a ajax call
     searchSpaceFlightNews();
   })
+  //****************************************************
 
-
+  // spaceFlightClear BUTTON 
+  //****************************************************
   $('.spaceFlightClear').on('click', function (e) {
+    // preventing the page from refreshing
     e.preventDefault();
     // empties div for new search 
     $('.newsDiv').empty();
   })
-
+  //****************************************************
 
 
 
@@ -59,15 +64,15 @@ $(document).ready(function () {
       for (var i = 0; i < response.docs.length; i++) {
 
         let title = response.docs[i].title;
-        let link =  response.docs[i].url;
-        let pDate =  response.docs[i].published_date;
+        let link = response.docs[i].url;
+        let pDate = response.docs[i].published_date;
 
         console.log(pDate);
 
         let titleDiv = $('<div>').text(title).css({
           'border': '1px solid blue'
         })
-        let linkDiv = $('<a>').attr('href',link).text('Click here for Article!').css({
+        let linkDiv = $('<a>').attr('href', link).text('Click here for Article!').css({
           'border': '1px solid blue'
         })
         let pDateDiv = $('<div>').text(pDate).css({
