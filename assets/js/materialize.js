@@ -21,12 +21,17 @@ $(document).ready(function () {
     // for testing
     // console.log('hello');
 
-    M.updateTextFields();
+    
 
     // inputText.focus();
 
     $('.focusNew').attr('placeholder','search News');
     $('.focusHub').attr('placeholder','search glossary');
+
+    M.updateTextFields();
+
+
+    // possible switch for the space x instead of button  in updated version 
 
     // placeholder="Placeholder"
 
