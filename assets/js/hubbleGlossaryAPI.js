@@ -69,9 +69,6 @@ $(document).ready(function () {
     //****************************************************
     function hubbleAjaxCall() {
 
-
-
-
         console.log('call hubble is happening')
         // this is the latest news 
         //http://hubblesite.org/api/v3/news_release/last
@@ -88,7 +85,8 @@ $(document).ready(function () {
         $.ajax({
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
-        }).then((response) => {
+        })
+        .then((response) => {
 
             // testing user output 
             // console.log(response.definition);
@@ -105,6 +103,9 @@ $(document).ready(function () {
             $('.newsDiv').append(definition);
 
         })
+        .error( alert('this is not a valid input') );
+
+
     }
     //****************************************************
 
