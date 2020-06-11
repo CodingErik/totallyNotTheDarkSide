@@ -17,7 +17,7 @@ I WANT to see INFO RELATED TO SPACE ENDEAVORS
 SO THAT I can read NEWS ABOUT THE NEXT SPACE LAUNCH IS! 
 ```
 
-> Project Mvp
+## Project Mvp
 
 ```
 1. application must use two server-side APIs.
@@ -33,10 +33,10 @@ SO THAT I can read NEWS ABOUT THE NEXT SPACE LAUNCH IS!
 
 ## Contributors
 
-> Erik De Luna ~ js Developer 
-> Dale Kittendorf ~ js Developer
-> Jonathan Bentley ~ html, css Developer
-> Trey Perry ~ html, css Developer
+- Erik De Luna ~ js Developer 
+- Dale Kittendorf ~ js Developer
+- Jonathan Bentley ~ html, css Developer
+- Trey Perry ~ html, css Developer
 
 ## Links
 
