@@ -19,6 +19,29 @@ $(document).ready(function () {
     });
     //****************************************************
 
+    // ENTER PREVENT DEFAULT 
+    // prevent enter from returning a return
+    //****************************************************
+    $('.focusHub').on('keydown', function (e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            // testing
+            // console.log('hello');
+            // clear newsDiv before making the call 
+            $('.newsDiv').empty();
+            // // call hubbleAjaxCall function 
+            // hubbleAjaxCall();
+
+            //testing
+            // console.log('no');
+
+            // simulate the search button click
+            $('.hubbleSearch').click();
+
+        }
+    });
+    //****************************************************
+
 
     // HUBBLE CLEAR BUTTON 
     //****************************************************
