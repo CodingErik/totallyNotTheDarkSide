@@ -49,7 +49,7 @@ $(document).ready(function () {
         // loop through and append the upcoming launches to the html
         launchesArr.forEach((e) => {
             let name = $("<div>").text(`launch name: ${e.name}`);
-            let date = $("<div>").text(`launch date: ${e.net}`);
+            let date = $("<div>").text(`launch date: ${moment.parseZone(e.net).utcOffset(e.net).format('LLL')}`);
             let id = $("<div>").text(`launch id: ${e.id}`);
             let launchContainer = $("<div>");
             launchContainer.addClass('launchCardStyle');
@@ -63,7 +63,18 @@ $(document).ready(function () {
             // need to use moment to parse the new date 
 
             // testing parsing date 
-            console.log(moment(date).format('MM/DD/YYYY'));
+            // console.log('this is the date',moment(date).format('MM/DD/YYYY'));
+
+            // testing   June 17, 2020 07:18:00 UTC
+            // console.log(moment.utc(e.net, "MMM dd, YYYY hh:mm:ss").format('L'));
+
+            
+            console.log('this is the actual date',e.net);
+            // console.log('second option', moment(e.net).utcOffset(e.net).format('L'));
+            
+            // this option parses and formats the time into local time zone 
+            console.log('third option', moment.parseZone(e.net).utcOffset(e.net).format('LLL'));
+
             
             // just for testing 
             // launchContainer.addClass('col s4');
