@@ -57,6 +57,13 @@ $(document).ready(function () {
             launchContainer.append(name);
             launchContainer.append(date);
             launchContainer.append(id);
+
+
+            // moment(testDate).format('MM/DD/YYYY');
+            // need to use moment to parse the new date 
+
+            // testing parsing date 
+            console.log(moment(date).format('MM/DD/YYYY'));
             
             // just for testing 
             // launchContainer.addClass('col s4');
