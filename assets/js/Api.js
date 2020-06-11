@@ -115,7 +115,11 @@ $(document).ready(function () {
         // this this is number of upcoming launches
         console.log(response.count);
 
-        let launchCount = $("<div>").text(`Upcoming Count Launch: ${response.count}`);
+        let launchCount = $("<div>").text(`Upcoming Rocket Launches Next: ${response.count}`);
+        
+        // adding a class for jon to style with 
+        launchCount.addClass('launchTitle');
+
 
         $(".launchDatesDiv").prepend(launchCount);
 
@@ -130,7 +134,9 @@ $(document).ready(function () {
             launchContainer.append(name);
             launchContainer.append(date);
             launchContainer.append(id);
-            launchContainer.addClass('col s4');
+            
+            // just for testing 
+            // launchContainer.addClass('col s4');
 
             // $('.upcomingLauchesContainer').append(launchContainer)
             $(".launchDatesDiv").append(launchContainer);
