@@ -97,6 +97,23 @@ a {
   float: right;
 }
 
+/* .newsDive {
+
+} */
+
+.rocketsDiv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rocketsDiv a {
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    background-color: mediumturquoise;
+    color: black;
+    padding: 3px;
+}
+
 .footer {
   padding-top: 50px;
   padding-bottom: 20px;
@@ -122,9 +139,9 @@ a {
   color: white;
 }
 
-.launchDatesDive {
+/* .launchDatesDivs {
     
-}
+} */
 
 .launchCardStyle {
     background-color: black;
@@ -133,8 +150,10 @@ a {
     color: limegreen;
     text-align: center;
     height: 100px;
+    width: 300px;
     margin: 2px;
     padding: 10px;
+    
 }
 
 /* li:nth-child(odd) {
