@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     // RUN SEARCH FOR API SEARCH BUTTON
     // SPACE X API REQUEST *************
+    // possible switch for the space x instead of button  in updated version 
     //**********************************
     $(".radioButton").on("click", function (e) {
         e.preventDefault();

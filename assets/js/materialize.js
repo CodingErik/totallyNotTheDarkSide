@@ -21,24 +21,10 @@ $(document).ready(function () {
     // for testing
     // console.log('hello');
 
-    
-
-    // inputText.focus();
-
     $('.focusNew').attr('placeholder','search News');
     $('.focusHub').attr('placeholder','search glossary');
 
     M.updateTextFields();
-
-
-    // possible switch for the space x instead of button  in updated version 
-
-    // placeholder="Placeholder"
-
-    // so we are trying hide the query search and the resultDiv if it has already been clicked 
-    // without affecting the rest of them? 
-
-    // fixed when the mouse leaves the area then it hides if not it will still be there 
 
     // toggle hidingQuery on aside for easy access to query search and card
     $('.search').removeClass('hidingQuery');
@@ -56,7 +42,6 @@ $(document).ready(function () {
     $('.search').addClass('hidingQuery');
   }
   // ******************************************
-
 
 
 });
