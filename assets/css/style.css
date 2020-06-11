@@ -6,6 +6,7 @@
 }
 
 
+
 body {
   background-color: #0b1f3a;
   color: #d7cec9;
@@ -57,10 +58,17 @@ body {
   margin-right: 10px;
 }
 
-.m-btn {
-  margin: 10px;
+
+.btn {
   height: 40px;
   width: 50px;
+  background-color: white;
+  display: none;
+}
+
+.btn:hover {
+  background-color: grey;
+  
 }
 
 #go-btn {
@@ -225,7 +233,19 @@ li:nth-child(odd) {
 }
 
 .nav-wrapper {
-  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+
+.dropdown-content {
+  background-color: grey;
+}
+
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
 }
 
 header {
