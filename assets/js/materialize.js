@@ -12,6 +12,7 @@ $(document).ready(function () {
     // maybe instead when the mouse leaves the area 
 
 
+    // when mouse leaves they will no longer be displayed 
     $( ".search" ).mouseleave(closeQuerySearch);
 
 
