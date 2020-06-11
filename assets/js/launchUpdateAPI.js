@@ -57,6 +57,11 @@ $(document).ready(function () {
             launchContainer.append(name);
             launchContainer.append(date);
             launchContainer.append(id);
+
+            
+            // this option parses and formats the time into local time zone 
+            // console.log('third option', moment.parseZone(e.net).utcOffset(e.net).format('LLL'));
+
             
             // just for testing 
             // launchContainer.addClass('col s4');
