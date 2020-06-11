@@ -3,14 +3,8 @@ $(document).ready(function () {
 
     $('.tabs').tabs();
 
-    
-    $('.tabs').on('click', populateQuerySearch);
-
-
-    // $('body').on('click', closeQuerySearch);
-
-    // maybe instead when the mouse leaves the area 
-
+    //     
+    $('.tabs').mouseenter(populateQuerySearch);
 
     // when mouse leaves they will no longer be displayed 
     $( ".search" ).mouseleave(closeQuerySearch);
