@@ -5,6 +5,7 @@
   /* font-family: 'Orbitron', sans-serif; */
 }
 
+
 body {
   background-color: #0b1f3a;
   color: #d7cec9;
@@ -56,9 +57,18 @@ body {
   margin-right: 10px;
 }
 
+.m-btn {
+  margin: 10px;
+  height: 40px;
+  width: 50px;
+}
+
 #go-btn {
   margin: 20px;
   width: 75px;
+}
+
+.brand-logo {
 }
 /* 
 ul {
@@ -208,4 +218,16 @@ li:nth-child(odd) {
 
 .inputFontColor {
     color: white;
+}
+
+.s-title {
+  font-size: 2em;
+}
+
+.nav-wrapper {
+  text-align: center;
+}
+
+header {
+  font-family: 'Orbitron', sans-serif;
 }
