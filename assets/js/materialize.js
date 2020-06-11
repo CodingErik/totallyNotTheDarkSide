@@ -4,9 +4,10 @@ $(document).ready(function () {
     $('.tabs').tabs();
 
     
-    $('.tabs').on('click', populateQuerySearch)
+    $('.tabs').on('click', populateQuerySearch);
 
 
+    $('body').on('click', closeQuerySearch);
 
     function populateQuerySearch(){
         
@@ -17,13 +18,17 @@ $(document).ready(function () {
         // for testing
         // console.log('hello');
 
+      // if( $('aside').has)
 
+
+      // so we are trying hide the query search and the resultDiv if it has already been clicked 
+      // without affecting the rest of them? 
 
       // toggle hidingQuery on aside for easy access to query search and card
-      $('aside').toggleClass('hidingQuery');
-      
-      // toggle hidingQuery on section for easy access to query search and card
-      $('section').toggleClass('hidingQuery');
+      $('.search').removeClass('hidingQuery');
 
     }
+
+
+    
 });
