@@ -7,7 +7,14 @@ $(document).ready(function () {
     $('.tabs').on('click', populateQuerySearch);
 
 
-    $('body').on('click', closeQuerySearch);
+    // $('body').on('click', closeQuerySearch);
+
+    // maybe instead when the mouse leaves the area 
+
+
+    $( ".search" ).mouseleave(closeQuerySearch);
+
+
 
     function populateQuerySearch(){
         
