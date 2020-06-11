@@ -5,7 +5,7 @@ You can look at recent news aobut anything space. This application is powered by
 
 The following image demonstrates the application functionality:
 
-
+![demo](./assets/demo/spacePortalDemo.gif)
 
 ## Client Scope
 
@@ -35,8 +35,8 @@ SO THAT I can read NEWS ABOUT THE NEXT SPACE LAUNCH IS!
 
 > Erik De Luna ~ js Developer 
 > Dale Kittendorf ~ js Developer
-> Jonathan Bentley ~ html, css
-> Trey Perry ~ html, css
+> Jonathan Bentley ~ html, css Developer
+> Trey Perry ~ html, css Developer
 
 ## Links
 
