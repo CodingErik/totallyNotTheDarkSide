@@ -3,8 +3,9 @@
 $(document).ready(function () {
 
 
-
-
+    // HUBBLE SEARCH BUTTON 
+    // this button calls 
+    //****************************************************
     $('.hubbleSearch').on('click', function (e) {
         e.preventDefault();
         // clear div 
@@ -14,7 +15,8 @@ $(document).ready(function () {
         
 
         console.log('this is being clicked')
-    })
+    });
+    //****************************************************
 
 
     $('.hubbleClear').on('click', function (e) {

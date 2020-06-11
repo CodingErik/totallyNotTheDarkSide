@@ -20,8 +20,6 @@ $(document).ready(function () {
             //testing
             // console.log('hello');
 
-            // the call is working so far here !!!!!!!!!!!
-
             // call function to make ajax call 
             spaceXAjax(e.target);
         }
@@ -34,7 +32,7 @@ $(document).ready(function () {
     //**********************************
     function spaceXAjax(buttonPressed) {
 
-        // pull data number 
+        // pull data number from button pressed  
         let id = $(buttonPressed).data('id');
 
         // testing to get the data-id from the specific button that was pressed 
@@ -48,6 +46,7 @@ $(document).ready(function () {
         // testing the id number 
         // console.log('this is before the ajax call ' + id);
 
+        // making an ajax call for the specific builtUrlQuery
         $.ajax({
             url: builtUrlQuery,
             method: "GET",
@@ -59,27 +58,29 @@ $(document).ready(function () {
     }
     //**********************************
 
-    //    ^^^^^      getSpaceXParameters function BUILDSURL
+    //getSpaceXParameters function
     //function gets the correct endpoints for the url for SPACEXAJAX the Ajax call ***
     //**********************************
     function getSpaceXParameters(id) {
         let userInput = $("#searchInput").val();
         console.log(userInput);
 
-        // RETURNS the right parameter according to button pressed 
+        // SWITCH RETURNS the right parameter according to button pressed 
         switch (id) {
             case 1:
+                // TO BE ADDED IN LATE VERSION OF PROGRAM 
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'launches/latest';
             case 2:
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'rockets';
             case 3:
+                // TO BE ADDED IN LATE VERSION OF PROGRAM 
                 // return console.log(`we will see this if the button pressed is ${id}`);
                 return 'missions';
-        }
+        };
 
-    }
+    };
     //**********************************
 
     // POPULATESPACEXDATA function  *APPEND DATA*
@@ -94,13 +95,14 @@ $(document).ready(function () {
         // test response
         // console.log('this is the response', response);
 
+        // calling the buildRocketDiv with the reponse as an argument 
         buildRocketDiv(response);
 
-    }
+    };
     //**********************************
 
 
-    /// to be used as Extension features
+    /// to be used in later version
     function buildLaunchDiv(response) {
 
         console.log('we are gettingn to buildLaunchDiv')
@@ -172,16 +174,13 @@ $(document).ready(function () {
 
         }
 
+        // this is the title of the returned content
         $('.newsDiv').prepend('<strong>ALL SPACE X ROCKETS<strong>');
-
-
-
-
 
         // // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
-    /// to be used as Extension features
+    /// to be used in later version
     function buildMissionsDiv(response) {
         // // MISSIONS 
         let missionName = $('<div>').text(response.mission_name);

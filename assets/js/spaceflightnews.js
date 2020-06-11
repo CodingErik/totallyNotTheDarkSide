@@ -77,10 +77,10 @@ $(document).ready(function () {
 
         // console.log(response.media_type);
 
+        // these commands append the to the newDiv
         $('.newsDiv').append(titleDiv);
         $('.newsDiv').append(linkDiv);
         $('.newsDiv').append(pDateDiv);
-        // $('.newsDiv')
 
       }
     });
