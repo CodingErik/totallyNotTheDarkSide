@@ -1,6 +1,11 @@
 // adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
 
+
+
+    
+
+
   // triggering tabs/slider 
   $('.tabs').tabs();
 
@@ -23,7 +28,13 @@ $(document).ready(function () {
 
     // if( $('aside').has)
 
-    $('.focus').is( ":focus" )
+    
+
+    $('.focus').addClass('active');
+
+    M.updateTextFields();
+
+    // inputText.focus();
 
     // so we are trying hide the query search and the resultDiv if it has already been clicked 
     // without affecting the rest of them? 
