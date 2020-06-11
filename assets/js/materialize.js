@@ -1,11 +1,6 @@
 // adding document .ready SO THAT THIS FIRES ONLY WHEN THE DOCUMENT IS READY 
 $(document).ready(function () {
 
-
-
-    
-
-
   // triggering tabs/slider 
   $('.tabs').tabs();
 
@@ -26,18 +21,19 @@ $(document).ready(function () {
     // for testing
     // console.log('hello');
 
-    // if( $('aside').has)
-
-    
-
-    $('.focus').addClass('active');
-
     M.updateTextFields();
 
     // inputText.focus();
 
+    $('.focusNew').attr('placeholder','search News');
+    $('.focusHub').attr('placeholder','search glossary');
+
+    // placeholder="Placeholder"
+
     // so we are trying hide the query search and the resultDiv if it has already been clicked 
     // without affecting the rest of them? 
+
+    // fixed when the mouse leaves the area then it hides if not it will still be there 
 
     // toggle hidingQuery on aside for easy access to query search and card
     $('.search').removeClass('hidingQuery');
