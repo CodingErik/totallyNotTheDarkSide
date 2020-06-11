@@ -54,8 +54,8 @@ $(document).ready(function () {
   // ******************************************
 
 
-<<<<<<< HEAD
-    }
+
+  
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -63,9 +63,4 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Dropdown.init(elems, options);
 });
 
-// Or with jQuery
 
-$('.dropdown-trigger').dropdown();
-=======
-});
->>>>>>> 439ae3bb6332abb9635b97a2e412cecccae988b5
