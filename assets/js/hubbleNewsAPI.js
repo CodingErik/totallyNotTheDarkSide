@@ -4,44 +4,49 @@ $(document).ready(function () {
 
 
     // HUBBLE SEARCH BUTTON 
-    // this button calls 
+    // this button calls the hubbleAjaxCall function 
     //****************************************************
     $('.hubbleSearch').on('click', function (e) {
         e.preventDefault();
-        // clear div 
+        // clear newsDiv before making the call 
         $('.newsDiv').empty();
-        // call 
+        // call hubbleAjaxCall function 
         hubbleAjaxCall();
-        
 
-        console.log('this is being clicked')
+        // for testing
+        // console.log('this is being clicked')
     });
     //****************************************************
 
 
+    // HUBBLE CLEAR BUTTON 
+    //****************************************************
     $('.hubbleClear').on('click', function (e) {
         e.preventDefault();
         // empties div for new search 
         $('.newsDiv').empty();
-    })
+    });
+    //****************************************************
 
 
-
-    $.ajaxPrefilter( function (options) {
+    // this prefilter was used to correct CORS that prevented the ajax from calling 
+    $.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
-          var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-          options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-          //options.url = "http://cors.corsproxy.io/url=" + options.url;
+            var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+            options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+            //options.url = "http://cors.corsproxy.io/url=" + options.url;
         }
-      });
+    });
 
 
 
+    // hubbleAjaxCall function 
     // hubble glossary 
+    //****************************************************
     function hubbleAjaxCall() {
 
 
-        
+
 
         console.log('call hubble is happening')
         // this is the latest news 
@@ -55,8 +60,8 @@ $(document).ready(function () {
         // user input
         let userInput = $('#hubbleUserInput').val().trim();
 
+        // making a request to url via ajax 
         $.ajax({
-            // url: `https://hubblesite.org/api/v3/glossary/asteroid?callback=json`,
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
         }).then((response) => {
@@ -65,19 +70,18 @@ $(document).ready(function () {
             // console.log(response.definition);
 
 
+            // making a dom element for the definition text that will populate from the query 
             let definition = $('<div>').text(response.definition).css({
                 padding: '30px'
             })
 
+            // adding hubbleDefinition class
             definition.addClass('hubbleDefinition')
-
+            // finally appending to the newsDiv
             $('.newsDiv').append(definition);
 
         })
-
-        
-
-
     }
+    //****************************************************
 
 });
