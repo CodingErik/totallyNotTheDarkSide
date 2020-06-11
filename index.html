@@ -1,7 +1,28 @@
 <!-- <div class="results"></div> -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- material icons  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- this is our style sheet  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- orbitron font  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,122 +71,149 @@
       </ul>
     </div>
   </nav>
+=======
+    <title>Space Portal | Main</title>
+  </head>
 
-  <!-- this is to scale up when ready  -->
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html"></a></li>
-    <li><a href="badges.html"></a></li>
-    <li><a href="collapsible.html"></a></li>
-  </ul>
-</header>
+  <header>
+    <nav class="nav-extended indigo darken-4">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Space Portal</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- for scaling features -->
+        </ul>
+      </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a href="#test1">Space Flight News</a></li>
+          <li class="tab"><a href="#test2">Space X Archives</a></li>
+          <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+>>>>>>> 439ae3bb6332abb9635b97a2e412cecccae988b5
 
-<body>
-  <div class="container">
-    <div class="row">
-      <!-- these are search options query cards-->
-      <aside class="col s12 m6 hidingQuery">
-        <div class="row">
-          <!-- SPACE FLIGHT NEWS  -->
-          <div id="test1" class="col s12"> <strong>Space Flight News</strong>
-            <!-- user input field  -->
-            <div class="input-field col s12">
-              <textarea id="spaceFlightUserInput" class=" inputFontColor materialize-textarea"></textarea>
-              <label for="textarea1">Search</label>
-            </div>
-            <div class="col s3 m2">
-              <!-- button  -->
-              <a class="waves-effect waves-light btn spaceFlightSearch">Search</a>
-            </div>
-            <div class="col s3 m2">
-              <!-- clear button  -->
-              <a class="waves-effect waves-light btn spaceFlightClear">Clear</a>
-            </div>
 
-          </div>
-          <!-- SPACE X ARCHIVES  -->
-          <div id="test2" class="col s12"> <strong>Space X Archives</strong>
-            <div class="row radioButton">
-              <div class="col s4 m3">
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- these are search options query cards-->
+        <aside class="col s12 m6 hidingQuery search">
+          <div class="row">
+            <!-- SPACE FLIGHT NEWS  -->
+            <div id="test1" class="col s12">
+              <strong>Space Flight News</strong>
+              <!-- user input field  -->
+              <div class="input-field col s12">
+                <textarea value='search'
+                  id="spaceFlightUserInput"
+                  class="inputFontColor materialize-textarea focusNew "
+                ></textarea>
+                <label for="textarea1">Search</label>
+              </div>
+              <div class="col s3 m2">
                 <!-- button  -->
-                <a data-id="1" class="waves-effect waves-light btn ">LAUNCH</a>
+                <a class="waves-effect waves-light btn spaceFlightSearch"
+                  >Search</a
+                >
               </div>
-              <div class="col s4 m3">
+              <div class="col s3 m2">
                 <!-- clear button  -->
-                <a data-id="2" class="waves-effect waves-light btn ">ROCKETS</a>
-              </div>
-              <div class="col s4 m3">
-                <!-- clear button  -->
-                <a data-id="3" class="waves-effect waves-light btn ">MISSIONS</a>
+                <a class="waves-effect waves-light btn spaceFlightClear"
+                  >Clear</a
+                >
               </div>
             </div>
-            <div class="row">
-              <div class="col s3 m3">
+            <!-- SPACE X ARCHIVES  -->
+            <div id="test2" class="col s12">
+              <strong>Space X Archives</strong>
+              <div class="row radioButton">
+                <div class="col s4 m3">
+                  <!-- clear button  -->
+                  <a data-id="2" class="waves-effect waves-light btn"
+                    >ROCKETS</a
+                  >
+                </div>
+                <!-- end of Space X Archive buttons -->
+              </div>
+              <div class="row">
+                <div class="col s3 m3">
+                  <!-- clear button  -->
+                  <a class="waves-effect waves-light btn-large spaceXClear"
+                    >Clear</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- HUBBLE NEWS GLOSSARY  -->
+            <div id="test3" class="col s12">
+              <strong>Hubble Glossary</strong>
+              <!-- user input field  -->
+              <div class="input-field col s12">
+                <textarea value='search'
+                  id="hubbleUserInput"
+                  class="inputFontColor materialize-textarea focusHub "
+                ></textarea>
+                <label for="textarea1">Search</label>
+              </div>
+              <div class="col s3 m2">
+                <!-- button  -->
+                <a class="waves-effect waves-light btn hubbleSearch">Search</a>
+              </div>
+              <div class="col s3 m2">
                 <!-- clear button  -->
-                <a class="waves-effect waves-light btn-large spaceXClear">Clear</a>
+                <a class="waves-effect waves-light btn hubbleClear">Clear</a>
               </div>
             </div>
           </div>
-          <!-- HUBBLE NEWS GLOSSARY  -->
-          <div id="test3" class="col s12"> <strong>Hubble Glossary</strong>
-            <!-- user input field  -->
-            <div class="input-field col s12">
-              <textarea id="hubbleUserInput" class=" inputFontColor materialize-textarea"></textarea>
-              <label for="textarea1">Search</label>
-            </div>
-            <div class="col s3 m2">
-              <!-- button  -->
-              <a class="waves-effect waves-light btn hubbleSearch">Search</a>
-            </div>
-            <div class="col s3 m2">
-              <!-- clear button  -->
-              <a class="waves-effect waves-light btn hubbleClear">Clear</a>
-            </div>
-
+        </aside>
+        <!-- this is where the results of the query populates -->
+        <section class="col s12 m6 hidingQuery search">
+          <div class="row newsDiv">
+            <!-- *********** result for space news api *********** -->
+          </div>
+        </section>
+        <div class="col s12">
+          <!-- this is where the quote goes  -->
+          <div class="quoteDiv"></div>
+        </div>
+        <div class="col s12">
+          <div class="imageOfTheDay"></div>
+        </div>
+        <div class="col s12">
+          <!-- this is where the launch times populate  -->
+          <div class="upcoming-launch container">
+            <div class="row launchDatesDiv"></div>
           </div>
         </div>
-      </aside>
-      <!-- this is where the results of the query populates -->
-      <section class="col s12 m6  hidingQuery">
-        <div class="row newsDiv">
-           <!-- *********** result for space news api *********** -->
-        </div>
-      </section>
-      <div class="col s12">
-        <!-- this is where the quote goes  -->
-        <div class="quoteDiv"></div>
+        <div class="col s12"></div>
       </div>
-      <div class="col s12">
-        <div class="imageOfTheDay"></div>
-      </div>
-      <div class="col s12">
-        <!-- this is where the launch times populate  -->
-        <div class="upcoming-launch container">
-          <div class="row launchDatesDiv"></div>
-        </div>
-      </div>
-      <div class="col s12"></div>
     </div>
 
-
-  </div>
-
-  <footer class="footer">
-    <p>Created by totallyNotTheDarkSide | 2020</p>
-    <div>
-      Icons made by
-      <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from
-      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-    </div>
-  </footer>
-  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./assets/js/materialize.js"></script>
-  <script src="./assets/js/Api.js"></script>
-  <script src="./assets/js/spaceflightnews.js"></script>
-  <script src="./assets/js/spaceXAPI.js"></script>
-  <script src="./assets/js/hubbleNewsAPI.js"></script>
-</body>
-
+    <footer class="footer">
+      <p>Created by totallyNotTheDarkSide | 2020</p>
+    </footer>
+    <!-- moment js library  -->
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- materialize js  -->
+    <script src="./assets/js/materialize.js"></script>
+    <!-- this is the imgQuoteAPI js  -->
+    <script src="./assets/js/imgQuoteAPI.js"></script>
+    <!-- this is the launchUpdateAPI js  -->
+    <script src="./assets/js/launchUpdateAPI.js"></script>
+    <!-- this is the space flight news js  -->
+    <script src="./assets/js/spaceflightnews.js"></script>
+    <!-- this is the space x js  -->
+    <script src="./assets/js/spaceXAPI.js"></script>
+    <!-- this is the hubble glossary js  -->
+    <script src="./assets/js/hubbleGlossaryAPI.js"></script>
+  </body>
 </html>

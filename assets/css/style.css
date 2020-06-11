@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  /* font-family: 'Orbitron', sans-serif; */
 }
 
 
@@ -19,24 +18,11 @@ body {
   padding: 0;
 }
 
-.logo-adjustment {
-  background: url("../images/telescope.png") no-repeat 50% 50%;
-  background-size: 100%;
-  height: 50px;
-  width: 50px;
-  margin: auto;
-  margin-top: 10px;
-  padding: 0;
-}
-
 #menu {
   list-style: none;
   display: flex;
-  /* flex-direction: row-reverse; */
   background-color: #746c6b;
-  /* opacity: 0.8; */
   min-height: 75px;
-  /* border: solid 2px; */
   border-radius: 3px;
 }
 
@@ -75,6 +61,7 @@ body {
   margin: 20px;
   width: 75px;
 }
+<<<<<<< HEAD
 
 .brand-logo {
 }
@@ -113,6 +100,8 @@ ul li ul li {
 ul li:hover ul li {
   display: block;
 } */
+=======
+>>>>>>> 439ae3bb6332abb9635b97a2e412cecccae988b5
 
 a {
   color: #d7cec9;
@@ -123,12 +112,6 @@ a {
   display: flex;
   flex-direction: column;
   margin: auto;
-}
-
-
-
-li:nth-child(odd) {
-  color: blue;
 }
 
 .article {
@@ -170,6 +153,23 @@ li:nth-child(odd) {
   float: right;
 }
 
+/* .newsDive {
+
+} */
+
+.rocketsDiv {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.rocketsDiv a {
+    /* border: 1px solid red; */
+    border-radius: 5px;
+    background-color: mediumturquoise;
+    color: black;
+    padding: 3px;
+}
+
 .footer {
   padding-top: 50px;
   padding-bottom: 20px;
@@ -195,25 +195,30 @@ li:nth-child(odd) {
   color: white;
 }
 
+/* .launchDatesDivs {
+    
+} */
 
 .launchCardStyle {
-    color: limegreen;
-    background-color: white;
-    border: 1px solid black;
+    background-color: black;
+    opacity: .7;
     border-radius: 10px;
+    color: limegreen;
     text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 2px;
+    padding: 10px;
+    
 }
 
+/* li:nth-child(odd) {
+  color: blue;
+} */
 
 .hidingQuery {
     display: none;
 }
-
-
-/* .newsDiv {
-    padding: 10px;
-} */
-
 
 .quoteDiv {
     padding: 10px;
