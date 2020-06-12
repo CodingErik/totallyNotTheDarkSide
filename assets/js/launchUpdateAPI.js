@@ -44,7 +44,7 @@ $(document).ready(function () {
         launchCount.addClass('launchTitle');
 
 
-        $(".launchDatesDiv").prepend(launchCount);
+        $(".launchDatesDiv").parent().prepend(launchCount);
 
         // loop through and append the upcoming launches to the html
         launchesArr.forEach((e) => {

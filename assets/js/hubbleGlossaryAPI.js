@@ -20,9 +20,10 @@ $(document).ready(function () {
     //****************************************************
 
     // ENTER PREVENT DEFAULT 
-    // prevent enter from returning a return
+    // empties
     //****************************************************
     $('.focusHub').on('keydown', function (e) {
+
         if (e.keyCode === 13) {
             e.preventDefault();
             // testing
@@ -36,6 +37,20 @@ $(document).ready(function () {
             // console.log('no');
 
             // simulate the search button click
+            // $('.hubbleSearch').click();
+
+        }
+    });
+    //****************************************************
+
+    // ENTER PREVENT DEFAULT 
+    // simulates click enter
+    //****************************************************
+    $('.focusHub').on('keyup', function (e) {
+
+        if (e.keyCode === 13) {
+            // e.preventDefault();
+
             $('.hubbleSearch').click();
 
         }
@@ -85,25 +100,39 @@ $(document).ready(function () {
         $.ajax({
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
+            // success: function (response) {
+            //     console.log(response)
+            // },
+            // error: function (request, status, error) {
+            //     alert(request.responseText);
+            // }
         })
-        .then((response) => {
-
-            // testing user output 
-            // console.log(response.definition);
+            .then((response) => {
 
 
-            // making a dom element for the definition text that will populate from the query 
-            let definition = $('<div>').text(response.definition).css({
-                padding: '30px'
-            })
+                // catches the error input and returns a invalid search 
+                if (response.definition === undefined) {
+                    $('.newsDiv').append("Sorry. Your Search didn't return any results. Please try another search term.");
+                } else {
 
-            // adding hubbleDefinition class
-            definition.addClass('hubbleDefinition')
-            // finally appending to the newsDiv
-            $('.newsDiv').append(definition);
+                    // console.log(response);
 
-        })
-        .error( alert('this is not a valid input') );
+                    // testing user output 
+                    // console.log(response.definition);
+                    
+                    // making a dom element for the definition text that will populate from the query 
+                    let definition = $('<div>').text(response.definition).css({
+                        padding: '30px'
+                    })
+
+                    // adding hubbleDefinition class
+                    definition.addClass('hubbleDefinition')
+                    // finally appending to the newsDiv
+                    $('.newsDiv').append(definition);
+                }
+
+            });
+
 
 
     }
@@ -111,3 +140,17 @@ $(document).ready(function () {
 
 });
 
+
+
+
+
+// $.ajax({
+//     type: "post", 
+//     url: "somepage.html",
+//     success: function (data, text) {
+//         //...
+//     },
+//     error: function (request, status, error) {
+//         alert(request.responseText);
+//     }
+// });
