@@ -1,14 +1,24 @@
 // Document .ready so this only fires after the entire .document is loaded
 $(document).ready(function () {
   //spaceflight SEARCH Button FUNCTION Expression activated on click
-  $(".spaceFlightSearch").on("click", function (e) {
+  $("#SFNsubmit").on("submit", function (e) {
     // preventing the page from refreshing
     e.preventDefault();
-    // clear newsDiv (results space) before making the call
+    console.log("from submitted");
     $(".newsDiv").empty();
-    // calling the searchSpaceFlightNews Function - to make the ajax call
+    // simulate the search button click
     searchSpaceFlightNews();
+    $("#spaceFlightUserInput").val("");
   });
+
+  // $(".spaceFlightSearch").on("click", function (e) {
+  //   // preventing the page from refreshing
+  //   e.preventDefault();
+  //   // clear newsDiv (results space) before making the call
+  //   $(".newsDiv").empty();
+  //   // calling the searchSpaceFlightNews Function - to make the ajax call
+  //   searchSpaceFlightNews();
+  // });
 
   // spaceFlight CLEAR Button FUNCTION Expression activated on Click
   $(".spaceFlightClear").on("click", function (e) {
@@ -18,26 +28,28 @@ $(document).ready(function () {
     $(".newsDiv").empty();
   });
   //enables ENTER KEY on keydown, empties
-  $(".focusNew").on("keydown", function (e) {
-    if (e.keyCode === 13) {
-      e.preventDefault();
+  // $(".focusNew").on("keydown", function (e) {
+  //   if (e.keyCode === 13) {
+  //     e.preventDefault();
 
-      // clear newsDiv before making the call
-      $(".newsDiv").empty();
-    }
-  });
+  //     // clear newsDiv before making the call
+  //     $(".newsDiv").empty();
+  //   }
+  // });
 
-  $(".focusNew").on("keyup", function (e) {
-    if (e.keyCode === 13) {
-      // simulate the search button click
-      $(".spaceFlightSearch").click();
-    }
-  });
+  // $(".focusNew").on("keyup", function (e) {
+  //   e.preventDefault();
+  //   if (e.keyCode === 13) {
+  //     $(".newsDiv").empty();
+  //     // simulate the search button click
+  //     $(".spaceFlightSearch").click();
+  //   }
+  // });
 
   //Function Declaration to perform ajax search of api with user input
   function searchSpaceFlightNews() {
     // empties div before the new search query populates
-    $(".newsDiv").empty();
+    // $(".newsDiv").empty();
     //take form input sets string value and trims empty space
     let userInput = $("#spaceFlightUserInput").val().trim();
     // testing to be sure userInput is populating
