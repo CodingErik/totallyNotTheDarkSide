@@ -65,18 +65,15 @@ $(document).ready(function () {
           console.log(pDate);
 
           // Dynamically creates div and format info for selected object data
-          let titleDiv = $("<div>").text(title).css({
-            border: "1px solid blue",
-          });
+          let titleDiv = $("<div>").text(title).attr("class", "newsResults");
           let linkDiv = $("<a>")
             .attr("href", link)
+            .attr("target", 'target="_blank"')
             .text("Click here for Article!")
             .css({
               border: "1px solid blue",
             });
-          let pDateDiv = $("<div>").text(pDate).css({
-            border: "1px solid blue",
-          });
+          let pDateDiv = $("<div>").text(pDate);
 
           // console.log(response.media_type);
 
