@@ -92,20 +92,12 @@
               <strong>Hubble Glossary</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
-                <textarea
-                  value="search"
-                  id="hubbleUserInput"
-                  class="inputFontColor materialize-textarea focusHub"
-                ></textarea>
-                <label for="textarea1">Search Any Astronomy Term</label>
-              </div>
-              <div class="col s3 m2">
-                <!-- button  -->
-                <a class="waves-effect waves-light btn hubbleSearch">Search</a>
-              </div>
-              <div class="col s3 m2">
-                <!-- clear button  -->
-                <a class="waves-effect waves-light btn hubbleClear">Clear</a>
+                <form id="hubbleSubmit">
+                  <label for="textarea1">Search Any Astronomy Term</label>
+                  <input type="text" value='' id="hubbleUserInput"name="textarea1" class="inputFontColor materialize-textarea"> 
+                  <input value="search" type='submit' class="waves-effect waves-light btn hubbleSearch"> 
+                  <input type="button" value="clear" class="inputFontColor materialize-textarea focusHub waves-effect waves-light btn hubbleClear" >
+                </form>
               </div>
             </div>
           </div>
