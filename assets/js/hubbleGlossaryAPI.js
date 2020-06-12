@@ -110,6 +110,7 @@ $(document).ready(function () {
             .then((response) => {
 
 
+
                 // catches the error input and returns a invalid search 
                 if (response.definition === undefined) {
                     $('.newsDiv').append("Sorry. Your Search didn't return any results. Please try another search term.");
