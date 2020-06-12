@@ -63,4 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var instances = M.Dropdown.init(elems, options);
 });
 
+$('.dropdown-trigger').dropdown();
+
 

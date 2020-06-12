@@ -13,6 +13,10 @@ body {
   padding: 0;
 }
 
+nav {
+  font-family: 'Orbitron', sans-serif;
+}
+
 .results {
   margin: 0;
   padding: 0;
@@ -24,6 +28,7 @@ body {
   background-color: #746c6b;
   min-height: 75px;
   border-radius: 3px;
+  
 }
 
 #searchBar {
@@ -45,14 +50,20 @@ body {
 }
 
 
-.btn {
+.dr-btn {
   height: 40px;
   width: 50px;
   background-color: white;
   display: none;
+  border-radius: 2px;
+  margin: 10px;
 }
 
-.btn:hover {
+.dr-con {
+  width: 100px;
+}
+
+.btn:hover, .dr-btn:hover {
   background-color: grey;
   
 }
@@ -213,5 +224,17 @@ a {
 }
 
 header {
-  font-family: 'Orbitron', sans-serif;
+  
+}
+
+.btn {
+  background-color: grey;
+  height: 30px;
+  text-align: center;
+  width: 110px;
+  border-radius: 2px;
+}
+
+.col {
+  margin: 20px;
 }
