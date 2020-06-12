@@ -125,7 +125,8 @@ a {
 
 /* Hubble Definition Title */
 .defTitle {
-    margin-left: 10px;
+    padding: 30px 0px 0px 30px;
+    font-size: larger;
 }
 
 .hubbleDefinition {
@@ -133,22 +134,32 @@ a {
     border-radius: 10px;
     margin-left: 20px;
     font-size: large;
+    padding-top: 20px;
 }
 
 .rocketContainer {
     margin-left: 20px;
 }
 
+.rocketContainer strong {
+    font-size: x-large;
+}
+
 .rocketsDiv {
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
     margin-top: 5px;
     margin-bottom: 5px;
+    padding: 10px;
 }
 
 .rocketsDiv a {
+    border: 1px solid white;
     border-radius: 5px;
     background-color: mediumturquoise;
     color: black;
-    padding: 3px;
+    padding: 5px;
 }
 
 .rocketName {
@@ -157,10 +168,11 @@ a {
 
 .rocketCountry {
     margin: 3px;
+    margin-bottom: 10px;
 }
 
 .rocketDescription {
-    margin: 5px;
+    margin: 10px;
 }
 
 .footer {
