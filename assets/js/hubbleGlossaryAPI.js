@@ -20,10 +20,10 @@ $(document).ready(function () {
     //****************************************************
 
     // ENTER PREVENT DEFAULT 
-    // KEYDO
-    // prevent enter from returning a return
+    // empties
     //****************************************************
     $('.focusHub').on('keydown', function (e) {
+
         if (e.keyCode === 13) {
             e.preventDefault();
             // testing
@@ -37,6 +37,20 @@ $(document).ready(function () {
             // console.log('no');
 
             // simulate the search button click
+            // $('.hubbleSearch').click();
+
+        }
+    });
+    //****************************************************
+
+    // ENTER PREVENT DEFAULT 
+    // simulates click enter
+    //****************************************************
+    $('.focusHub').on('keyup', function (e) {
+
+        if (e.keyCode === 13) {
+            // e.preventDefault();
+
             $('.hubbleSearch').click();
 
         }
@@ -70,9 +84,6 @@ $(document).ready(function () {
     //****************************************************
     function hubbleAjaxCall() {
 
-
-
-
         console.log('call hubble is happening')
         // this is the latest news 
         //http://hubblesite.org/api/v3/news_release/last
@@ -89,24 +100,58 @@ $(document).ready(function () {
         $.ajax({
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
-        }).then((response) => {
-
-            // testing user output 
-            // console.log(response.definition);
-
-
-            // making a dom element for the definition text that will populate from the query 
-            let definition = $('<div>').text(response.definition).css({
-                padding: '30px'
-            })
-
-            // adding hubbleDefinition class
-            definition.addClass('hubbleDefinition')
-            // finally appending to the newsDiv
-            $('.newsDiv').append(definition);
-
+            // success: function (response) {
+            //     console.log(response)
+            // },
+            // error: function (request, status, error) {
+            //     alert(request.responseText);
+            // }
         })
+            .then((response) => {
+
+
+
+                // catches the error input and returns a invalid search 
+                if (response.definition === undefined) {
+                    $('.newsDiv').append("Sorry. Your Search didn't return any results. Please try another search term.");
+                } else {
+
+                    // console.log(response);
+
+                    // testing user output 
+                    // console.log(response.definition);
+                    
+                    // making a dom element for the definition text that will populate from the query 
+                    let definition = $('<div>').text(response.definition).css({
+                        padding: '30px'
+                    })
+
+                    // adding hubbleDefinition class
+                    definition.addClass('hubbleDefinition')
+                    // finally appending to the newsDiv
+                    $('.newsDiv').append(definition);
+                }
+
+            });
+
+
+
     }
     //****************************************************
 
 });
+
+
+
+
+
+// $.ajax({
+//     type: "post", 
+//     url: "somepage.html",
+//     success: function (data, text) {
+//         //...
+//     },
+//     error: function (request, status, error) {
+//         alert(request.responseText);
+//     }
+// });
