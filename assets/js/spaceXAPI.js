@@ -146,6 +146,8 @@ $(document).ready(function () {
     function buildRocketDiv(response) {
         // // ROCKETS
 
+        let rocketContainer = $('<div>').addClass('rocketContainer');
+
         console.log('this is from within the buildRocketDiv', response);
         for (let i = 0; i < response.length; i++) {
 
@@ -178,14 +180,17 @@ $(document).ready(function () {
             container.append(rocketDescription);
             container.append(wiki);
 
-            $('.newsDiv').append(container);
+            rocketContainer.append(container);
+           
 
 
         }
-
+        
         // this is the title of the returned content
-        $('.newsDiv').prepend('<strong>ALL SPACE X ROCKETS<strong>');
-
+        rocketContainer.prepend('<strong>ALL SPACE X ROCKETS<strong>');
+        
+        $('.newsDiv').append(rocketContainer);
+        
         // // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
