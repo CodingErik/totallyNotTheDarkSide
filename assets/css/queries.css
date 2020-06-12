@@ -1,4 +1,5 @@
 @media only screen and (max-width:600px) {
-    .btn {display: block;}
+    .dr-btn {display: block;}
     .nav-content {display: none;}
+    .tabs {height: 200px;}
   }
