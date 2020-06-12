@@ -123,9 +123,21 @@ a {
   float: right;
 }
 
-/* .newsDive {
+/* Hubble Definition Title */
+.defTitle {
+    margin-left: 10px;
+}
 
-} */
+.hubbleDefinition {
+    background-color: gray;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: large;
+}
+
+.rocketContainer {
+    margin-left: 20px;
+}
 
 .rocketsDiv {
     margin-top: 5px;
@@ -133,7 +145,6 @@ a {
 }
 
 .rocketsDiv a {
-    /* border: 1px solid red; */
     border-radius: 5px;
     background-color: mediumturquoise;
     color: black;
