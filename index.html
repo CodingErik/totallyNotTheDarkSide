@@ -44,7 +44,9 @@
     <div class="nav-wrapper">
       <div class="nav-st">
                 <!-- Dropdown Trigger -->
-                <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'></a>
+                <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'>
+                  <img id="burg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="">
+                </a>
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content tabs dr-con'>
                   <li class="tab"><a href="#test1">Space Flight News</a></li>
@@ -69,7 +71,7 @@
       </ul>
     </div>
   </nav>
-
+q
   <body>
     <div class="container">
       <div class="row">
@@ -77,10 +79,10 @@
         <aside class="col s12 m6 hidingQuery search">
           <div class="row">
             <!-- SPACE FLIGHT NEWS  -->
-            <div id="test1" class="col s12">
+            <div id="test1" class="col s12 sc-btn">
               <strong>Space Flight News</strong>
               <!-- user input field  -->
-              <div class="input-field col s12">
+              <div class="input-field col s12 sc-b">
                 <textarea
                   value="search"
                   id="spaceFlightUserInput"
@@ -88,24 +90,25 @@
                 ></textarea>
                 <label for="textarea1">Search</label>
               </div>
-              <div class="col s3 m2">
-                <!-- button  -->
-                <a class="waves-effect waves-light btn spaceFlightSearch"
-                  >Search</a
-                >
+              <div class="col s3 m2 sc-sc">
+                  <!-- button  -->
+                  <a class="waves-effect waves-light btn spaceFlightSearch"
+                    >Search</a
+                  >
               </div>
-              <div class="col s3 m2">
-                <!-- clear button  -->
-                <a class="waves-effect waves-light btn spaceFlightClear"
-                  >Clear</a
-                >
+              <div class="col s3 m2 sc-sc">
+                  <!-- clear button  -->
+                  <a class="waves-effect waves-light btn spaceFlightClear"
+                    >Clear</a
+                  >
+              </div>
               </div>
             </div>
             <!-- SPACE X ARCHIVES  -->
             <div id="test2" class="col s12">
               <strong>Space X Archives</strong>
               <div class="row radioButton">
-                <div class="col s4 m3">
+                <div class="col s3 m3">
                   <!-- clear button  -->
                   <a data-id="2" class="waves-effect waves-light btn"
                     >ROCKETS</a
@@ -123,10 +126,10 @@
               </div>
             </div>
             <!-- HUBBLE NEWS GLOSSARY  -->
-            <div id="test3" class="col s12">
+            <div id="test3" class="col s12 sc-btn">
               <strong>Hubble Glossary</strong>
               <!-- user input field  -->
-              <div class="input-field col s12">
+              <div class="input-field col s12 sc-b">
                 <textarea
                   value="search"
                   id="hubbleUserInput"
@@ -134,14 +137,14 @@
                 ></textarea>
                 <label for="textarea1">Search</label>
               </div>
-              <div class="col s3 m2">
-                <!-- button  -->
-                <a class="waves-effect waves-light btn hubbleSearch">Search</a>
-              </div>
-              <div class="col s3 m2">
-                <!-- clear button  -->
-                <a class="waves-effect waves-light btn hubbleClear">Clear</a>
-              </div>
+                <div class="col s3 m2 sc-sc">
+                  <!-- button  -->
+                  <a class="waves-effect waves-light btn hubbleSearch">Search</a>
+                </div>
+                <div class="col s3 m2 sc-sc">
+                  <!-- clear button  -->
+                  <a class="waves-effect waves-light btn hubbleClear">Clear</a>
+                </div>
             </div>
           </div>
         </aside>
@@ -188,5 +191,7 @@
     <script src="./assets/js/spaceXAPI.js"></script>
     <!-- this is the hubble glossary js  -->
     <script src="./assets/js/hubbleGlossaryAPI.js"></script>
+    <!-- this is the dropdown materialize js  -->
+    <script src="./assets/js/dropdown.js"></script>
   </body>
 </html>

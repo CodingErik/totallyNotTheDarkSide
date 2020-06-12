@@ -52,11 +52,12 @@ nav {
 
 .dr-btn {
   height: 40px;
-  width: 50px;
-  background-color: white;
+  width: 40px;
+  background-color: darkgray;
   display: none;
   border-radius: 2px;
   margin: 10px;
+  justify-content: center;
 }
 
 .dr-con {
@@ -64,8 +65,7 @@ nav {
 }
 
 .btn:hover, .dr-btn:hover {
-  background-color: grey;
-  
+  background-color:white;
 }
 
 #go-btn {
@@ -223,9 +223,7 @@ a {
   justify-content: center;
 }
 
-header {
-  
-}
+
 
 .btn {
   background-color: grey;
@@ -235,6 +233,23 @@ header {
   border-radius: 2px;
 }
 
-.col {
-  margin: 20px;
+.sc-btn {
+  display: flex;
+  flex-wrap: wrap;
+
 }
+
+.sc-sc {
+  margin: 50px;
+}
+
+.input-field {
+  min-width: 500px;
+  width: 700px;
+}
+
+#burg {
+  height: 40px;
+  width:40px;
+}
+
