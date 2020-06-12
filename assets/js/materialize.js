@@ -58,11 +58,16 @@ $(document).ready(function () {
   
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  var instances = M.Dropdown.init(elems, options);
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.dropdown-trigger');
 
-$('.dropdown-trigger').dropdown();
+
+
+
+//////take a look at this tomorrow so that we can get this resolved
+//   var instances = M.Dropdown.init(elems, options);
+// });
+
+// $('.dropdown-trigger').dropdown();
 
 

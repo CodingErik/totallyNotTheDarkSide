@@ -73,7 +73,7 @@ $(document).ready(function () {
         if (options.crossDomain && jQuery.support.cors) {
             var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
             options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-            //options.url = "http://cors.corsproxy.io/url=" + options.url;
+            // options.url = "http://cors.corsproxy.io/url=" + options.url;
         }
     });
 
@@ -120,6 +120,10 @@ $(document).ready(function () {
 
                     // testing user output 
                     // console.log(response.definition);
+
+                    let definitionContainer = $('<div>');
+
+                    let definitionTitle = $('<strong>').text('Definition:').addClass('defTitle');
                     
                     // making a dom element for the definition text that will populate from the query 
                     let definition = $('<div>').text(response.definition).css({
@@ -127,9 +131,11 @@ $(document).ready(function () {
                     })
 
                     // adding hubbleDefinition class
-                    definition.addClass('hubbleDefinition')
+                    definitionContainer.addClass('hubbleDefinition')
                     // finally appending to the newsDiv
-                    $('.newsDiv').append(definition);
+                    definitionContainer.prepend(definitionTitle);
+                    definitionContainer.append(definition);
+                    $('.newsDiv').append(definitionContainer);
                 }
 
             });
