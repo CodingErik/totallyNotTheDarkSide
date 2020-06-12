@@ -4,11 +4,17 @@
   margin: 0px;
 }
 
+
+
 body {
   background-color: #0b1f3a;
   color: #d7cec9;
   margin: 0;
   padding: 0;
+}
+
+nav {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .results {
@@ -22,6 +28,7 @@ body {
   background-color: #746c6b;
   min-height: 75px;
   border-radius: 3px;
+  
 }
 
 #searchBar {
@@ -40,6 +47,25 @@ body {
   margin: 20px;
   width: 150px;
   margin-right: 10px;
+}
+
+
+.dr-btn {
+  height: 40px;
+  width: 50px;
+  background-color: white;
+  display: none;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.dr-con {
+  width: 100px;
+}
+
+.btn:hover, .dr-btn:hover {
+  background-color: grey;
+  
 }
 
 #go-btn {
@@ -114,6 +140,18 @@ a {
     padding: 3px;
 }
 
+.rocketName {
+    font-size: large;
+}
+
+.rocketCountry {
+    margin: 3px;
+}
+
+.rocketDescription {
+    margin: 5px;
+}
+
 .footer {
   padding-top: 50px;
   padding-bottom: 20px;
@@ -139,9 +177,19 @@ a {
   color: white;
 }
 
-/* .launchDatesDivs {
-    
+/* .upcoming-launch-container {
 } */
+
+.launchDatesDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launchTitle {
+    color: limegreen;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .launchCardStyle {
     background-color: black;
@@ -151,14 +199,21 @@ a {
     text-align: center;
     height: 100px;
     width: 300px;
-    margin: 2px;
-    padding: 10px;
-    
+    margin: 3px;
+    padding: 10px 0px;
 }
 
-/* li:nth-child(odd) {
-  color: blue;
-} */
+.launchCardStyle:nth-child(odd) {
+   background-color: darkblue;
+    opacity: .7;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 2px;
+    padding: 10px 0px;
+}
 
 .hidingQuery {
     display: none;
@@ -175,4 +230,40 @@ a {
 
 .inputFontColor {
     color: white;
+}
+
+.s-title {
+  font-size: 2em;
+}
+
+.nav-wrapper {
+  justify-content: center;
+  display: flex;
+}
+
+
+.dropdown-content {
+  background-color: grey;
+}
+
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+/* header {
+  
+} */
+
+.btn {
+  background-color: grey;
+  height: 30px;
+  text-align: center;
+  width: 110px;
+  border-radius: 2px;
+}
+
+.col {
+  margin: 20px;
 }

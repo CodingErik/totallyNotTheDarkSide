@@ -22,31 +22,53 @@
       rel="stylesheet"
     />
 
-    <title>Space Portal | Main</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- material icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- orbitron font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <!-- this is our style sheet  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" media="screen and (max-width:600px)" href="./assets/css/queries.css">
+  
 
-  <header>
-    <nav class="nav-extended indigo darken-4">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Space Portal</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <!-- for scaling features -->
-        </ul>
+  <title>Space Portal | Main</title>
+</head>
+
+<header>
+  <nav class="nav-extended indigo darken-4">
+    <div class="nav-wrapper">
+      <div class="nav-st">
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'></a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content tabs dr-con'>
+                  <li class="tab"><a href="#test1">Space Flight News</a></li>
+                  <li class="tab"><a href="#test2">Space X Archives</a></li>
+                  <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+                </ul>
       </div>
-      <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-          <li class="tab"><a href="#test1">Space Flight News</a></li>
-          <li class="tab"><a href="#test2">Space X Archives</a></li>
-          <li class="tab"><a href="#test3">Hubble Glossary</a></li>
-        </ul>
+      <div class="nav-st">
+        <a href="#" class="s-title">Space Portal</a>
       </div>
-    </nav>
-  </header>
-
-
+      
+      <!-- <button class="material-icons m-btn">menu</button> -->
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- for scaling features -->
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs nav-tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Space Flight News</a></li>
+        <li class="tab"><a href="#test2">Space X Archives</a></li>
+        <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <body>
     <div class="container">
@@ -59,9 +81,10 @@
               <strong>Space Flight News</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
-                <textarea value='search'
+                <textarea
+                  value="search"
                   id="spaceFlightUserInput"
-                  class="inputFontColor materialize-textarea focusNew "
+                  class="inputFontColor materialize-textarea focusNew"
                 ></textarea>
                 <label for="textarea1">Search</label>
               </div>
@@ -93,7 +116,7 @@
               <div class="row">
                 <div class="col s3 m3">
                   <!-- clear button  -->
-                  <a class="waves-effect waves-light btn-large spaceXClear"
+                  <a class="waves-effect waves-light btn spaceXClear"
                     >Clear</a
                   >
                 </div>
@@ -104,9 +127,10 @@
               <strong>Hubble Glossary</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
-                <textarea value='search'
+                <textarea
+                  value="search"
                   id="hubbleUserInput"
-                  class="inputFontColor materialize-textarea focusHub "
+                  class="inputFontColor materialize-textarea focusHub"
                 ></textarea>
                 <label for="textarea1">Search</label>
               </div>
@@ -136,8 +160,10 @@
         </div>
         <div class="col s12">
           <!-- this is where the launch times populate  -->
+          <!-- <div class="launchTitle"></div> -->
           <div class="upcoming-launch container">
-            <div class="row launchDatesDiv"></div>
+            <!-- <div class="launchTitle"></div> -->
+            <div class="row launchDatesDiv"></div> 
           </div>
         </div>
         <div class="col s12"></div>
@@ -145,7 +171,7 @@
     </div>
 
     <footer class="footer">
-      <p>Created by totallyNotTheDarkSide | 2020</p>
+      <p>Project 1 | Created by totallyNotTheDarkSide | 2020</p>
     </footer>
     <!-- moment js library  -->
     <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
