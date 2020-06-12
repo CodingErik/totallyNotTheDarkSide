@@ -151,8 +151,8 @@ $(document).ready(function () {
 
 
             // console.log('this is each rocket i ',response[i]);
-            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia);
-            let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images);
+            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia).attr('target', 'target="_blank"');
+            let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images).attr('target', 'target="_blank"');
             let rocketDescription = $('<div>').text(`Description: ${response[i].description}`);
             let rocketCountry = $('<div>').text(`country: ${response[i].country}`);
             let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`);
