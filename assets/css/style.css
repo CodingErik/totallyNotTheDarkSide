@@ -114,6 +114,18 @@ a {
     padding: 3px;
 }
 
+.rocketName {
+    font-size: large;
+}
+
+.rocketCountry {
+    margin: 3px;
+}
+
+.rocketDescription {
+    margin: 5px;
+}
+
 .footer {
   padding-top: 50px;
   padding-bottom: 20px;
@@ -139,9 +151,19 @@ a {
   color: white;
 }
 
-/* .launchDatesDivs {
-    
+/* .upcoming-launch-container {
 } */
+
+.launchDatesDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launchTitle {
+    color: limegreen;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .launchCardStyle {
     background-color: black;
@@ -151,14 +173,21 @@ a {
     text-align: center;
     height: 100px;
     width: 300px;
-    margin: 2px;
-    padding: 10px;
-    
+    margin: 3px;
+    padding: 10px 0px;
 }
 
-/* li:nth-child(odd) {
-  color: blue;
-} */
+.launchCardStyle:nth-child(odd) {
+   background-color: darkblue;
+    opacity: .7;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 2px;
+    padding: 10px 0px;
+}
 
 .hidingQuery {
     display: none;
