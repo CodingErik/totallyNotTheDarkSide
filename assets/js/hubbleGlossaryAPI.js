@@ -20,6 +20,7 @@ $(document).ready(function () {
     //****************************************************
 
     // ENTER PREVENT DEFAULT 
+    // KEYDO
     // prevent enter from returning a return
     //****************************************************
     $('.focusHub').on('keydown', function (e) {
