@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- material icons  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- this is our style sheet  -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- orbitron font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" media="screen and (max-width:600px)" href="./assets/css/queries.css">
+  <title>Space Portal | Main</title>
+</head>
+
+<header>
+  <nav class="nav-extended indigo darken-4">
+    <div class="nav-wrapper">
+      <div class="nav-st">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'></a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content tabs dr-con'>
+          <li class="tab"><a href="#test1">Space Flight News</a></li>
+          <li class="tab"><a href="#test2">Space X Archives</a></li>
+          <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+        </ul>
+      </div>
+      <div class="nav-st">
+        <a href="#" class="s-title">Space Portal</a>
+      </div>
+
+      <!-- <button class="material-icons m-btn">menu</button> -->
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <!-- for scaling features -->
+      </ul>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs nav-tabs tabs-transparent">
+        <li class="tab"><a href="#test1">Space Flight News</a></li>
+        <li class="tab"><a href="#test2">Space X Archives</a></li>
+        <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <!-- these are search options query cards-->
+        <aside class="col s12 m6 hidingQuery search">
+          <div class="row">
+            <!-- SPACE FLIGHT NEWS  -->
+            <div id="test1" class="col s12">
+              <strong>Space Flight News</strong>
+              <!-- user input field  -->
+              <div class="input-field col s12">
+                <textarea value="search" id="spaceFlightUserInput"
+                  class="inputFontColor materialize-textarea focusNew"></textarea>
+                <label for="textarea1">Search</label>
+              </div>
+              <div class="col s3 m2">
+                <!-- button  -->
+                <a class="waves-effect waves-light btn spaceFlightSearch">Search</a>
+              </div>
+              <div class="col s3 m2">
+                <!-- clear button  -->
+                <a class="waves-effect waves-light btn spaceFlightClear">Clear</a>
+              </div>
+            </div>
+            <!-- SPACE X ARCHIVES  -->
+            <div id="test2" class="col s12">
+              <strong>Space X Archives</strong>
+              <div class="row ">
+                <div class="col s3 m3 radioButton">
+                  <!-- clear button  -->
+                  <a data-id="2" class="waves-effect waves-light btn">ROCKETS</a>
+                </div>
+                <!-- end of Space X Archive buttons -->
+                <div class="col s3 m3">
+                  <!-- clear button  -->
+                  <a class="waves-effect waves-light btn spaceXClear">Clear</a>
+                </div>
+              </div>
+            </div>
+            <!-- HUBBLE NEWS GLOSSARY  -->
+            <div id="test3" class="col s12">
+              <strong>Hubble Glossary</strong>
+              <!-- user input field  -->
+              <div class="input-field col s12">
+                <textarea
+                  value="search"
+                  id="hubbleUserInput"
+                  class="inputFontColor materialize-textarea focusHub"
+                ></textarea>
+                <label for="textarea1">Search Any Astronomy Term</label>
+              </div>
+              <div class="col s3 m2">
+                <!-- button  -->
+                <a class="waves-effect waves-light btn hubbleSearch">Search</a>
+              </div>
+              <div class="col s3 m2">
+                <!-- clear button  -->
+                <a class="waves-effect waves-light btn hubbleClear">Clear</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- this is where the results of the query populates -->
+        <section class="col s12 m6 hidingQuery search">
+          <div class="row newsDiv">
+            <!-- *********** result for space news api *********** -->
+          </div>
+        </section>
+        <div class="col s12">
+          <!-- this is where the quote goes  -->
+          <div class="quoteDiv"></div>
+        </div>
+        <div class="col s12">
+          <div class="imageOfTheDay"></div>
+        </div>
+        <div class="col s12">
+          <!-- this is where the launch times populate  -->
+          <!-- <div class="launchTitle"></div> -->
+          <div class="upcoming-launch container">
+            <!-- <div class="launchTitle"></div> -->
+            <div class="row launchDatesDiv"></div>
+          </div>
+        </div>
+        <div class="col s12"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Project 1 | Created by totallyNotTheDarkSide | 2020</p>
+    </footer>
+    <!-- moment js library  -->
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- materialize js  -->
+    <script src="./assets/js/materialize.js"></script>
+    <!-- this is the imgQuoteAPI js  -->
+    <script src="./assets/js/imgQuoteAPI.js"></script>
+    <!-- this is the launchUpdateAPI js  -->
+    <script src="./assets/js/launchUpdateAPI.js"></script>
+    <!-- this is the space flight news js  -->
+    <script src="./assets/js/spaceflightnews.js"></script>
+    <!-- this is the space x js  -->
+    <script src="./assets/js/spaceXAPI.js"></script>
+    <!-- this is the hubble glossary js  -->
+    <script src="./assets/js/hubbleGlossaryAPI.js"></script>
+  </body>
+
+</html>

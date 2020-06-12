@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+body {
+  background-color: #0b1f3a;
+  color: #d7cec9;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.results {
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  background-color: #746c6b;
+  min-height: 75px;
+  border-radius: 3px;
+  
+}
+
+#searchBar {
+  margin: 10px;
+  width: 200;
+  margin-left: 40px;
+}
+
+.h-five {
+  margin: auto;
+  margin-top: 5px;
+  width: 100px;
+}
+
+.nav-btn {
+  margin: 20px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+
+.dr-btn {
+  height: 40px;
+  width: 50px;
+  background-color: white;
+  display: none;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.dr-con {
+  width: 100px;
+}
+
+.btn:hover, .dr-btn:hover {
+  background-color: grey;
+  
+}
+
+#go-btn {
+  margin: 20px;
+  width: 75px;
+}
+
+a {
+  color: #d7cec9;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.article {
+  height: 1000px;
+  width: 100%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.aside {
+  height: 500px;
+  width: 20%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.section {
+  height: 500px;
+  width: 80%;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+/* Hubble Definition Title */
+.defTitle {
+    padding: 30px 0px 0px 30px;
+    font-size: larger;
+}
+
+.hubbleDefinition {
+    background-color: gray;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: large;
+    padding-top: 20px;
+}
+
+.rocketContainer {
+    margin-left: 20px;
+}
+
+.rocketContainer strong {
+    font-size: x-large;
+}
+
+.rocketsDiv {
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.rocketsDiv a {
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: mediumturquoise;
+    color: black;
+    padding: 5px;
+}
+
+.rocketName {
+    font-size: large;
+}
+
+.rocketCountry {
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+.rocketDescription {
+    margin: 10px;
+}
+
+.footer {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#searchResult {
+  height: 55px;
+  width: 60%;
+  background-color: #0a5568;
+  border: 2px solid black;
+  font-weight: 600;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.quoteDiv {
+  font-size: 30px;
+  color: white;
+}
+
+/* .upcoming-launch-container {
+} */
+
+.launchDatesDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launchTitle {
+    color: limegreen;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launchCardStyle {
+    background-color: black;
+    opacity: .7;
+    border-radius: 10px;
+    color: limegreen;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 3px;
+    padding: 10px 0px;
+}
+
+.launchCardStyle:nth-child(odd) {
+   background-color: darkblue;
+    opacity: .7;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 2px;
+    padding: 10px 0px;
+}
+
+.hidingQuery {
+    display: none;
+}
+
+.quoteDiv {
+    padding: 10px;
+    margin: 10px;
+}
+
+.radioButton {
+    margin-top: 20px;
+}
+
+.inputFontColor {
+    color: white;
+}
+
+.s-title {
+  font-size: 2em;
+}
+
+.nav-wrapper {
+  justify-content: center;
+  display: flex;
+}
+
+
+.dropdown-content {
+  background-color: grey;
+}
+
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+/* header {
+  
+} */
+
+.btn {
+  background-color: grey;
+  height: 30px;
+  text-align: center;
+  width: 110px;
+  border-radius: 2px;
+}
+
+.col {
+  margin: 20px;
+}
