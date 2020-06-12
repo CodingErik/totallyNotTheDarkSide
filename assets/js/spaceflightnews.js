@@ -70,6 +70,7 @@ $(document).ready(function () {
           });
           let linkDiv = $("<a>")
             .attr("href", link)
+            .attr("target", 'target="_blank"')
             .text("Click here for Article!")
             .css({
               border: "1px solid blue",
