@@ -7,56 +7,18 @@ $(document).ready(function () {
     // HUBBLE SEARCH BUTTON 
     // this button calls the hubbleAjaxCall function 
     //****************************************************
-    $('.hubbleSearch').on('click', function (e) {
+    $('#hubbleSubmit').on('submit', function (e) {
         e.preventDefault();
         // clear newsDiv before making the call 
         $('.newsDiv').empty();
         // call hubbleAjaxCall function 
         hubbleAjaxCall();
 
+        $('#hubbleUserInput').val('');
         // for testing
         // console.log('this is being clicked')
     });
     //****************************************************
-
-    // ENTER PREVENT DEFAULT 
-    // empties
-    //****************************************************
-    $('.focusHub').on('keydown', function (e) {
-
-        if (e.keyCode === 13) {
-            e.preventDefault();
-            // testing
-            // console.log('hello');
-            // clear newsDiv before making the call 
-            $('.newsDiv').empty();
-            // // call hubbleAjaxCall function 
-            // hubbleAjaxCall();
-
-            //testing
-            // console.log('no');
-
-            // simulate the search button click
-            // $('.hubbleSearch').click();
-
-        }
-    });
-    //****************************************************
-
-    // ENTER PREVENT DEFAULT 
-    // simulates click enter
-    //****************************************************
-    $('.focusHub').on('keyup', function (e) {
-
-        if (e.keyCode === 13) {
-            // e.preventDefault();
-
-            $('.hubbleSearch').click();
-
-        }
-    });
-    //****************************************************
-
 
     // HUBBLE CLEAR BUTTON 
     //****************************************************
@@ -100,12 +62,6 @@ $(document).ready(function () {
         $.ajax({
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
-            // success: function (response) {
-            //     console.log(response)
-            // },
-            // error: function (request, status, error) {
-            //     alert(request.responseText);
-            // }
         })
             .then((response) => {
 
@@ -148,16 +104,3 @@ $(document).ready(function () {
 });
 
 
-
-
-
-// $.ajax({
-//     type: "post", 
-//     url: "somepage.html",
-//     success: function (data, text) {
-//         //...
-//     },
-//     error: function (request, status, error) {
-//         alert(request.responseText);
-//     }
-// });

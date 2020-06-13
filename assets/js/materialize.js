@@ -58,16 +58,5 @@ $(document).ready(function () {
   
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.dropdown-trigger');
-
-
-
-
-//////take a look at this tomorrow so that we can get this resolved
-//   var instances = M.Dropdown.init(elems, options);
-// });
-
-// $('.dropdown-trigger').dropdown();
 
 

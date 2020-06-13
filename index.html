@@ -21,14 +21,16 @@
   <nav class="nav-extended indigo darken-4">
     <div class="nav-wrapper">
       <div class="nav-st">
-        <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'></a>
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content tabs dr-con'>
-          <li class="tab"><a href="#test1">Space Flight News</a></li>
-          <li class="tab"><a href="#test2">Space X Archives</a></li>
-          <li class="tab"><a href="#test3">Hubble Glossary</a></li>
-        </ul>
+                <!-- Dropdown Trigger -->
+                <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'>
+                  <img id="burg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="">
+                </a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content tabs dr-con'>
+                  <li class="tab"><a href="#test1">Space Flight News</a></li>
+                  <li class="tab"><a href="#test2">Space X Archives</a></li>
+                  <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+                </ul>
       </div>
       <div class="nav-st">
         <a href="#" class="s-title">Space Portal</a>
@@ -47,7 +49,6 @@
       </ul>
     </div>
   </nav>
-
   <body>
     <div class="container">
       <div class="row">
@@ -55,7 +56,7 @@
         <aside class="col s12 m6 hidingQuery search">
           <div class="row">
             <!-- SPACE FLIGHT NEWS  -->
-            <div id="test1" class="col s12">
+            <div id="test1" class="col s12 sc-btn">
               <strong>Space Flight News</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
@@ -87,24 +88,16 @@
               </div>
             </div>
             <!-- HUBBLE NEWS GLOSSARY  -->
-            <div id="test3" class="col s12">
+            <div id="test3" class="col s12 sc-btn">
               <strong>Hubble Glossary</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
-                <textarea
-                  value="search"
-                  id="hubbleUserInput"
-                  class="inputFontColor materialize-textarea focusHub"
-                ></textarea>
-                <label for="textarea1">Search Any Astronomy Term</label>
-              </div>
-              <div class="col s3 m2">
-                <!-- button  -->
-                <a class="waves-effect waves-light btn hubbleSearch">Search</a>
-              </div>
-              <div class="col s3 m2">
-                <!-- clear button  -->
-                <a class="waves-effect waves-light btn hubbleClear">Clear</a>
+                <form id="hubbleSubmit">
+                  <label for="textarea1">Search Any Astronomy Term</label>
+                  <input type="text" value='' id="hubbleUserInput"name="textarea1" class="inputFontColor materialize-textarea"> 
+                  <input value="search" type='submit' class="waves-effect waves-light btn hubbleSearch"> 
+                  <input type="button" value="clear" class="inputFontColor materialize-textarea focusHub waves-effect waves-light btn hubbleClear" >
+                </form>
               </div>
             </div>
           </div>
@@ -154,6 +147,8 @@
     <script src="./assets/js/spaceXAPI.js"></script>
     <!-- this is the hubble glossary js  -->
     <script src="./assets/js/hubbleGlossaryAPI.js"></script>
+    <!-- this is the dropdown materialize js  -->
+    <script src="./assets/js/dropdown.js"></script>
   </body>
 
 </html>
