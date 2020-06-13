@@ -4,8 +4,6 @@
   margin: 0px;
 }
 
-
-
 body {
   background-color: #0b1f3a;
   color: #d7cec9;
@@ -15,6 +13,10 @@ body {
 
 nav {
   font-family: 'Orbitron', sans-serif;
+}
+
+button {
+    color: whitesmoke;
 }
 
 .results {
@@ -200,9 +202,6 @@ a {
   color: white;
 }
 
-/* .upcoming-launch-container {
-} */
-
 .launchDatesDiv {
     display: flex;
     flex-wrap: wrap;
@@ -236,6 +235,14 @@ a {
     width: 300px;
     margin: 2px;
     padding: 10px 0px;
+}
+
+.newsResults {
+    color: purple;
+}
+
+.newsResults a {
+    color: orange;
 }
 
 .hidingQuery {
@@ -274,10 +281,6 @@ a {
   display: flex;
   justify-content: center;
 }
-
-/* header {
-  
-} */
 
 .btn {
   background-color: grey;
