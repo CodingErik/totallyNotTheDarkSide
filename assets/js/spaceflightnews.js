@@ -84,6 +84,9 @@ $(document).ready(function () {
           spaceFlightNewsContainer.append(spaceFlightNewsCard);
         } 
         
+        // prepending header 
+        spaceFlightNewsContainer.prepend(spaceFlightNewsHeader);
+        
         // spaceFlightNewsContainer appended to newsDiv
         $('.newsDiv').append(spaceFlightNewsContainer);
           
