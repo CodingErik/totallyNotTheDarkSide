@@ -42,6 +42,19 @@ $(document).ready(function () {
       } else {
         console.log(response);
         // Loop to return selected data from SFN returned search object -
+
+        // this is the header for searchSpaceFlightNews
+        let spaceFlightNewsHeader = $('<strong>Space Flight News Article Results<strong>');
+        
+        // class for john spaceFlightNewsHeader
+        spaceFlightNewsHeader.attr('class', 'spaceFlightNewsHeader');
+
+        // making a container for all of spaceflight news 
+        let spaceFlightNewsContainer  = $('<div>');
+
+        // class for john spaceFlightNewsContainer
+        spaceFlightNewsContainer.attr('class', 'spaceFlightNewsContainer');
+
         for (var i = 0; i < response.docs.length; i++) {
           let title = response.docs[i].title;
           let link = response.docs[i].url;
@@ -49,20 +62,35 @@ $(document).ready(function () {
 
           console.log(pDate);
 
+          // making card for each news article 
+          let spaceFlightNewsCard  = $('<div>').addClass('spaceFlightNewsCard');
+
           // Dynamically creates div and format info for selected object data
           let titleDiv = $("<div>").text(title).attr("class", "newsResults");
           let linkDiv = $("<a>")
             .attr("href", link)
             .attr("target", 'target="_blank"')
-            .text("Click here for Article!");
-          let pDateDiv = $("<div>").text(moment.parseZone(pDate).format("L"));
+            .text("Click here for Article!")
+            .attr('class', 'linkDiv');
+          let pDateDiv = $("<div>").text(moment.parseZone(pDate).format("L"))
+          .attr('class', 'pDateDiv');
           // console.log(response.media_type);
 
           //Appends dynamically created Divs and format info from above to the div on front page, in the order listed
-          $(".newsDiv").append(titleDiv);
-          $(".newsDiv").append(linkDiv);
-          $(".newsDiv").append(pDateDiv);
-        } //closes for loop
+          spaceFlightNewsCard.append(titleDiv);
+          spaceFlightNewsCard.append(linkDiv);
+          spaceFlightNewsCard.append(pDateDiv);
+
+          spaceFlightNewsContainer.append(spaceFlightNewsCard);
+        } 
+        
+        // prepending header 
+        spaceFlightNewsContainer.prepend(spaceFlightNewsHeader);
+        
+        // spaceFlightNewsContainer appended to newsDiv
+        $('.newsDiv').append(spaceFlightNewsContainer);
+          
+        //closes for loop
       } // closes if else
     }); //closes ajax .then
   } //close of spaceflightnews function
