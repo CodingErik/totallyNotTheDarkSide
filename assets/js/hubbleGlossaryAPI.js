@@ -79,7 +79,7 @@ $(document).ready(function () {
 
                     let definitionContainer = $('<div>');
 
-                    let definitionTitle = $('<strong>').text('Definition:').addClass('defTitle');
+                    let definitionTitle = $('<strong>').text(`Definition: ${userInput}`).addClass('defTitle');
                     
                     // making a dom element for the definition text that will populate from the query 
                     let definition = $('<div>').text(response.definition).css({
