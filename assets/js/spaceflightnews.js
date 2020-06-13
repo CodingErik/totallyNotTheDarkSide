@@ -42,12 +42,28 @@ $(document).ready(function () {
       } else {
         console.log(response);
         // Loop to return selected data from SFN returned search object -
+
+        // this is the header for searchSpaceFlightNews
+        let spaceFlightNewsHeader = $('<strong>Space Flight News Article Results<strong>');
+        
+        // class for john spaceFlightNewsHeader
+        spaceFlightNewsHeader.attr('class', 'spaceFlightNewsHeader');
+
+        // making a container for all of spaceflight news 
+        let spaceFlightNewsContainer  = $('<div>');
+
+        // class for john spaceFlightNewsContainer
+        spaceFlightNewsContainer.attr('class', 'spaceFlightNewsContainer');
+
         for (var i = 0; i < response.docs.length; i++) {
           let title = response.docs[i].title;
           let link = response.docs[i].url;
           let pDate = response.docs[i].published_date;
 
           console.log(pDate);
+
+          // making card for each news article 
+          let spaceFlightNewsCard  = $('<div>');
 
           // Dynamically creates div and format info for selected object data
           let titleDiv = $("<div>").text(title).attr("class", "newsResults");
@@ -59,9 +75,11 @@ $(document).ready(function () {
           // console.log(response.media_type);
 
           //Appends dynamically created Divs and format info from above to the div on front page, in the order listed
-          $(".newsDiv").append(titleDiv);
-          $(".newsDiv").append(linkDiv);
-          $(".newsDiv").append(pDateDiv);
+          spaceFlightNewsCard.append(titleDiv);
+          spaceFlightNewsCard.append(linkDiv);
+          spaceFlightNewsCard.append(pDateDiv);
+
+          spaceFlightNewsContainer.append(spaceFlightNewsCard);
         } //closes for loop
       } // closes if else
     }); //closes ajax .then
