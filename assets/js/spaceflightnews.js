@@ -55,8 +55,7 @@ $(document).ready(function () {
             .attr("href", link)
             .attr("target", 'target="_blank"')
             .text("Click here for Article!");
-          let pDateDiv = $("<div>").text(pDate);
-
+          let pDateDiv = $("<div>").text(moment.parseZone(pDate).format("L"));
           // console.log(response.media_type);
 
           //Appends dynamically created Divs and format info from above to the div on front page, in the order listed
