@@ -62,12 +62,6 @@ $(document).ready(function () {
         $.ajax({
             url: `http://hubblesite.org/api/v3/glossary/${userInput}`,
             method: 'GET'
-            // success: function (response) {
-            //     console.log(response)
-            // },
-            // error: function (request, status, error) {
-            //     alert(request.responseText);
-            // }
         })
             .then((response) => {
 
