@@ -4,6 +4,8 @@
   margin: 0px;
 }
 
+
+
 body {
   background-color: #0b1f3a;
   color: #d7cec9;
@@ -51,16 +53,13 @@ nav {
 .dr-btn {
   height: 40px;
   width: 40px;
-  background-color: darkgray;
+  background-color: white;
   display: none;
   border-radius: 2px;
   margin: 10px;
   justify-content: center;
 }
 
-.dr-con {
-  width: 100px;
-}
 
 .btn:hover, .dr-btn:hover {
   background-color:white;
@@ -132,12 +131,10 @@ a {
     border-radius: 10px;
     margin-left: 20px;
     font-size: large;
-    margin-top: 40px;
     padding-top: 20px;
 }
 
 .rocketContainer {
-    margin-top: 40px;
     margin-left: 20px;
 }
 
@@ -200,6 +197,9 @@ a {
   color: white;
 }
 
+/* .upcoming-launch-container {
+} */
+
 .launchDatesDiv {
     display: flex;
     flex-wrap: wrap;
@@ -235,30 +235,6 @@ a {
     padding: 10px 0px;
 }
 
-.newsDiv {
-    margin-top: 40px;
-}
-
-.newsDiv a {
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: turquoise;
-    padding: 5px;
-}
-
-.newsResults {
-    /* border: 1px solid yellow; */
-    border-radius: 10px;
-    background-color: gray;
-    color: white;
-    margin: 5px;
-    padding: 5px;
-}
-
-.newsResults a {
-    color: orange;
-}
-
 .hidingQuery {
     display: none;
 }
@@ -266,10 +242,6 @@ a {
 .quoteDiv {
     padding: 10px;
     margin: 10px;
-}
-
-.radioButton {
-    margin-top: 20px;
 }
 
 .inputFontColor {
@@ -287,14 +259,15 @@ a {
 
 
 .dropdown-content {
-  background-color: grey;
+  background-color: white;
+  color: black;
 }
-
 
 .nav-tabs {
   display: flex;
   justify-content: center;
 }
+
 
 .btn {
   background-color: grey;
@@ -302,6 +275,7 @@ a {
   text-align: center;
   width: 110px;
   border-radius: 2px;
+  color: black;
 }
 
 .sc-btn {
@@ -323,4 +297,13 @@ a {
   height: 40px;
   width:40px;
 }
+
+.sx-arc {
+  /* display: flex; */
+  /* flex-flow: row;
+  flex-wrap: wrap; */
+  min-width: 470px;
+}
+
+
 
