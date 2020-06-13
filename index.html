@@ -1,26 +1,5 @@
-<!-- <div class="results"></div> -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <!-- material icons  -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!-- this is our style sheet  -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- orbitron font  -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
-      rel="stylesheet"
-    />
 
 <head>
   <meta charset="UTF-8" />
@@ -29,13 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <!-- material icons  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- this is our style sheet  -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- orbitron font  -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <!-- this is our style sheet  -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" media="screen and (max-width:600px)" href="./assets/css/queries.css">
-  
-
   <title>Space Portal | Main</title>
 </head>
 
@@ -43,6 +21,7 @@
   <nav class="nav-extended indigo darken-4">
     <div class="nav-wrapper">
       <div class="nav-st">
+<<<<<<< HEAD
                 <!-- Dropdown Trigger -->
                 <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'>
                   <img id="burg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="">
@@ -53,11 +32,21 @@
                   <li class="tab"><a href="#test2">Space X Archives</a></li>
                   <li class="tab"><a href="#test3">Hubble Glossary</a></li>
                 </ul>
+=======
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger dr-btn' href='#' data-target='dropdown1'></a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content tabs dr-con'>
+          <li class="tab"><a href="#test1">Space Flight News</a></li>
+          <li class="tab"><a href="#test2">Space X Archives</a></li>
+          <li class="tab"><a href="#test3">Hubble Glossary</a></li>
+        </ul>
+>>>>>>> ff6a8286151532aa4f10a0393cdd7e3ef7b79ea2
       </div>
       <div class="nav-st">
         <a href="#" class="s-title">Space Portal</a>
       </div>
-      
+
       <!-- <button class="material-icons m-btn">menu</button> -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <!-- for scaling features -->
@@ -81,6 +70,7 @@
             <div id="test1" class="col s12 sc-btn">
               <strong>Space Flight News</strong>
               <!-- user input field  -->
+<<<<<<< HEAD
               <div class="input-field col s12 sc-b">
                 <textarea
                   value="search"
@@ -101,26 +91,45 @@
                     >Clear</a
                   >
               </div>
+=======
+              <div class="input-field col s12">
+                    <form id="SFNsubmit">
+                      <label for="search">Search:</label><br>
+                       <input type="text" value="" id="spaceFlightUserInput" name="textarea1"class="inputFontColor materialize-textarea focusNew"><br>
+                        <input type="submit" value="SEARCH" >
+                        <input type="button"class="spaceFlightClear" value="CLEAR">
+                      </form>
+                <!-- <textarea value="search" id="spaceFlightUserInput"
+                  class="inputFontColor materialize-textarea focusNew"></textarea>
+                <label for="textarea1">Search</label> -->
+              </div>
+              <div class="col s3 m2">
+                <!-- button  -->
+                <a class="waves-effect waves-light btn spaceFlightSearch">Search</a>
+              </div>
+              <div class="col s3 m2">
+                <!-- clear button  -->
+                <a class="waves-effect waves-light btn spaceFlightClear">Clear</a>
+>>>>>>> ff6a8286151532aa4f10a0393cdd7e3ef7b79ea2
               </div>
             </div>
             <!-- SPACE X ARCHIVES  -->
             <div id="test2" class="col s12">
               <strong>Space X Archives</strong>
+<<<<<<< HEAD
               <div class="row radioButton">
                 <div class="col s3 m3">
+=======
+              <div class="row ">
+                <div class="col s3 m3 radioButton">
+>>>>>>> ff6a8286151532aa4f10a0393cdd7e3ef7b79ea2
                   <!-- clear button  -->
-                  <a data-id="2" class="waves-effect waves-light btn"
-                    >ROCKETS</a
-                  >
+                  <a data-id="2" class="waves-effect waves-light btn">ROCKETS</a>
                 </div>
                 <!-- end of Space X Archive buttons -->
-              </div>
-              <div class="row">
                 <div class="col s3 m3">
                   <!-- clear button  -->
-                  <a class="waves-effect waves-light btn spaceXClear"
-                    >Clear</a
-                  >
+                  <a class="waves-effect waves-light btn spaceXClear">Clear</a>
                 </div>
               </div>
             </div>
@@ -128,6 +137,7 @@
             <div id="test3" class="col s12 sc-btn">
               <strong>Hubble Glossary</strong>
               <!-- user input field  -->
+<<<<<<< HEAD
               <div class="input-field col s12 sc-b">
                 <textarea
                   value="search"
@@ -144,6 +154,16 @@
                   <!-- clear button  -->
                   <a class="waves-effect waves-light btn hubbleClear">Clear</a>
                 </div>
+=======
+              <div class="input-field col s12">
+                <form id="hubbleSubmit">
+                  <label for="textarea1">Search Any Astronomy Term</label>
+                  <input type="text" value='' id="hubbleUserInput"name="textarea1" class="inputFontColor materialize-textarea"> 
+                  <input value="search" type='submit' class="waves-effect waves-light btn hubbleSearch"> 
+                  <input type="button" value="clear" class="inputFontColor materialize-textarea focusHub waves-effect waves-light btn hubbleClear" >
+                </form>
+              </div>
+>>>>>>> ff6a8286151532aa4f10a0393cdd7e3ef7b79ea2
             </div>
           </div>
         </aside>
@@ -162,7 +182,9 @@
         </div>
         <div class="col s12">
           <!-- this is where the launch times populate  -->
+          <!-- <div class="launchTitle"></div> -->
           <div class="upcoming-launch container">
+            <!-- <div class="launchTitle"></div> -->
             <div class="row launchDatesDiv"></div>
           </div>
         </div>
@@ -171,7 +193,7 @@
     </div>
 
     <footer class="footer">
-      <p>Created by totallyNotTheDarkSide | 2020</p>
+      <p>Project 1 | Created by totallyNotTheDarkSide | 2020</p>
     </footer>
     <!-- moment js library  -->
     <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
@@ -193,4 +215,5 @@
     <!-- this is the dropdown materialize js  -->
     <script src="./assets/js/dropdown.js"></script>
   </body>
+
 </html>

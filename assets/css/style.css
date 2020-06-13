@@ -123,21 +123,56 @@ a {
   float: right;
 }
 
-/* .newsDive {
+/* Hubble Definition Title */
+.defTitle {
+    padding: 30px 0px 0px 30px;
+    font-size: larger;
+}
 
-} */
+.hubbleDefinition {
+    background-color: gray;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: large;
+    padding-top: 20px;
+}
+
+.rocketContainer {
+    margin-left: 20px;
+}
+
+.rocketContainer strong {
+    font-size: x-large;
+}
 
 .rocketsDiv {
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
     margin-top: 5px;
     margin-bottom: 5px;
+    padding: 10px;
 }
 
 .rocketsDiv a {
-    /* border: 1px solid red; */
+    border: 1px solid white;
     border-radius: 5px;
     background-color: mediumturquoise;
     color: black;
-    padding: 3px;
+    padding: 5px;
+}
+
+.rocketName {
+    font-size: large;
+}
+
+.rocketCountry {
+    margin: 3px;
+    margin-bottom: 10px;
+}
+
+.rocketDescription {
+    margin: 10px;
 }
 
 .footer {
@@ -165,9 +200,19 @@ a {
   color: white;
 }
 
-/* .launchDatesDivs {
-    
+/* .upcoming-launch-container {
 } */
+
+.launchDatesDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.launchTitle {
+    color: limegreen;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .launchCardStyle {
     background-color: black;
@@ -177,14 +222,21 @@ a {
     text-align: center;
     height: 100px;
     width: 300px;
-    margin: 2px;
-    padding: 10px;
-    
+    margin: 3px;
+    padding: 10px 0px;
 }
 
-/* li:nth-child(odd) {
-  color: blue;
-} */
+.launchCardStyle:nth-child(odd) {
+   background-color: darkblue;
+    opacity: .7;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    height: 100px;
+    width: 300px;
+    margin: 2px;
+    padding: 10px 0px;
+}
 
 .hidingQuery {
     display: none;
@@ -223,7 +275,13 @@ a {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 
+=======
+/* header {
+  
+} */
+>>>>>>> ff6a8286151532aa4f10a0393cdd7e3ef7b79ea2
 
 .btn {
   background-color: grey;

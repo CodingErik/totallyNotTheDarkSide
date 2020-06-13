@@ -146,13 +146,15 @@ $(document).ready(function () {
     function buildRocketDiv(response) {
         // // ROCKETS
 
+        let rocketContainer = $('<div>').addClass('rocketContainer');
+
         console.log('this is from within the buildRocketDiv', response);
         for (let i = 0; i < response.length; i++) {
 
 
             // console.log('this is each rocket i ',response[i]);
-            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia);
-            let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images);
+            let wiki = $('<a>').text('Wiki link here!').attr('href', response[i].wikipedia).attr('target', 'target="_blank"');
+            let rocketImage = $('<a>').text('picture link here!').attr('href', response[i].flickr_images).attr('target', 'target="_blank"');
             let rocketDescription = $('<div>').text(`Description: ${response[i].description}`);
             let rocketCountry = $('<div>').text(`country: ${response[i].country}`);
             let rocketName = $('<div>').text(`Rocket Name: ${response[i].rocket_name}`);
@@ -178,14 +180,17 @@ $(document).ready(function () {
             container.append(rocketDescription);
             container.append(wiki);
 
-            $('.newsDiv').append(container);
+            rocketContainer.append(container);
+           
 
 
         }
-
+        
         // this is the title of the returned content
-        $('.newsDiv').prepend('<strong>ALL SPACE X ROCKETS<strong>');
-
+        rocketContainer.prepend('<strong>ALL SPACE X ROCKETS<strong>');
+        
+        $('.newsDiv').append(rocketContainer);
+        
         // // return console.log(`we will see this if the button pressed is ${id}`);
     }
 
