@@ -82,7 +82,12 @@ $(document).ready(function () {
           spaceFlightNewsCard.append(pDateDiv);
 
           spaceFlightNewsContainer.append(spaceFlightNewsCard);
-        } //closes for loop
+        } 
+        
+        // spaceFlightNewsContainer appended to newsDiv
+        $('.newsDiv').append(spaceFlightNewsContainer);
+          
+        //closes for loop
       } // closes if else
     }); //closes ajax .then
   } //close of spaceflightnews function
