@@ -63,15 +63,17 @@ $(document).ready(function () {
           console.log(pDate);
 
           // making card for each news article 
-          let spaceFlightNewsCard  = $('<div>');
+          let spaceFlightNewsCard  = $('<div>').addClass('spaceFlightNewsCard');
 
           // Dynamically creates div and format info for selected object data
           let titleDiv = $("<div>").text(title).attr("class", "newsResults");
           let linkDiv = $("<a>")
             .attr("href", link)
             .attr("target", 'target="_blank"')
-            .text("Click here for Article!");
-          let pDateDiv = $("<div>").text(moment.parseZone(pDate).format("L"));
+            .text("Click here for Article!")
+            .attr('class', 'linkDiv');
+          let pDateDiv = $("<div>").text(moment.parseZone(pDate).format("L"))
+          .attr('class', 'pDateDiv');
           // console.log(response.media_type);
 
           //Appends dynamically created Divs and format info from above to the div on front page, in the order listed
