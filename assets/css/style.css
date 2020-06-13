@@ -124,10 +124,12 @@ a {
 .defTitle {
     padding: 30px 0px 0px 30px;
     font-size: larger;
+    color: white;
 }
 
 .hubbleDefinition {
     background-color: gray;
+    color: white;
     border-radius: 10px;
     margin-left: 20px;
     font-size: large;
@@ -235,6 +237,45 @@ a {
     padding: 10px 0px;
 }
 
+<<<<<<< HEAD
+=======
+.newsDiv {
+    margin-top: 40px;
+}
+
+.newsDiv a {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: turquoise;
+    padding: 5px;
+}
+
+.spaceFlightNewsHeader {
+    font-size: x-large;
+}
+
+.spaceFlightNewsCard {
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    margin: 5px;
+    padding: 15px;
+}
+
+.newsResults {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.linkDiv {
+    color: black;
+}
+
+.pDateDiv {
+    margin-top: 10px;
+}
+
+>>>>>>> 74a0c8b379e5ed5ac6351e17718e4c6656fc436c
 .hidingQuery {
     display: none;
 }
