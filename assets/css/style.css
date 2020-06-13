@@ -15,10 +15,6 @@ nav {
   font-family: 'Orbitron', sans-serif;
 }
 
-button {
-    color: whitesmoke;
-}
-
 .results {
   margin: 0;
   padding: 0;
@@ -136,10 +132,12 @@ a {
     border-radius: 10px;
     margin-left: 20px;
     font-size: large;
+    margin-top: 40px;
     padding-top: 20px;
 }
 
 .rocketContainer {
+    margin-top: 40px;
     margin-left: 20px;
 }
 
@@ -237,8 +235,24 @@ a {
     padding: 10px 0px;
 }
 
+.newsDiv {
+    margin-top: 40px;
+}
+
+.newsDiv a {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: turquoise;
+    padding: 5px;
+}
+
 .newsResults {
-    color: purple;
+    /* border: 1px solid yellow; */
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    margin: 5px;
+    padding: 5px;
 }
 
 .newsResults a {

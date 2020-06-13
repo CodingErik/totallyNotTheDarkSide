@@ -1,7 +1,7 @@
 # SPACE PORTAL
 
 This is a application where you can access data related to space. You can see when the next space launches will be, browse the hubble glossary and find the description to a term you don't know.
-You can look at recent news aobut anything space. This application is powered by the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities.
+You can look at recent news about anything space. This application is powered by 6 different APIs to retrieve an image of the day, upcoming launch dates, a quote that refreshes with every visit, a Space Flight News search, a Spacex search that returns information on SpaceX rockets, and Hubble glossary to search for astronomy definitions.
 
 The following image demonstrates the application functionality:
 
@@ -9,31 +9,31 @@ The following image demonstrates the application functionality:
 
 ## Client Scope
 
->User Story
+> User Story
 
 ```
-AS A USER WITH A CURIOSITY FOR SPACE
-I WANT to see INFO RELATED TO SPACE ENDEAVORS  
-SO THAT I can read NEWS ABOUT THE NEXT SPACE LAUNCH IS! 
+AS A USER WITH AN INTEREST IN OUTER SPACE
+I WANT TO ACCESS INFORMATION RELATED TO SPACE INCLUDING
+NEWS, UPCOMING LAUNCHES, IMAGES FROM SPACE AND ASTRONOMY TERMS
+SO THAT I CAN LEARN MORE ABOUT ALL THINGS SPACE RELATED!
 ```
 
 ## Project Mvp
 
 ```
-1. application must use two server-side APIs.
-2. Must use a CSS framework *other than Bootstrap! Gasp!* 
-3. least one third-party API 
-4. Must have a polished, mobile-first UI 
-5. Must meet good quality coding standards 
-6. NOT use alerts, confirms, or prompts 
+1. Application uses 6 server-side APIs, 2 of which provide for user input.
+2. Application uses Materialize CSS framework in place of BOOTSRAP.
+3. All 6 APIs are from a third party.
+4. Our design was designed with mobile functionality as a primary concern.
+5. Must meet good quality coding standards
+6. We did NOT use alerts, confirms, or prompts in the construction of this site.
 7. deployed to GitHub Pages
-8. Must be interactive 
+8. The site allows users to interact by searching for news in Space Flight News and astronomy terms from the Hubble site.
 ```
-
 
 ## Contributors
 
-- Erik De Luna ~ js Developer 
+- Erik De Luna ~ js Developer
 - Dale Kittendorf ~ js Developer
 - Jonathan Bentley ~ html, css Developer
 - Trey Perry ~ html, css Developer
