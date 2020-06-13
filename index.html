@@ -59,9 +59,15 @@
               <strong>Space Flight News</strong>
               <!-- user input field  -->
               <div class="input-field col s12">
-                <textarea value="search" id="spaceFlightUserInput"
+                    <form id="SFNsubmit">
+                      <label for="search">Search:</label><br>
+                       <input type="text" value="" id="spaceFlightUserInput" name="textarea1"class="inputFontColor materialize-textarea focusNew"><br>
+                        <input type="submit" value="SEARCH" >
+                        <input type="button"class="spaceFlightClear" value="CLEAR">
+                      </form>
+                <!-- <textarea value="search" id="spaceFlightUserInput"
                   class="inputFontColor materialize-textarea focusNew"></textarea>
-                <label for="textarea1">Search</label>
+                <label for="textarea1">Search</label> -->
               </div>
               <div class="col s3 m2">
                 <!-- button  -->
